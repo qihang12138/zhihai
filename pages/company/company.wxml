@@ -1,16 +1,54 @@
-<visit-card></visit-card>
-<!-- 公司简介 -->
-<view class="aboutUs">
-  <view class="aboutUs-tit">公司简介</view>
-  <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="aboutUs-img" wx:for="{{1}}"></image>
-  <view class="aboutUs-cont">
-
-                                 点点星少儿艺术中心成立于2010年前身为艺之星舞蹈培训班;是经河南省工商局申批的一所大型专舞蹈培训机构艺术中心成立六年来舞出完美人逐渐在郑州艺术培训领地崭露头角。
-
-　 艺术中心自成立以后经过六年的经验积累，已经形成一套独立性针对性实用性、完整性的教学系统艺术中心开设有少儿中国舞国际标准舞(拉丁舞、摩登)、芭蕾、街舞、爵士舞等少儿各类舞种。本艺术中心中国艺术家协会河南省艺术教育基地，是全国权威的少儿舞蹈考级机构中国舞蹈家协会、中国国家歌剧舞剧院河南区舞蹈考级点、是全国国际标准舞及河南国际标准舞协会少儿拉丁舞、摩登舞考牌教学点。
-
-　　艺术中心自创建以来，教学成果累累。在数届全国国标舞、各类中国舞舞蹈大赛中，参赛选手曾获二十余个奖项。数次参与河南电视台少儿春晚、舞动中原等大型活动，受到各界热情赞扬。在办学的过程中，我们除了致力以学校软、硬件配套设施的完善，还努力为学员创造良好的展示自我的平台，积极参加国家，省，市，举行的大型的文艺演出及舞蹈比赛，并取得瞩目的成绩。
-                          </view>
+<view class="redBar"></view>
+<!-- 公司名片 -->
+<view class="visitingCard">
+  <view class="visitingCard-tit">
+    <view class="visitingCard-name">{{pageData.name}}</view>
+    <view class="view">52</view>
+  </view>
+  <view class="brief">
+    <view class="brief-text">{{pageData.addr}}</view>
+    <view class="darkSpot brief-text"></view>
+    <view class="brief-text">{{pageData.people}}</view>
+  </view>
+  <view class="visitingCard-cont">{{pageData.marray}}</view>
+  <view class="address">
+    <view class="address-text">{{pageData.addr}}</view>
+    <view class="tel"></view>
+  </view>
 </view>
-
-
+<!-- 选项卡 -->
+<van-tabs animated custom-class="tabs">
+  <van-tab title="公司信息">
+    <!-- 公司简介 -->
+    <view class="aboutUs">
+      <view class="aboutUs-tit">公司简介</view>
+      <view class="aboutUs-cont">{{pageData.content}}</view>
+    </view>
+  </van-tab>
+  <van-tab title="公司环境">
+    <!-- 公司环境 -->
+    <view class="aboutUs">
+      <view class="aboutUs-tit">服务环境</view>
+      <block wx:for="{{pageData.image}}" wx:key="index">
+        <image src="{{item}}" class="aboutUs-img"></image>
+      </block>
+    </view>
+  </van-tab>
+  <van-tab title="公司招聘">
+     <!-- 招聘 -->
+    <view class="careers" wx:for="{{pageData.job}}" wx:key="index">
+      <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="careers-img"></image>
+      <view class="careers-cont">
+        <view class="careers-job">{{item.name}}</view>
+        <view class="careers-text">
+          {{item.addr}}
+        </view>
+        <view class="careers-text">
+          <text>{{item.edu}}</text>
+          <text>{{item.age}}</text>
+        </view>
+      </view>
+      <view class="careers-pay">{{item.money}}</view>
+    </view>
+  </van-tab>
+</van-tabs>

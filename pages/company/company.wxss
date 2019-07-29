@@ -2,6 +2,93 @@ page {
     background: #F4F5F6;
 }
 
+.redBar {
+    background: #f36886;
+    height: 83rpx;
+}
+
+
+/* 公司信息名片 */
+
+.visitingCard {
+    background: #fff;
+    margin: -70rpx 20rpx 20rpx;
+    padding: 40rpx 45rpx;
+    border-radius: 10rpx;
+}
+
+.visitingCard-tit {
+    font-size: 18px;
+    color: #222;
+    font-weight: 500;
+    display: flex;
+    margin-bottom: 20rpx;
+}
+
+.visitingCard-name {
+    flex: 1;
+}
+
+.view {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+    width: 70rpx;
+    height: 22rpx;
+    line-height: 22rpx;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAWCAYAAADXYyzPAAAEG0lEQVRIS62WWUhUYRTHuzPjQLRok06NI9ZLEBVYQgtlDyXt0QJp+FCEYK5jZRFFQRpF0Gpo6qQv1UM0D5WVLS8FmRlFtEDrS2bN2DjOhC1IjjP2OzIj0+3OaNCFw733fOc7/3P+3/nO9ykjhvGUl5cbkpKSEvV6/QTMrUiqoigpSD+Pi/923p8DgYDb4/F0Yd83lFslloHD4TB2d3eb+/r65gKyDpmH/UjEKBIC9vPdi/QA/oh3IwE+io+P78zOzha95qMJTMQ6i8Ui2a3C2RYApvA9DokbIhMJ4ivyHjmHNHV0dLjxF1TP+wtYaLVarRnBYHAHxgsQE6IVoDjTRQlElsBHwC2MVwLerKb/D4cCmpycvJxJh5gwHTGoHMvaeRn/gFNviAUL79Ghby3719juc7lctyPBB4FZT73P51uJ0RGcTNPI8ju6e4CeYw0f8+3X6XR6CkpA09Hn8F6EjFEFK8y8YXyvyWS6yboHZDwMrNTW1s7GkR1dWhTQOr/ff8ZsNn8OTw4DCFOJiYnWuLi4YnQFGuD96F6wfPmFhYVP+O4fAAZ0MllUEtVqfvWqiP2w0MjYzvz8/PZw4ZHpJOb0U/Ef2UKdUkB2u1222Qls1+JDXYgBxm4wbzvgbUpNTc04Mi1DuU0jUonBiWwC9J6ApqSkpAFWIfTKdkKe4qzC7Xa/CIEL3RcQ2e/qR5arEvtTClFm8XMUmaxhKBS19Pb2brTZbC6YMQNUhayPyEi20GVotuXm5nrwZyHjS9hkaCyZQLQhu5W6urrrGC3ToEaMhGYHwNtKSkq8AM+AnSb0qaogP5LFsqKionfV1dXjDQbDaeZlR/NJYHck40YMVsQwckDtUMDSMlcUFBS8Hg4wWLeU+vr6DVTbsRhUN5NxTiyqAb2C2CiazqqqqmSj0XgRfwujUN2OfpfS0NBggqYyfkoR9R4URp3QuzkvL+9uqKJnojuApMsggM+gtZzu9FyKi+VYjP15hrSKS/r5WRI5PLCdAJ8EnadwsIbfP7YThtKtrpJFGcXzScA5qcw4T0UU9XbC9jiyTmPpgvhqZQuSQ97bwQYC5elQfpYJkpG6B39DZ5cG0tXV5VT3XWkgbDMrQZQQ/FZsx6qKT3bHS/xvZ9vdF2YGW2ZWVpY+MzNzCRMPYyTdS91IvjN2l8kXyfQZy/NTnJPBKHSz0OWQ0WKN5RJQ6dd7EhISbqlb5kCAoUNiDg4OIvMxlrM38hHa5dj7wbhbBrCR4zPWIfEKm/1RD4mwd1lD+vEU9mIxzjegF8fRjj9VXIO/kqUPeQgTJ51O54OYx2KkF6l2KFwKeCH6qcg/XwSo3pter/fLsC4CkeBCPUfZRCp6HnRJ44959WFcrj7XyLK1p6fHU1pa+isaJTHvXBH0//fL3m9MOjAL+GtTbgAAAABJRU5ErkJggg==') no-repeat;
+    background-size: 30rpx 22rpx;
+}
+
+.brief {
+    display: flex;
+    align-items: center;
+}
+
+.brief-text {
+    font-size: 14px;
+    margin-right: 15rpx;
+}
+
+.darkSpot {
+    width: 8rpx;
+    height: 8rpx;
+    background: #333;
+    border-radius: 50%;
+}
+
+.visitingCard-cont {
+    width: 475rpx;
+    font-size: 13px;
+    color: #666;
+    padding: 23rpx 0 52rpx 0;
+}
+
+.address {
+    display: flex;
+    padding-top: 30rpx;
+    border-top: 1rpx solid #f0f0f0;
+}
+
+.address-text {
+    font-size: 14px;
+    padding: 0 40rpx;
+    flex: 1;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAXCAYAAADtNKTnAAADAUlEQVQ4T4WUX0hTcRTHu/tjssrV+kMOoiLKQKGXMPO5AumpHqSEHobIcFPJIc0HCcFKxGAi2XTOBQkVYthzfyjChCLspSB8McoaUk3GStfmdvuctTsut6kXDud3zvmd7/me8/v9rrJJ96mqqgwPDztxVSmKUod9HG3FTqPnstnsc4vFMm232z/X19dntFRFW0xMTJhjsVg1djsJJ9F2xIbIHhX5A2iC2KzJZAokEolpn8+3Ivk5kDzAaZY32FSFluprfcJgLpPJDCSTyXEBUqSFUChUjQ4CcIwNpnUAtJAw+0h77YuLi0+UkZGRcoxeKDYYGQC8AvBv/KXIVsP8stgvyW1UhoaGzjCsEI79hTKqmiX5CyBT+N4hh7HPo48gFh3Yd0A65TR62NCaH6TEyVUXzGZzKxteYC9TRJhUra6uhtFHdS2n2PtY2pFqdcjmfIUUyZMMrq2lpeWnVrW/v39LWVmZH7td11oWkLcC8grnCcScT1hGD1L1utfr/aWBdHd3W5xO50UKBGC+M+//B0I7D3GcJaAxkcAzxNXc3PxVAwkEAtttNttVbDci90c+Oe43AuIHQGju0BIAkDZ60JPpdDphtVpLWZ9iTr349yHaJRXWD5TR0dEaKI5jHNIFhc0Sxz6Lb5Z4BbqGYnvQ+nv0DV+bEg6HHQyxk6BXRzNHCiA5arnacjrazDTC0sojCl0WWkowGKzEuM+6UsdG27yWXiDQGI1Gn+Z644RsVPRQuQtTHt5GX5K9Edrs8ng8S4VXDJsDAI0jtYa+jYDybj6UlJQ0uFyu99K18VdwDpBBAuXrUImz5xpMbrvdbjmdwlHlcmhrFxRvFnuMeVA5tRnkEnfok1aowCTvkCHXUukucrDIkKMAtDkcjqmifzYNta+vbxu/vw5AfPj0zz8Ny3uw7KCNH/p2jUxysbGxsQrezh2WNTo284BIGzMyzA1BmI0VJhfkZ4XeS0KMNm7F4/GA3+9PGIdelIlsikQiu1Op1BVAhM1r2hhoamqSC/bf9xfSHmTa6if7MAAAAABJRU5ErkJggg==') no-repeat 0 center/17rpx 23rpx;
+}
+
+.tel {
+    width: 70rpx;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAADJUlEQVRIS6WWX0hTURzHvdtiNmctFAMxknwYGW3O0fKlopDoIeglH4pK8sVAerHSCoqKXsSeekkfiqKeeqiHEJKip2jWEnXOjZWS1SIskGRjm1O3Pmfdwe16nXrvhR/nzz3n+9nvnN/vdyeV/HssHo9nlyRJLdgxxjtyudxn+v30Hw0PDyfldbobiZ1mt9u932w2dyO8F8AmWhNtlnfRbDbbOjo6+pF+TjeFjRKeuBHuwZoFVCWWBNibTqfvhMPhhFHQLZPJdB4Rh1oIiHiG8KplbGzshyFQY2PjEAJ7xHGtIBRbWFg4HgwGPxg5PglQHIi9yK+dwyPhdZ+RoJC8Xq+IqI1FQEuABvGqLRQKzeg9PuHRNzyqEYFRRCSIR0cDgcB33SA8GmTzQWyDhogI6RgB0WO1Wh/4/f6UbhDhfRmPurAtShGRR8zFmOtJJBKPo9FoXC9E7JNcLleTxWJ5gmidRg71k0O3yaFZI5A8iKOrlKPqLONSheAiXr1IpVIdkUjkp2GQ7JUPrx7ilVMZFIB+8yNucHT3Jycn543A8pFWX19v57I7iayLDMsLgnJlCNO2U+/eGUrYgihBsR2P+hgfVlWJJUCvmbtEwob0wpS5IzU0NDTj1V31ESIu7usV891aMKfTWW6z2UqTyWSa6BQpsKg+5v+StLa2ttThcLTxybjOwq2qxXkYFeJaPB6fmJ6eTov3RG0N93uO7k7eh2knaKfQmMlkMvHx8fE55rLLqoHP56tgQRcL21mwWQMWwbN7zA8ANQO5wPgUYzsA4U2K8Tz9P9hb+gN46tcsO9xXNQuuYmeUwaGAziLyifEvbJ862RXr0qwTa56uWN/kI7mCyOkVYEJvCVN/LNXXUwLsa7FCWjh/8Yk/we6KZQprn0gWBcmXXcU9tNLvwLYV+UBqYkUu8iK0KkiGlREcR+h3AnKt8qFUA0Wd7F0TSN5p4d7qAJ4k10SUVWPK2qh1Nxkces6L7vWA8kJyudoth/Qh2irEymitCpJIWBHeb7CbIyMjkXWDCmKi6pNHddzfASBNCHppK+X/g+/pvyQfn5GwX9iT+wvzMmkGI+qErAAAAABJRU5ErkJggg==') no-repeat 0 center/26rpx 26rpx;
+}
+
+
+/* 选项卡 */
+
+.tabs {
+    padding-top: 100rpx!important;
+}
+
 
 /* 公司简介 */
 
@@ -19,5 +106,37 @@ page {
 .aboutUs-img {
     width: 630rpx;
     height: 322rpx;
-    margin-bottom: 45rpx;
+    margin-bottom: 10rpx;
+}
+
+
+/* 招聘 */
+
+.careers {
+    display: flex;
+    margin: 0 20rpx 20rpx 20rpx;
+    padding: 40rpx;
+    border-radius: 10rpx;
+    background: #fff;
+    box-shadow: 0 3px 10px 0 rgba(234, 234, 234, 1);
+}
+
+.careers-img {
+    margin-right: 30rpx;
+    height: 94rpx;
+    width: 94rpx;
+}
+
+.careers-cont {
+    flex: 1;
+}
+
+.careers-text text {
+    margin-right: 10rpx;
+    font-size: 14px;
+    color: #5f5f6b;
+}
+
+.careers-pay {
+    color: #D86381;
 }
