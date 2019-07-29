@@ -1,0 +1,10 @@
+<view class="title p10">{{pageData.title}}</view>
+<view class="p10 msg">
+    发布时间:
+    <text class="">{{pageData.time}}</text>
+    阅读量:
+    <text class="">{{pageData.browse}}</text>
+</view>
+<view class="cont p10">
+    <rich-text nodes="{{ pageData.content }}"></rich-text>
+</view>

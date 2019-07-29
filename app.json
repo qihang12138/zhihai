@@ -1,22 +1,23 @@
 {
     "pages": [
-        "pages/index/index",
+        "pages/searchDancer/searchDancer",
         "pages/evaluate/evaluate",
-        "pages/teach/teach",
-        "pages/workExperience/workExperience",
-        "pages/about/about",
-        "pages/careers/careers",
+        "pages/organ/organ",
+        "pages/recruit/recruit",
         "pages/company/company",
         "pages/environment/environment",
-        "pages/recruit/recruit",
-        "pages/organ/organ",
-        "pages/searchDancer/searchDancer",
+        "pages/index/index",
+        "pages/careers/careers",
+        "pages/about/about",
+        "pages/dancer/dancer",
+        "pages/workExperience/workExperience",
+        "pages/teach/teach",
+        "pages/newsDetail/newsDetail",
         "pages/searchJob/searchJob",
         "pages/searchOrgan/searchOrgan",
         "pages/personal/personal",
         "pages/organMsg/organMsg",
         "pages/organization/organization",
-        "pages/dancer/dancer",
         "pages/perfect/perfect"
     ],
     "window": {
@@ -47,6 +48,7 @@
     },
     "sitemapLocation": "sitemap.json",
     "usingComponents": {
+        "van-cell": "/vant/cell/index",
         "visit-card": "../components/visitingCard/visitingCard",
         "name-card": "../components/nameCard/nameCard"
     }

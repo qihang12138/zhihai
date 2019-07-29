@@ -1,5 +1,7 @@
-let ApiUrl = '192.168.101.7/api/';
+let ApiUrl = 'https://xwz.dd371.com/api/';
 const api = {
-    ApiIndex: ApiUrl + 'index/index'
+    ApiWechat: ApiUrl + 'login/login',
+    ApiIndex: ApiUrl + 'index/index',
+    ApiNewDetail: ApiUrl + 'index/news_detail',
 }
 module.exports = api;

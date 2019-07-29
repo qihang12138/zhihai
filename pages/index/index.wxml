@@ -1,32 +1,28 @@
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
-  <block wx:for="{{imgUrls}}">
+  <block wx:for="{{pageData.banner}}" wx:key="index">
     <swiper-item>
       <navigator url="">
-        <image src="{{item}}" class="slide-image" />
+        <image src="{{item.image}}" class="slide-image" />
       </navigator>
     </swiper-item>
   </block>
 </swiper>
 <!-- 舞种分类 -->
 <view class="dance">
-  <block wx:for="{{8}}">
+  <block wx:for="{{pageData.type}}" wx:key="index">
     <navigator class="dance-list" url="">
-      <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="dance-image"></image>
-      <view>拉丁舞</view>
+      <image src="{{item.image}}" class="dance-image"></image>
+      <view>{{item.name}}</view>
     </navigator>
   </block>
 </view>
-<!-- 选项卡 -->
+<!-- 优秀老师 -->
 <view class="tabs">
-  <view class="tabs-list">
-    <text class="tabs-on">综合</text>
-    <text>附近</text>
-    <text>舞种</text>
-  </view>
+  <van-cell is-link title="优秀老师" value="更多" link-type="navigateTo" url="/pages/index/index" />
   <view class="tabs-images">
-    <block wx:for="{{10}}">
+    <block wx:for="{{pageData.teacher}}" wx:key="index">
       <navigator url="">
-        <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="tabs-image"></image>
+        <image src="{{item.image}}" class="tabs-image"></image>
       </navigator>
     </block>
   </view>
@@ -34,14 +30,14 @@
 <!-- 新闻 -->
 <view class="news">
   <view class="news-tit"></view>
-  <block wx:for="{{4}}">
-    <navigator class="" url="">
+  <block wx:for="{{pageData.news}}" wx:key="index">
+    <navigator class="" url="/pages/newsDetail/newsDetail?id={{item.id}}">
       <view class="news-cont">
-        <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="news-image"></image>
+        <image src="{{item.image}}" class="news-image"></image>
         <view class="news-deta">
-          <view class="news-head">分校介绍及计划</view>
-          <view class="news-text">点点星舞蹈现有七所校区，分别为锦艺城总校区大学路校区、须水校区、郑东经开校区</view>
-          <text class="news-time">2019-7-15</text>
+          <view class="news-head">{{item.title}}</view>
+          <view class="news-text">{{item.marray}}</view>
+          <text class="news-time">{{item.time}}</text>
         </view>
       </view>
     </navigator>

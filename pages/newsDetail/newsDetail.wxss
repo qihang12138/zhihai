@@ -1,0 +1,23 @@
+page {
+    background: #fff !important;
+}
+
+.p10 {
+    padding: 0 10rpx;
+}
+
+/* 标题 */
+.title {
+    padding: 20rpx 0 10rpx;
+    font-size: 18px;
+}
+
+/* 信息 */
+.msg {
+    font-size: 12px;
+}
+
+/* 内容 */
+.cont {
+    padding-top: 40rpx;
+}

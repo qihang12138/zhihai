@@ -1,0 +1,14 @@
+<view class="authorization">
+    <view class="avatar">
+        <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="nickname">
+        您好,
+        <open-data type="userNickName" lang="zh_CN"></open-data>
+    </view>
+    <view class="info">
+        <view>该小程序由朵朵科技开发,请提供以下授权,即可继续操作</view>
+        <text class="minor">获得你的公开信息(昵称、头像等)</text>
+    </view>
+</view>
+<button class="logIn-btn wx-btn" open-type="getUserInfo" bindgetuserinfo="getuserinfo">微信登录</button>

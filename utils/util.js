@@ -6,14 +6,35 @@ const formatTime = date => {
   const minute = date.getMinutes()
   const second = date.getSeconds()
 
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+  return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+}
+const YMD = date => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+
+  return [year, month, day].map(formatNumber).join('-')
 }
 
 const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+const toast = ({ title = '提示文字', icon = 'success', duration = 1500 } = option) => {
+  return new Promise((resolve, reject) => {
+    wx.showToast({
+      title: title,
+      icon: icon,
+      duration,
+      success() {
+        setTimeout(resolve, duration);
+      }
+    })
+  })
+}
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  toast: toast,
+  YMD: YMD
 }

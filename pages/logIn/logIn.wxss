@@ -1,0 +1,49 @@
+/*********授权*********/
+.authorization {
+    padding: 0 30rpx;
+    margin: 100rpx 30rpx;
+}
+
+.authorization .avatar {
+    width: 160rpx;
+    height: 160rpx;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.authorization .nickname {
+    margin-top: 20rpx;
+    text-align: center;
+}
+
+.authorization .info {
+    border-top: 1rpx solid #dddddd;
+    padding-top: 40rpx;
+    margin: 50rpx 0;
+}
+
+.authorization .minor {
+    font-size: 14px;
+    color: #999999;
+}
+
+.logIn-btn {
+    position: fixed;
+    bottom: 50rpx;
+    left: 30rpx;
+    border-radius: 45rpx;
+    line-height: 90rpx;
+    text-align: center;
+    width: 690rpx;
+    height: 90rpx;
+}
+
+.wx-btn {
+    border: 2rpx solid #09BB07;
+    color: #09BB07;
+}
+
+.tel-btn {
+    border: 2rpx solid #3C93FF;
+}
