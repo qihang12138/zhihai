@@ -1,0 +1,32 @@
+<view class="redBar"></view>
+
+<!-- 公司名片 -->
+<view class="visitingCard">
+  <view class="visitingCard-tit">
+    <view class="visitingCard-name">郑州朵朵科技有限公司</view>
+    <view class="view">52</view>
+  </view>
+  <view class="brief">
+    <view class="brief-text">郑州市</view>
+    <view class="brief-text">金水区</view>
+    <view class="darkSpot brief-text"></view>
+    <view class="brief-text">一千人以上</view>
+  </view>
+  <view class="visitingCard-cont">全国连锁 超强师资  课程丰富小班授课 擅长民族舞 现代舞、芭蕾舞等</view>
+  <view class="address">
+    <view class="address-text">金水区文化路三全路荣华国际8楼</view>
+    <view class="tel"></view>
+  </view>
+</view>
+
+<!-- 选项卡 -->
+<view class="tabs">
+  <view class="tab on">公司信息</view>
+  <view class="tab">公司环境</view>
+  <view class="tab">公司招聘</view>
+</view>
+
+<!-- 联系按钮 -->
+<view class="contact">
+  <button class="contact-btn">联系</button>
+</view>

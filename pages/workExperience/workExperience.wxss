@@ -1,0 +1,66 @@
+/* 选项卡 */
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5f5f6b;
+    font-size: 14px;
+    padding: 0 32rpx;
+    background: #fff;
+    margin: 20rpx 0;
+}
+
+.tab {
+    text-align: center;
+    flex: 1;
+    margin: 0 20rpx;
+    padding: 32rpx 0;
+}
+
+.on {
+    border-bottom: 1rpx solid #f36886;
+    color: #000;
+}
+
+
+/* 工作经历 */
+
+.job {
+    margin-bottom: 110rpx;
+    padding: 30rpx 0 150rpx;
+    font-size: 15px;
+    color: #333;
+    background: #fff;
+}
+
+.underline {
+    border-bottom: 1rpx solid #f0f0f0
+}
+
+.job-tit {
+    padding: 0 0 35rpx 40rpx;
+    font-size: 16px;
+    color: #000;
+}
+
+.job-brief {
+    padding: 20rpx 0;
+    margin: 0 40rpx;
+}
+
+.job-site {
+    font-size: 15px;
+    color: #333;
+}
+
+.job-time {
+    padding: 5rpx 0 17rpx 0;
+    font-size: 12px;
+    color: #999;
+}
+
+.job-duties {
+    font-size: 13px;
+    color: #333;
+}

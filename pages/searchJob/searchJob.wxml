@@ -1,0 +1,10 @@
+<view class="search">
+  <input type="text" value="" placeholder="请输入关键词" class="search-input"/>
+</view>
+
+<view class="suggest">搜索建议</view>
+<navigator url="" class="suggest-nav">
+  <text class="option">拉丁舞</text>
+</navigator>
+  
+

@@ -1,0 +1,56 @@
+.screen {
+    height: 80rpx;
+    background: #ccc;
+}
+
+.dancer {
+    padding-bottom: 30rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.dancer-brief {
+    padding: 30rpx 20rpx;
+    display: flex;
+    position: relative;
+}
+
+.dancer-msg {
+    font-size: 15px;
+    color: #5F5F6B;
+    display: inline-block;
+    margin-right: 10rpx
+}
+
+.dancer-img {
+    width: 94rpx;
+    height: 94rpx;
+    border-radius: 10rpx;
+    margin-right: 30rpx;
+}
+
+.check {
+    width: 164rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    font-size: 13px;
+    color: #F36886;
+    border: 1px solid #F36886;
+    border-radius: 10rpx;
+    background: #fff;
+    position: absolute;
+    right: 20rpx;
+    top: 100rpx;
+}
+
+.label {
+    font-size: 12px;
+    color: #999;
+    background: rgb(244, 245, 246);
+    display: inline-block;
+    height: 44rpx;
+    width: 100rpx;
+    line-height: 44rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    margin-left: 20rpx;
+}

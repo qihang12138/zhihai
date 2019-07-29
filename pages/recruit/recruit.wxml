@@ -1,0 +1,22 @@
+<view class="recruit">
+  <view class="recruit-row underline">
+    我要招聘
+    <view class="recruit-msg">拉丁舞老师</view>
+  </view>
+  <view class="recruit-row underline">
+    经验要求
+    <view class="recruit-msg">3-5年</view>
+  </view>
+  <view class="recruit-row underline">
+    最低学历
+    <view class="recruit-msg">本科</view>
+  </view>
+  <view class="recruit-row underline">
+    薪资范围
+    <view class="recruit-msg">请选择薪资</view>
+  </view>
+  <view class="recruit-row">
+    公司地址
+    <view class="recruit-msg">请选择地址</view>
+  </view>
+</view>

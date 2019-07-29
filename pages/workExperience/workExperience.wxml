@@ -1,0 +1,17 @@
+<name-card></name-card>
+<!-- 选项卡 -->
+<view class="tabs">
+  <view class="tab">个人简历</view>
+  <view class="tab on">工作经历</view>
+  <view class="tab">教育经历</view>
+  <view class="tab">个人评价</view>
+</view>
+<!-- 个人简厉 -->
+<view class="job">
+  <view class="job-tit underline">工作经历</view>
+  <view class="job-brief underline" wx:for="{{2}}">
+    <view class="job-site">点点星科技有限公司</view>
+    <view class="job-time">2018.04-2018.09</view>
+    <view class="job-duties">担任主课老师，擅长交谊 舞，民族舞，芭蕾舞</view>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+page {
+    background: #f4f5f6;
+}
+
+.perfect {
+    margin-top: 20rpx;
+    font-size: 15px;
+    color: #333;
+}
+
+.underline {
+    border-bottom: 1rpx solid #f0f0f0
+}
+
+.perfect-row {
+    position: relative;
+    padding: 35rpx 0 35rpx 20rpx;
+    font-weight: 500;
+    background: #fff;
+}
+
+.perfect-msg {
+    padding: 30rpx 0 30rpx 20rpx;
+    height: 230rpx;
+    width: 730rpx;
+    font-size: 15px;
+    background: #fff;
+}
+
+.last {
+    margin-top: 20rpx;
+}

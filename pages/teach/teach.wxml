@@ -1,0 +1,21 @@
+<name-card></name-card>
+<!-- 选项卡 -->
+<view class="tabs">
+  <view class="tab">个人简历</view>
+  <view class="tab">工作经历</view>
+  <view class="tab on">教育经历</view>
+  <view class="tab">个人评价</view>
+</view>
+
+<!-- 教育经历 -->
+<view class="teach">
+  <view class="teach-tit underline">教育经历</view>
+  <view class="teach-brief underline" wx:for="{{2}}">
+    <view class="teach-site">四川音乐学院</view>
+    <view class="teach-time">2014年-2018年</view>
+    <view class="teach-duties">
+      <text class="teach-major">艺术专业</text>
+      <text>本科</text>
+    </view>
+  </view>
+</view>

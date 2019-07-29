@@ -1,0 +1,19 @@
+<visit-card></visit-card>
+
+<!-- 招聘 -->
+<view class="careers" wx:for="{{2}}">
+  <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="careers-img"></image>
+  <view class="careers-cont">
+    <view class="careers-job">芭蕾舞老师</view>
+    <view class="careers-text">
+      <text>郑州</text>
+      <text>金水区</text>
+      <text>文化</text>
+    </view>
+    <view class="careers-text">
+      <text>本科</text>
+      <text>3-5年</text>
+    </view>
+  </view>
+  <view class="careers-pay">8-10k</view>
+</view>

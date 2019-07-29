@@ -1,0 +1,15 @@
+<view class="perfect">
+  <view class="perfect-row underline">工作经历</view>
+  <textarea placeholder="请输入工作经历..." maxlength="300" class="perfect-msg underline"></textarea>
+
+  <view class="perfect-row underline">培训经历</view>
+  <textarea placeholder="请输入培训经历..." maxlength="300" class="perfect-msg underline"></textarea>
+
+  <view class="perfect-row underline">个人评价</view>
+  <textarea placeholder="请输入个人评价..." maxlength="300" class="perfect-msg underline"></textarea>
+
+  <input type="file" placeholder="请上传公司图片..." class="perfect-msg underline"/>
+
+  <view class="perfect-row last">机构评价</view>
+  <textarea placeholder="请输入机构评价..." maxlength="300" class="perfect-msg underline"></textarea>
+</view>

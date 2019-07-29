@@ -1,0 +1,14 @@
+<view class="redBar"></view>
+<!-- 个人信息名片 -->
+<view class="nameCard">
+  <view class="nameCard-img"></view>
+  <view class="nameCard-name">昵称昵称</view>
+  <view class="nameCard-job">职业芭蕾舞者</view>
+  <view class="nameCard-brief">8年舞龄、荣获中国舞蹈比赛表演金奖
+    擅长：民族舞 现代舞、芭蕾舞等</view>
+  <view class="nameCard-site">河南郑州</view>
+</view>
+<!-- 联系按钮 -->
+<view class="contact">
+  <button class="contact-btn">联系</button>
+</view>

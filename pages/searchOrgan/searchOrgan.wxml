@@ -1,0 +1,24 @@
+<view class="search">
+  <input type="text" value="" placeholder="请输入关键词" class="search-input" />
+</view>
+<view class="screen"></view>
+<block wx:for="{{1}}">
+  <navigator url="">
+    <view class="organ">
+      <view class="organ-brief">
+        <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="organ-img"></image>
+        <view>
+          <view>朵朵科技有限公司</view>
+          <text class="organ-msg">郑州</text>
+          <text class="organ-msg">金水区</text>
+          <text class="organ-msg">文化</text>
+        </view>
+      </view>
+      <view>
+        <text class="label">拉丁舞</text>
+        <text class="label">拉丁舞</text>
+        <text class="label">拉丁舞</text>
+      </view>
+    </view>
+  </navigator>
+</block>

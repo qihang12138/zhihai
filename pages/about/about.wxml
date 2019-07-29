@@ -1,0 +1,29 @@
+<name-card></name-card>
+<!-- 选项卡 -->
+<view class="tabs">
+  <view class="tab on">个人简历</view>
+  <view class="tab">工作经历</view>
+  <view class="tab">教育经历</view>
+  <view class="tab">个人评价</view>
+</view>
+<!-- 个人简厉 -->
+<view class="resume">
+  <view class="resume-tit">个人简历</view>
+  <view class="resume-row underline">
+    <view>姓名</view>
+    <view class="resume-msg">某某某</view>
+  </view>
+  <view class="resume-row underline">
+    性别
+    <view class="resume-msg">女</view>
+    </view>
+  <view class="resume-row underline">
+    出生年月
+    <view class="resume-msg">2019-07-16</view>
+    </view>
+  <view class="resume-row">
+    专业
+    <view class="resume-msg">舞蹈</view>
+    </view>
+</view>
+

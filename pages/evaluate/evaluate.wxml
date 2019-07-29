@@ -1,0 +1,17 @@
+<name-card></name-card>
+<!-- 选项卡 -->
+<view class="tabs">
+  <view class="tab">个人简历</view>
+  <view class="tab">工作经历</view>
+  <view class="tab">教育经历</view>
+  <view class="tab on">个人评价</view>
+</view>
+
+<!-- 个人评价 -->
+<view class="evaluate">
+  <view class="evaluate-tit underline">教育经历</view>
+  <view class="evaluate-cont">
+    5年舞蹈经验，擅长民族舞，芭蕾舞等，曾获全国大赛
+一等奖，桃李杯一等奖。
+  </view>
+</view>

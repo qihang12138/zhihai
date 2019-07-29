@@ -1,0 +1,20 @@
+<view class="screen"></view>
+
+<block wx:for="{{4}}">
+  <view class="dancer">
+    <view class="dancer-brief">
+      <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="dancer-img"></image>
+      <view>
+        <view>昵称</view>
+        <text class="dancer-msg">北京</text>
+        <text class="dancer-msg">28</text>
+      </view>
+      <button class="check">立即查看</button>
+    </view>
+    <view>
+      <text class="label">拉丁舞</text>
+      <text class="label">拉丁舞</text>
+      <text class="label">拉丁舞</text>
+    </view>
+  </view>
+</block>

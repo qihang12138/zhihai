@@ -1,0 +1,24 @@
+<navigator url="">
+  <view class="head-img"></view>
+</navigator>
+<navigator url="">
+  <view class="list id">ID</view>
+</navigator>
+<navigator url="">
+  <view class="list name">公司名称</view>
+</navigator>
+<navigator url="">
+  <view class="list site">公司地址</view>
+</navigator>
+<navigator url="">
+  <view class="list tel">手机号</view>
+</navigator>
+<navigator url="">
+  <view class="list msg">个人资料</view>
+</navigator>
+<navigator url="">
+  <view class="list service">联系客服</view>
+</navigator>
+<navigator url="">
+  <view class="list cooperation">合作渠道</view>
+</navigator>

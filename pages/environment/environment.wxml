@@ -1,0 +1,8 @@
+<visit-card></visit-card>
+
+<!-- 公司环境 -->
+<view class="environment">
+  <view class="environment-tit">服务环境</view>
+  <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="environment-img" wx:for="{{2}}"></image>
+
+</view>

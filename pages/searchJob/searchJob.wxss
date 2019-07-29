@@ -1,0 +1,33 @@
+.search {
+    border-top: 1px solid #f0f0f0;
+    padding: 20rpx;
+}
+
+.search-input {
+    width: 630rpx;
+    height: 56rpx;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAD+UlEQVRIibXXa4iVVRQG4GeO46jjZErYp5adMtTKhKJSu0cFKUlJBBn1o+hiWVF0MzAsuhIFQURGkJZ0h5B+VCZZaobgrQspKJoe06ZtFzGdSRtn7MfaU8fBaczGBZvD4dt7vevba71rvV/NzJmzdWE9MRgnYBzOwFD0Riu24RssxXfYnFJlb1dOa7t4PhSTcQUKDEHfA+y7FI15LSmK8jspVVYcCnADJuEqXIZ6bMXn2Ijf0IIeODIHdArG5jWmKMpz8UFKle8PFvgYXIuHcBTWYCEW5ZWqN6dUURTlBpyJS3ABzs1reFGUX0ypsubfgGtELm/BDOzBu3gWK/OeUl5tHcB35eAWFkW5Px7ErbgdQ4uifB82pFRpVeWo3erE1T6QHT+Cu7AqPz9ZXPuwA9xSte3AE7gb6/OZaTi+elM18IS8oT7/zsLP6IfpeBNzcGWHc/tZSpV9KVWaMRePinqYjAk5JfsBD8fNODYDzsIvgkJP4mGciq+xWoer7iSAZrwnUtUbt+G8oijXVANfLSixGs9gu6jUe3AHfsTTmIJ5XYFWgbfgFSzAKExEn6Io19QKOlwoGsUSrMsB3SSKY4PI14cHC9jB9mAmTscYjMaqkrjCYRlwbt48SDSNVryKTw8RFPaKil+P00Qt1ZVwMY7DWiwTtBqEAViMt3PUh2QpVdpSqmwXjacnTkJdrSB+L9EYtmfgn/AYNuXVHbZOdLtB6FUrigj+yL/7RDHN6SbAdtuMnYKevUuicRC5OJz2Z8aoRankn/x1Nan+r9WLlO5FW0mMsvYHNYcReIiYejuxu4QV2I2BopIPl40QY3Qb9pTwGbaIeTquu9GKolxTFOUBGIlmfNUOvFK0yhFiOnV3rutwOcoZax5a2ovrS0GnsTmATqfPIVgDpgpRsRyrU6q0lARv38Anon3OwBHdgVgU5XrcibPF234saPX3mzXiNdFPrxEKYmA3gN4oFE0jXsaylCr7qoGJInsBvwohcK+49v9MsaIoD8mg9wsNtxzzU6r83r6nupB24i2Ri6lC7I3Ec0Iv75bJ3wlYLfoIvk7BddlXkxgOQ4ui3JhntB4TJ06qPr8H3wr1MVrQa7zQS7tycM3VB5qadiiKcl0O8gahOMZnH1+IwXA+TsTahob+W5qadqjp5EtigCi0ybheNPatQoM1Ct7/KRrC0ULsFznAWlFEs/NLDMbzYhYvEEJwUWec3Z6j3SQ62zlCQYzKDgg2VOd/I94XM31x1ZfE2qIoT8NTQnf3wEtdNYsfcuSvC46fJa6sn8hbq8h9o5DBi1Kq7OjoJKXK/FwDj+Mi9D3YLtUmPsqW5v81OfK2lCpdKs4M/lEW+9PhLyNsKzYZ31uWAAAAAElFTkSuQmCC') no-repeat 42rpx 13rpx rgb(246, 247, 248);
+    background-size: 30rpx 30rpx;
+    border-radius: 28rpx;
+    padding-left: 80rpx;
+}
+
+.suggest {
+    padding-left: 20rpx;
+    font-size: 12px;
+    color: #999;
+}
+
+.suggest-nav {
+    display: inline-block;
+}
+
+.option {
+    border: 1rpx solid rgba(204, 204, 204, 1);
+    border-radius: 50rpx;
+    padding: 11rpx 30rpx;
+    font-size: 12px;
+    color: rgba(153, 153, 153, 1);
+    margin: 30rpx 0 0 20rpx;
+    display: inline-block;
+}

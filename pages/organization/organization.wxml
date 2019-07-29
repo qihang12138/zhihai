@@ -1,0 +1,25 @@
+<view class="screen"></view>
+
+<block wx:for="{{4}}">
+  <navigator url="">
+    
+  
+    
+  <view class="organization">
+    <view class="organization-brief">
+      <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="organization-img"></image>
+      <view>
+        <view>朵朵科技有限公司</view>
+        <text class="organization-msg">郑州</text>
+        <text class="organization-msg">金水区</text>
+        <text class="organization-msg">文化</text>
+      </view>
+    </view>
+    <view>
+      <text class="label">拉丁舞</text>
+      <text class="label">拉丁舞</text>
+      <text class="label">拉丁舞</text>
+    </view>
+  </view>
+  </navigator>
+</block>

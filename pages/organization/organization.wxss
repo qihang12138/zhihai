@@ -1,0 +1,47 @@
+page {
+    background: #f4f5f6;
+}
+
+.screen {
+    height: 80rpx;
+    background: #ccc;
+}
+
+.organization {
+    padding-bottom: 30rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+    background: #fff;
+}
+
+.organization-brief {
+    padding: 30rpx 20rpx;
+    display: flex;
+    position: relative;
+}
+
+.organization-msg {
+    font-size: 15px;
+    color: #5F5F6B;
+    display: inline-block;
+    margin-right: 10rpx
+}
+
+.organization-img {
+    width: 94rpx;
+    height: 94rpx;
+    border-radius: 10rpx;
+    margin-right: 30rpx;
+}
+
+.label {
+    font-size: 12px;
+    color: #999;
+    background: rgb(244, 245, 246);
+    display: inline-block;
+    height: 44rpx;
+    width: 100rpx;
+    line-height: 44rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    margin-left: 20rpx;
+}

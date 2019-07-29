@@ -1,0 +1,23 @@
+page {
+    background: #F4F5F6;
+}
+
+
+/* 公司简介 */
+
+.aboutUs {
+    background: #fff;
+    padding: 0 60rpx 120rpx;
+}
+
+.aboutUs-tit {
+    font-size: 16px;
+    color: #222;
+    padding: 30rpx 0;
+}
+
+.aboutUs-img {
+    width: 630rpx;
+    height: 322rpx;
+    margin-bottom: 45rpx;
+}
