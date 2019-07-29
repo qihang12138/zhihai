@@ -1,0 +1,31 @@
+<van-tabs active="{{ active }}">
+    <block wx:for="{{pageData.type}}">
+        <van-tab title="{{item.name}}"></van-tab>
+    </block>
+</van-tabs>
+<view class="classify">
+    <!-- <van-cell title="全部" custom-class="collapse-item" /> -->
+    <van-collapse value="{{ 0 }}" custom-class="collapse">
+        <van-collapse-item title="地区" name="1" custom-class="collapse-item"></van-collapse-item>
+        <van-collapse-item title="学历" name="2" custom-class="collapse-item"></van-collapse-item>
+        <van-collapse-item title="专业" name="3" custom-class="collapse-item"></van-collapse-item>
+    </van-collapse>
+</view>
+<block wx:for="{{list}}">
+    <view class="dancer">
+        <view class="dancer-brief">
+            <image src="{{item.image}}" class="dancer-img"></image>
+            <view>
+                <view>{{item.username}}</view>
+                <view class="dancer-msg">年龄: {{item.age}}</view>
+                <view class="dancer-msg">地址: {{item.addr}}</view>
+            </view>
+            <button class="check">立即查看</button>
+        </view>
+        <view>
+            <block wx:for="{{item.tag}}" wx:key="index" wx:if="{{index<3}}">
+                <text class="label">{{item.name}}</text>
+            </block>
+        </view>
+    </view>
+</block>

@@ -1,18 +1,35 @@
-// pages/evaluate/evaluate.js
+// pages/classify/classify.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    activeNames: ['1']
   },
-
+  getData() {
+    app.http({
+      url: app.api.ApiType
+    }).then(res => {
+      let { error_code, data } = res;
+      if (error_code === 0) {
+        this.setData({
+          pageData: data
+        })
+      }
+    })
+  },
+  onChange(event) {
+    this.setData({
+      activeNames: event.detail
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData();
   },
 
   /**

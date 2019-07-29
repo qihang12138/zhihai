@@ -1,24 +1,22 @@
 {
     "pages": [
-        "pages/searchDancer/searchDancer",
-        "pages/evaluate/evaluate",
-        "pages/organ/organ",
-        "pages/recruit/recruit",
-        "pages/company/company",
-        "pages/environment/environment",
+        "pages/perfect/perfect",
         "pages/index/index",
-        "pages/careers/careers",
-        "pages/about/about",
-        "pages/dancer/dancer",
-        "pages/workExperience/workExperience",
-        "pages/teach/teach",
-        "pages/newsDetail/newsDetail",
-        "pages/searchJob/searchJob",
-        "pages/searchOrgan/searchOrgan",
         "pages/personal/personal",
+        "pages/dancer/dancer",
+        "pages/about/about",
+        "pages/careers/careers",
+        "pages/environment/environment",
+        "pages/company/company",
+        "pages/recruit/recruit",
+        "pages/organ/organ",
+        "pages/searchDancer/searchDancer",
+        "pages/searchOrgan/searchOrgan",
+        "pages/searchJob/searchJob",
         "pages/organMsg/organMsg",
         "pages/organization/organization",
-        "pages/perfect/perfect"
+        "pages/classify/classify",
+        "pages/newsDetail/newsDetail"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -30,26 +28,35 @@
         "color": "#999999",
         "selectedColor": "#F36886",
         "list": [{
-            "pagePath": "pages/index/index",
-            "iconPath": "./image/dancer.png",
-            "selectedIconPath": "./image/dancer-on.png",
-            "text": "寻舞者"
-        }, {
-            "pagePath": "pages/organ/organ",
-            "iconPath": "./image/organ.png",
-            "selectedIconPath": "./image/organ-on.png",
-            "text": "寻机构"
-        }, {
-            "pagePath": "pages/personal/personal",
-            "iconPath": "./image/personal.png",
-            "selectedIconPath": "./image/personal-on.png",
-            "text": "我的信息"
-        }]
+                "pagePath": "pages/index/index",
+                "iconPath": "./image/dancer.png",
+                "selectedIconPath": "./image/dancer-on.png",
+                "text": "寻舞者"
+            },
+            {
+                "pagePath": "pages/organ/organ",
+                "iconPath": "./image/organ.png",
+                "selectedIconPath": "./image/organ-on.png",
+                "text": "寻机构"
+            },
+            {
+                "pagePath": "pages/personal/personal",
+                "iconPath": "./image/personal.png",
+                "selectedIconPath": "./image/personal-on.png",
+                "text": "我的信息"
+            }
+        ]
     },
     "sitemapLocation": "sitemap.json",
     "usingComponents": {
-        "van-cell": "/vant/cell/index",
-        "visit-card": "../components/visitingCard/visitingCard",
-        "name-card": "../components/nameCard/nameCard"
+        "van-area": "/vant/area/index",
+        "van-picker": "/vant/picker/index",
+        "van-popup": "/vant/popup/index",
+        "van-field": "/vant/field/index",
+        "van-collapse": "/vant/collapse/index",
+        "van-collapse-item": "/vant/collapse-item/index",
+        "van-tab": "/vant/tab/index",
+        "van-tabs": "/vant/tabs/index",
+        "van-cell": "/vant/cell/index"
     }
 }

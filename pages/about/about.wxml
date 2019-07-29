@@ -1,29 +1,71 @@
-<name-card></name-card>
+<view class="redBar"></view>
+<!-- 个人信息名片 -->
+<view class="nameCard">
+  <image class="nameCard-img" src="{{header}}"></image>
+  <view class="nameCard-name">{{pageData.username}}</view>
+  <view class="nameCard-job">{{pageData.major}}</view>
+  <view class="nameCard-brief">{{pageData.tag}}</view>
+  <view class="nameCard-site">{{pageData.addr}}</view>
+</view>
 <!-- 选项卡 -->
-<view class="tabs">
-  <view class="tab on">个人简历</view>
-  <view class="tab">工作经历</view>
-  <view class="tab">教育经历</view>
-  <view class="tab">个人评价</view>
+<van-tabs animated custom-class="tabs">
+  <!-- 个人简厉 -->
+  <van-tab title="个人简历">
+    <view class="resume tab">
+      <view class="resume-tit">个人简历</view>
+      <view class="resume-row underline">
+        <view class="resume-msg">姓名</view>
+        {{pageData.username}}
+      </view>
+      <view class="resume-row underline">
+        <view class="resume-msg">性别</view>
+        {{pageData.sex}}
+      </view>
+      <view class="resume-row underline">
+        <view class="resume-msg">出生年月</view>
+        {{pageData.birth}}
+      </view>
+      <view class="resume-row">
+        <view class="resume-msg">专业</view>
+        {{pageData.major}}
+      </view>
+    </view>
+  </van-tab>
+  <!-- 工作经历 -->
+  <van-tab title="工作经历">
+    <view class="job tab">
+      <view class="job-tit underline">工作经历</view>
+      <!-- <view class="job-brief underline" wx:for="{{2}}">
+        <view class="job-site">点点星科技有限公司</view>
+        <view class="job-time">2018.04-2018.09</view>
+        <view class="job-duties">担任主课老师，擅长交谊 舞，民族舞，芭蕾舞</view>
+      </view> -->
+      <rich-text nodes="{{ pageData.work }}"></rich-text>
+    </view>
+  </van-tab>
+  <!-- 教育经历 -->
+  <van-tab title="教育经历">
+    <view class="job tab">
+      <view class="job-tit underline">教育经历</view>
+      <view class="job-brief underline" wx:for="{{2}}">
+        <view class="job-site">四川音乐学院</view>
+        <view class="teach-time">2014年-2018年</view>
+        <view class="job-duties">
+          <text class="teach-major">艺术专业</text>
+          <text>本科</text>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+  <!-- 培训经历 -->
+  <van-tab title="培训经历">
+    <view class="evaluate tab">
+      <view class="job-tit underline">教育经历</view>
+      <view class="evaluate-cont">5年舞蹈经验，擅长民族舞，芭蕾舞等，曾获全国大赛一等奖，桃李杯一等奖。</view>
+    </view>
+  </van-tab>
+</van-tabs>
+<!-- 联系按钮 -->
+<view class="my-btn-box">
+  <button class="my-btn">联系</button>
 </view>
-<!-- 个人简厉 -->
-<view class="resume">
-  <view class="resume-tit">个人简历</view>
-  <view class="resume-row underline">
-    <view>姓名</view>
-    <view class="resume-msg">某某某</view>
-  </view>
-  <view class="resume-row underline">
-    性别
-    <view class="resume-msg">女</view>
-    </view>
-  <view class="resume-row underline">
-    出生年月
-    <view class="resume-msg">2019-07-16</view>
-    </view>
-  <view class="resume-row">
-    专业
-    <view class="resume-msg">舞蹈</view>
-    </view>
-</view>
-

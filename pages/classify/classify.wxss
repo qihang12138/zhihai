@@ -1,3 +1,19 @@
+/* 下拉框 */
+.classify {
+    display: flex;
+    width: 750rpx;
+}
+
+.collapse {
+    display: flex;
+    width: 750rpx;
+}
+
+.collapse-item {
+    flex: 1 !important;
+}
+
+/* 舞者 */
 .dancer {
     padding-bottom: 30rpx;
     border-bottom: 1rpx solid #f0f0f0;

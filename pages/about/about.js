@@ -1,18 +1,39 @@
 // pages/about/about.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pageData: '',
+    header: '',
+    id: 0
   },
+  getData() {
+    app.http({
+      url: app.api.ApiDetail + '?id=8'// + this.data.id
+    }).then(res => {
+      let { error_code, data } = res;
+      if (error_code === 0) {
+        if (data.image == null) {
+          data.image = '../../image/header.png'
+        }
+        this.setData({
+          pageData: data,
+          header: data.image
+        })
+        console.log(this.data.header);
 
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({ id: options.id })
+    this.getData();
   },
 
   /**

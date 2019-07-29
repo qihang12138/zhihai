@@ -1,0 +1,24 @@
+/* 按钮 */
+
+.my-btn-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 20rpx;
+    background: #f4f5f6;
+}
+
+.my-btn {
+    width: 710rpx;
+    height: 70rpx;
+    font-size: 14px;
+    background: #f36886;
+    color: #fff;
+}
+
+
+/* 重置vant样式 */
+
+.van-tabs__line {
+    background-color: #F36886 !important;
+}

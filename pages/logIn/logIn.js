@@ -21,12 +21,12 @@ Page({
     wx.login({
       success(res) {
         let { errMsg, code } = res,
-        formData = {
-          code,
-          nickname: userInfo.nickName,
-          image: userInfo.avatarUrl,
-          fid:0
-        }, isOK = true;
+          formData = {
+            code,
+            nickname: userInfo.nickName,
+            image: userInfo.avatarUrl,
+            fid: 0
+          }, isOK = true;
 
         app.http({
           url: app.api.ApiWechat,
@@ -39,8 +39,8 @@ Page({
             app.util.toast({
               title: msg
             }).then(() => {
-              wx.navigateBack({
-                delta: 1
+              wx.switchTab({
+                url: '/pages/index/index'
               })
             })
           }

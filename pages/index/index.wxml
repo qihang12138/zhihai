@@ -21,7 +21,7 @@
   <van-cell is-link title="优秀老师" value="更多" link-type="navigateTo" url="/pages/index/index" />
   <view class="tabs-images">
     <block wx:for="{{pageData.teacher}}" wx:key="index">
-      <navigator url="">
+      <navigator url="/pages/about/about?id={{item.id}}">
         <image src="{{item.image}}" class="tabs-image"></image>
       </navigator>
     </block>

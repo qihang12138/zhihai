@@ -1,24 +1,28 @@
-<navigator url="">
-  <view class="head-img"></view>
-</navigator>
-<navigator url="">
-  <view class="list id">ID</view>
-</navigator>
-<navigator url="">
-  <view class="list name">姓名</view>
-</navigator>
-<navigator url="">
-  <view class="list age">生日</view>
-</navigator>
-<navigator url="">
-  <view class="list tel">手机号</view>
-</navigator>
-<navigator url="">
+<view class="head-panel">
+  <view class="avatar">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName" class="head-name"></open-data>
+</view>
+<view class="msg">
+  <view class="msg-row">
+    <view class="msg-item id">{{pageData.uid}}</view>
+    <view class="msg-item level">{{level[pageData.level]}}</view>
+  </view>
+  <view class="msg-row">
+    <view class="msg-item tel">{{pageData.phone}}</view>
+    <view class="msg-item age">{{pageData.birth}}</view>
+  </view>
+</view>
+<!-- <navigator url="">
   <view class="list msg">个人资料</view>
 </navigator>
 <navigator url="">
   <view class="list service">联系客服</view>
 </navigator>
 <navigator url="">
-  <view class="list cooperation">合作渠道</view>
-</navigator>
+  <view class="list cooperation"></view>
+</navigator> -->
+<van-cell is-link icon="" title="个人资料" link-type="navigateTo" url="/pages/index/index" />
+<van-cell is-link icon="" title="联系客服" link-type="navigateTo" url="/pages/index/index" />
+<van-cell is-link icon="" title="我要认证" link-type="navigateTo" url="/pages/index/index" />

@@ -1,18 +1,40 @@
 // pages/dancer/dancer.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pageData: '',
+    list: ''
   },
-
+  changeList(e) {
+    var index = e.detail.index,
+      data = this.data.pageData,
+    lists = [data.all, data.news, data.hot];
+    this.setData({
+      list: lists[index]
+    })
+  },
+  getData() {
+    app.http({
+      url: app.api.ApiTeacher
+    }).then(res => {
+      let { error_code, data } = res;
+      if (error_code === 0) {
+        this.setData({
+          pageData: data,
+          list: data.all
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData();
   },
 
   /**
