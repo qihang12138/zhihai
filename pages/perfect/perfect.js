@@ -106,12 +106,19 @@ Page({
             tagShow: true
         })
     },
-    onTag(e) {
-        var id = e.currentTarget.dataset.id,
-            tags = this.data.tags;
-        tags.push(id);
+    onTag(e) { // 选择职业标签
+        var { id, index } = e.currentTarget.dataset,
+        { tagList, tags } = this.data;
+
+        tags.indexOf(id) > -1 ? tags.splice( tags.indexOf(id), 1) : tags.push(id)
+        tagList[index].status = !tagList[index].status;
+        
+        // 按顺序选中id
+        // var resTag = tagList.filter(item => item.status).map(item => item.id)
+        // console.log('resTag: ', resTag);
         this.setData({
             tags: tags,
+            tagList: tagList
         })
     },
     changeTag() {
@@ -130,8 +137,12 @@ Page({
                 // data.news.forEach(item => {
                 //     item.time = app.util.YMD(new Date(item.time * 1000));
                 // })
+                data.tag.forEach(item => {
+                    item.status = false
+                })
                 this.setData({
-                    pageData: data
+                    pageData: data,
+                    tagList: data.tag
                 })
             }
         })

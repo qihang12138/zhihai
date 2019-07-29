@@ -44,8 +44,8 @@
 <!-- 职业标签 -->
 <van-popup show="{{ tagShow }}" position="bottom" bind:close="onClose">
   <view class="tags">
-    <block wx:for="{{pageData.tag}}">
-      <view class="tag" bindtap="onTag" data-id="{{item.id}}">{{item.name}}</view>
+    <block wx:for="{{tagList}}" wx:key="{{index}}">
+      <view class="tag {{item.status ? 'tag-on' : ''}}" data-index="{{index}}" bindtap="onTag" data-id="{{item.id}}">{{item.name}}</view>
     </block>
   </view>
   <view class="my-btn-box">
