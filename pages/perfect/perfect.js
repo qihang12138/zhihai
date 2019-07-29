@@ -39,7 +39,8 @@ Page({
         this.setData({
             majorShow: false,
             eduShow: false,
-            siteShow: false
+            siteShow: false,
+            tagShow: false
         });
     },
     site() {
@@ -122,10 +123,10 @@ Page({
         })
     },
     changeTag() {
-        var msgObj = "msgObj.tag"
-        this.setData({
-            [msgObj]: this.data.tag,
-        })
+        // var msgObj = "msgObj.tag"
+        // this.setData({
+        //     [msgObj]: this.data.tag,
+        // })
         this.onClose();
     },
     getData() {

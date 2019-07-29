@@ -49,7 +49,7 @@
     </block>
   </view>
   <view class="my-btn-box">
-    <button class="my-btn" bindtap="changeTap">确认</button>
+    <button class="my-btn" bindtap="changeTag">确认</button>
   </view>
 </van-popup>
 <!-- 所在地区 -->
