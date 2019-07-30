@@ -217,18 +217,23 @@ Page({
         }
 
         app.util.verifyPhone(msgObj.phone).then(res => {
-        return
-        app.http({
-            url: app.api.ApiDancerSave,
-            method: 'POST'
-        }).then(res => {
-            let { error_code, data } = res;
-            if (error_code === 0) {
-                this.setData({
-                    pageData: data
+            app.http({
+                url: app.api.ApiDancerSave,
+                data: msgObj,
+                method: 'POST'
+            }).then(res => {
+                let { error_code, msg } = res;
+                
+                app.util.toast({
+                    title: msg,
+                    icon: error_code === 0 ? 'success' : 'none'
+                }).then(() => {
+                    if (error_code === 0) {
+                        // 提交成功soming
+                        
+                    }
                 })
-            }
-        })
+            })
         })
     },
     /**
