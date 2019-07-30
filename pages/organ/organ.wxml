@@ -1,12 +1,13 @@
-<navigator url="{{pageData.banner.url}}">
+<van-search bindtap="toSearch" placeholder="请输入搜索关键词" readonly shape="round" />
+<navigator url="{{pageData.banner.url}}" hover-class="none">
   <image src="{{pageData.banner.image}}" class="slide-image" />
 </navigator>
 <!-- 合作机构 -->
 <view class="partners">
   <view class="partners-tit"></view>
   <view class="partners-cont">
-    <navigator url="/pages/company/company?id={{item.id}}" wx:for="{{pageData.cooper}}" wx:key="index">
-      <image src="{{item.logo}}" class="partners-img" mode="aspectFill" />
+    <navigator url="/pages/company/company?id={{item.id}}" hover-class="none" wx:for="{{pageData.cooper}}" wx:key="{{index}}">
+      <image src="{{item.logo}}" class="partners-img img-border" mode="aspectFill" />
     </navigator>
   </view>
 </view>
@@ -18,9 +19,9 @@
     <text class="{{tabsOn==2?'tabs-on':''}}" bindtap="tabsOn" data-id="2">优秀</text>
   </view>
   <view class="tabs-images">
-    <block wx:for="{{tabs}}" wx:key="index">
-      <navigator url="/pages/company/company?id={{item.id}}">
-        <image src="{{item.logo}}" class="tabs-image" mode="aspectFill"></image>
+    <block wx:for="{{tabs}}" wx:key="{{index}}">
+      <navigator url="/pages/company/company?id={{item.id}}" hover-class="none">
+        <image src="{{item.logo}}" class="tabs-image img-border" mode="aspectFill"></image>
       </navigator>
     </block>
   </view>

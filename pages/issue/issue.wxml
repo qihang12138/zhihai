@@ -4,15 +4,6 @@
     <van-tab title="已通过"></van-tab>
     <van-tab title="已驳回"></van-tab>
 </van-tabs>
-<block wx:for="{{2}}" wx:key="index">
-    <navigator class="recommend" url="/pages/position/position?id={{item.id}}">
-        <view class="recommend-row">
-            <view>{{item.name}}街舞老师</view>
-            <view class="recommend-money">{{item.money}}5-8k</view>
-        </view>
-        <view class="recommend-site">{{item.addr}}河南 · {{item.edu}}郑州 · {{item.age}}金水</view>
-    </navigator>
-</block>
 <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 1 }}" >
     <view slot="right" class="del" bindtap="del" data-id="{{2}}">删除</view>
     <view slot="">
@@ -26,3 +17,8 @@
     </view>
 </van-swipe-cell>
 <van-toast id="van-toast" />
+
+<!-- 确认按钮 -->
+<navigator class="my-btn-box" url="/pages/recruit/recruit">
+  <button class="my-btn" bindtap="add">发布招聘</button>
+</navigator>

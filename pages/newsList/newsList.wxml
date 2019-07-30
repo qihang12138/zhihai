@@ -1,0 +1,14 @@
+<view class="news">
+  <block wx:for="{{pageData}}" wx:key="index">
+    <navigator class="" url="/pages/newsDetail/newsDetail?id={{item.id}}">
+      <view class="news-cont">
+        <image src="{{item.image}}" class="news-image"></image>
+        <view class="news-deta">
+          <view class="news-head">{{item.title}}</view>
+          <view class="news-text">{{item.marray}}</view>
+          <text class="news-time">{{item.time}}</text>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</view>

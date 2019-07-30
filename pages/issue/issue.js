@@ -1,6 +1,6 @@
 // pages/issue/issue.js
 const app = getApp()
-import Toast from 'path/to/vant-weapp/dist/toast/toast';
+    // import Toast from 'path/to/vant-weapp/dist/toast/toast';
 Page({
 
     /**

@@ -1,15 +1,15 @@
 <view class="m20">
-  <van-field value="{{ msgObj.name }}" required clearable label="公司名称" placeholder="必填" bind:input="changeMsgObj" data-id="username" />
-  <van-cell title="办学年限" required is-link value="{{ age || '请选择办学年限' }}" bind:click="ageShow" data-id="sex" />
-  <van-cell title="人员规模" required is-link value="{{ scale || '请选择人员规模'}}" bind:click="scaleShow" data-id="sex" />
-  <van-cell title="公司地址" required is-link value="{{ msgObj.addr || '请选择公司地址' }}" bind:click="siteShow" data-id="major" />
+  <van-field value="{{ msgObj.name }}" required clearable label="公司名称" placeholder="必填" bind:input="changeMsgObj" data-id="name" />
+  <van-cell title="办学年限" required is-link value="{{ age || '请选择办学年限' }}" bind:click="ageShow" data-id="age" />
+  <van-cell title="人员规模" required is-link value="{{ scale || '请选择人员规模'}}" bind:click="scaleShow" data-id="pid" />
+  <van-cell title="公司地址" required is-link value="{{ msgObj.addr || '请选择公司地址' }}" bind:click="siteShow" data-id="addr" />
   <van-field value="{{ msgObj.phone }}" required clearable label="公司电话" placeholder="必填" bind:input="changeMsgObj" data-id="phone" />
 </view>
 <view class="perfect">
   <view class="perfect-row underline">公司介绍</view>
   <textarea placeholder="请输入公司优势、特色" maxlength="300" class="perfect-msg underline" value="{{msgObj.marray}}" data-type="marray" bindinput="textInput"></textarea>
   <view class="perfect-row underline">公司简介</view>
-  <textarea placeholder="请输入公司信息" maxlength="300" class="perfect-msg underline" value="{{msgObj.work}}" data-type="work" bindinput="textInput"></textarea>
+  <textarea placeholder="请输入公司信息" maxlength="300" class="perfect-msg underline" value="{{msgObj.content}}" data-type="content" bindinput="textInput"></textarea>
   <view class="perfect-row underline">公司环境</view>
   <view class="perfect-msg underline imgs">
      <image class="thumb perfect-img" src="/image/add.png" bindtap="addImgs"  mode="aspectFill"></image>

@@ -1,3 +1,4 @@
+<van-search bindtap="toSearch" placeholder="请输入搜索关键词" readonly shape="round" />
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
   <block wx:for="{{pageData.banner}}" wx:key="index">
     <swiper-item>
@@ -18,7 +19,11 @@
 </view>
 <!-- 优秀老师 -->
 <view class="tabs">
-  <van-cell is-link title="优秀老师" value="更多" hover-class="none" url="/pages/dancer/dancer" />
+  <view class="tabs-tit">
+    <image src="/image/teacher.png" class="tabs-img" />
+    <navigator url="/pages/dancer/dancer" hover-class="none" class="tabs-more">更多</navigator>
+  </view>
+  <!-- <van-cell is-link title="优秀老师" value="更多" hover-class="none" url="/pages/dancer/dancer" /> -->
   <view class="tabs-images">
     <block wx:for="{{pageData.teacher}}" wx:key="index">
       <navigator url="/pages/about/about?id={{item.id}}&teach=1">
@@ -29,7 +34,10 @@
 </view>
 <!-- 新闻 -->
 <view class="news">
-  <view class="news-tit"></view>
+  <view class="tabs-tit">
+    <image src="/image/news.png" class="tabs-img" />
+    <navigator url="/pages/newsList/newsList" hover-class="none" class="tabs-more">更多</navigator>
+  </view>
   <block wx:for="{{pageData.news}}" wx:key="index">
     <navigator class="" url="/pages/newsDetail/newsDetail?id={{item.id}}">
       <view class="news-cont">

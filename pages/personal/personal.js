@@ -6,8 +6,15 @@ Page({
      * 页面的初始数据
      */
     data: {
-        level: ['游客', '舞者', '机构'],
-        identity: true
+        level: [{
+            id: 0,
+            name: '舞者'
+        }, {
+            id: 1,
+            name: '机构'
+        }],
+        identity: false,
+        show: false
     },
     getData() {
         app.http({
@@ -23,6 +30,18 @@ Page({
                 })
             }
         })
+    },
+    show() {
+        this.setData({ show: true })
+    },
+    onClose() {
+        this.setData({ show: false })
+    },
+    onChange(e) {
+        this.setData({
+            identity: e.detail.id
+        })
+        this.onClose();
     },
     /**
      * 生命周期函数--监听页面加载

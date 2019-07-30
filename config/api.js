@@ -5,6 +5,7 @@ const api = {
     ApiIndex: ApiUrl + 'index/index',
     ApiNewDetail: ApiUrl + 'user/news_detail',
     ApiTeacher: ApiUrl + 'index/teacher',
+    ApiNews: ApiUrl + 'index/news',
     ApiType: ApiUrl + 'index/type',
     ApiDetail: ApiUrl + 'user/detail',
     ApiDancerType: ApiUrl + 'user/dancer_type',
@@ -25,10 +26,9 @@ const api = {
     ApiOrganType: ApiUrl + 'organ/organ_type',
     ApiAddImg: ApiUrl + 'index/add_img',
     ApiTeacherDetail: ApiUrl + 'user/teacher_detail',
-<<<<<<< HEAD
     ApiDelete: ApiUrl + 'user/delete',
-=======
     ApiAddImg: ApiUrl + 'index/add_img',
->>>>>>> be4686a441de63327d1b7668343c01babb099d3e
+    ApiSearch: ApiUrl + 'organ/search',
+    ApiLister: ApiUrl + 'organ/lister',
 }
 module.exports = api;

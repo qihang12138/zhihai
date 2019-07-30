@@ -1,0 +1,33 @@
+.news {
+    background: #fff;
+}
+
+.news-cont {
+    display: flex;
+    padding: 20rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.news-head {
+    font-size: 13px;
+}
+
+.news-deta {
+    flex: 1;
+    position: relative;
+    font-size: 12px;
+}
+
+.news-image {
+    height: 140rpx;
+    width: 150rpx;
+    margin-right: 27rpx;
+}
+
+.news-time {
+    position: absolute;
+    right: 15rpx;
+    top: 90rpx;
+    color: #97979F;
+    font-size: 12px;
+}

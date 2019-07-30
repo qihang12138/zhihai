@@ -1,4 +1,4 @@
-// pages/organ/organ.js
+// pages/newsList/newsList.js
 const app = getApp()
 Page({
 
@@ -6,36 +6,20 @@ Page({
      * 页面的初始数据
      */
     data: {
-        pageData: '',
-        tabsOn: 0,
-        tabs: ''
+        pageData: {}
     },
-    tabsOn(e) {
-        var id = e.currentTarget.dataset.id,
-            data = this.data.pageData,
-            tabs = [data.comper, data.near, data.goods]
-        this.setData({
-            tabsOn: id,
-            tabs: tabs[id]
-        })
-    },
-    toSearch() {
-        wx.navigateTo({
-            url: '/pages/searchOrgan/searchOrgan'
-        })
-    },
+
     getData() {
         app.http({
-            url: app.api.ApiOrganIndex
+            url: app.api.ApiNews
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
-                // data.news.forEach(item => {
-                //     item.time = app.util.YMD(new Date(item.time * 1000));
-                // })
+                data.forEach(item => {
+                    item.time = app.util.YMD(new Date(item.time * 1000));
+                })
                 this.setData({
-                    pageData: data,
-                    tabs: data.comper
+                    pageData: data
                 })
             }
         })

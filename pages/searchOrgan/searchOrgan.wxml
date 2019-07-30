@@ -1,24 +1,35 @@
-<view class="search">
-  <input type="text" value="" placeholder="请输入关键词" class="search-input" />
+<view class="classify">
+  <view class="classify-box">
+    <view class="classify-item" data-type="all" bindtap="postData">全部</view>
+  </view>
+  <view class="classify-box">
+    <view class="classify-item" bindtap="">地区</view>
+  </view>
+  <view class="classify-box">
+    <view class="classify-item" bindtap="peopleShow">规模</view>
+  </view>
+  <view class="classify-box">
+    <view class="classify-item" bindtap="ageShow">年限</view>
+  </view>
 </view>
-<view class="screen"></view>
-<block wx:for="{{1}}">
-  <navigator url="">
+<block wx:for="{{pageData}}" wx:key="{{index}}">
+  <navigator url="/pages/company/company?id={{item.id}}">
     <view class="organ">
       <view class="organ-brief">
-        <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="organ-img"></image>
+        <image src="{{item.logo}}" class="organ-img"></image>
         <view>
-          <view>朵朵科技有限公司</view>
-          <text class="organ-msg">郑州</text>
-          <text class="organ-msg">金水区</text>
-          <text class="organ-msg">文化</text>
+          <view>{{item.name}}</view>
+          <text class="organ-msg">{{item.addr}}</text>
         </view>
       </view>
-      <view>
+      <view class="organ-marray">{{item.marray}}</view>
+      <!-- <view>
         <text class="label">拉丁舞</text>
         <text class="label">拉丁舞</text>
         <text class="label">拉丁舞</text>
-      </view>
+      </view> -->
     </view>
   </navigator>
 </block>
+<van-action-sheet show="{{ ageShow }}" actions="{{ ageList }}" bind:close="onClose" bind:select="changeAge" />
+<van-action-sheet show="{{ peopleShow }}" actions="{{ peopleList }}" bind:close="onClose" bind:select="changePeople" />

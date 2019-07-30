@@ -16,6 +16,10 @@
     color: #fff;
 }
 
+.img-border {
+    border: 1rpx solid #eee;
+}
+
 
 /* 重置vant样式 */
 
