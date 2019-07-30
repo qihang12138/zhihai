@@ -1,0 +1,78 @@
+.jobCard {
+    margin: 20rpx;
+    padding: 30rpx 30rpx 0;
+    box-shadow: 0px 2px 6px 0px rgba(233, 232, 232, 1);
+}
+
+.job-tit {
+    padding-bottom: 10rpx;
+    font-size: 14px;
+    color: #333;
+}
+
+.job-text {
+    padding-right: 25rpx;
+}
+
+.job-msg {
+    display: flex;
+    align-items: center;
+    padding: 30rpx 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.job-font {
+    font-size: 12px;
+    color: #999;
+}
+
+.job-money {
+    flex: 1;
+    font-size: 14px;
+    color: #D86381;
+}
+
+.job-site {
+    padding: 27rpx 54rpx;
+}
+
+
+/* 职位详情 */
+
+.details {
+    padding: 30rpx 20rpx 100rpx;
+}
+
+.details-tit {
+    padding-bottom: 25rpx;
+}
+
+.details-cont {
+    font-size: 12px;
+    color: #666;
+}
+
+
+/* 公司信息 */
+
+.company {
+    padding: 0 20rpx;
+}
+
+.company-tit {
+    padding-bottom: 30rpx;
+}
+
+.company-card {
+    display: flex;
+}
+
+.company-img {
+    margin-right: 14rpx;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.company-cont {
+    font-size: 12px;
+}

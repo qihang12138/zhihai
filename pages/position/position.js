@@ -1,4 +1,4 @@
-// pages/environment/environment.js
+// pages/position//position.js
 Page({
 
   /**

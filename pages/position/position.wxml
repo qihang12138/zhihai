@@ -1,0 +1,30 @@
+<view class="jobCard">
+    <view class="job-tit">芭蕾舞老师</view>
+    <view>
+        <text class="job-text job-font">文化路</text>
+        <text class="job-text job-font">3-5年</text>
+        <text class="job-text job-font">本科</text>
+    </view>
+    <view class="job-msg">
+        <text class="job-money">8-10k</text>
+        <text class="job-font">7月20日</text>
+    </view>
+    <view class="job-site job-font">郑州市金水区文化路</view>
+</view>
+<!-- 职位详情 -->
+<view class="details">
+    <view class="details-tit">职位详情</view>
+    <view class="details-cont">热爱舞蹈艺术，根据教学技术完成任务。热爱舞蹈艺术，根据教学技术完成任务</view>
+</view>
+
+<!-- 公司信息 -->
+<view class="company">
+    <view class="company-tit">公司信息</view>
+    <view class="company-card">
+        <image src="" class="company-img"/>
+        <view class="company-cont">
+            <view >郑州朵朵科技有限公司</view>
+             <view >20-90人</view>
+        </view>
+    </view>
+</view>
