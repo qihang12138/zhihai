@@ -20,13 +20,10 @@ const api = {
     ApiSaveJob: ApiUrl + 'user/save_job',
     ApiIndexSearch: ApiUrl + 'index/search',
     ApiIndexSearchLister: ApiUrl + 'index/type_lister',
-<<<<<<< HEAD
     ApiOrganSave: ApiUrl + 'user/organ_save',
     ApiOrgan: ApiUrl + 'user/organ',
     ApiOrganType: ApiUrl + 'organ/organ_type',
     ApiAddImg: ApiUrl + 'index/add_img',
-=======
     ApiTeacherDetail: ApiUrl + 'user/teacher_detail',
->>>>>>> 65646329068d32c04f1daa7e8abb3b7a5986f27b
 }
 module.exports = api;
