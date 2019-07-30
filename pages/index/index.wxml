@@ -18,10 +18,10 @@
 </view>
 <!-- 优秀老师 -->
 <view class="tabs">
-  <van-cell is-link title="优秀老师" value="更多" link-type="navigateTo" url="/pages/index/index" />
+  <van-cell is-link title="优秀老师" value="更多" hover-class="none" url="/pages/dancer/dancer" />
   <view class="tabs-images">
     <block wx:for="{{pageData.teacher}}" wx:key="index">
-      <navigator url="/pages/about/about?id={{item.id}}">
+      <navigator url="/pages/about/about?id={{item.id}}&teach=1">
         <image src="{{item.image}}" class="tabs-image" mode="aspectFill"></image>
       </navigator>
     </block>
