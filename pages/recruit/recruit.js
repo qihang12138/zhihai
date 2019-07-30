@@ -46,6 +46,49 @@ Page({
             [msgObj]: e.detail
         })
     },
+    ageShow() {
+        this.setData({
+            ageShow: true
+        })
+    },
+    eduShow() {
+        this.setData({
+            eduShow: true
+        })
+    },
+    moneyShow() {
+        this.setData({
+            moneyShow: true
+        })
+    },
+    selectAge(e) {
+        let { name } = e.detail;
+        this.setData({
+            ['msgObj.age']: name
+        });
+        this.onClose()
+    },
+    selectEdu(e) {
+        let { name } = e.detail;
+        this.setData({
+            ['msgObj.edu']: name
+        });
+        this.onClose()
+    },
+    selectMoney(e) {
+        let { name } = e.detail;
+        this.setData({
+            ['msgObj.money']: name
+        });
+        this.onClose()
+    },
+    onClose() {
+        this.setData({
+            ageShow: false,
+            eduShow: false,
+            moneyShow: false,
+        })
+    },
     submit() {
         app.http({
             url: app.api.ApiSaveJob,

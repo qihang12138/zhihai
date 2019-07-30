@@ -8,38 +8,22 @@ Page({
      */
     data: {
         areaList: area,
-        majorShow: false,
-        eduShow: false,
-        tagShow: false,
+        scaleShow: false,
+        ageShow: false,
         siteShow: false,
-        sexShow: false,
         pageData: '',
-        columns: [],
-        sexlist: [{
-                name: '男'
-            },
-            {
-                name: '女'
-            },
-            {
-                name: '保密'
-            }
-        ],
-        tags: [],
-        tag: '',
+        ageList: [],
+        scaleList: [],
         msgObj: {
-            username: '',
-            sex: '',
-            birth: '',
-            major: '',
-            edu: '',
+            name: '',
+            yid: '',
+            pid: '',
             addr: '',
             phone: '',
-            tag: [],
-            marray: '',
-            work: '',
-            edu_history: '',
-            train: ''
+            marry: '',
+            content: '',
+            image: [],
+            logo: ''
         }
     },
     textInput(e) {
@@ -57,6 +41,52 @@ Page({
             ['msgObj.' + type]: value
         })
     },
+    ageShow() {
+        this.setData({ ageShow: true })
+    },
+    changeAge(e) {
+        this.setData({
+            ['msgObj.yid']: e.detail.id
+        })
+    },
+    scaleShow() {
+        this.setData({ scaleShow: true })
+    },
+    changeScale(e) {
+        this.setData({
+            ['msgObj.pid']: e.detail.id
+        })
+    },
+    siteShow() {
+        this.setData({ siteShow: true })
+    },
+    changeSite(e) {
+        var site = '';
+        console.log(e);
+
+        e.detail.values.forEach(item => {
+            site += item.name
+        })
+        this.setData({
+            ['msgObj.addr']: site
+        })
+        console.log(this.data.msgObj);
+
+    },
+    onClose() {
+        this.setData({
+            scaleShow: false,
+            ageShow: false,
+            siteShow: false
+        });
+    },
+    changeMsgObj(e) {
+        var id = e.currentTarget.dataset.id;
+        var msgObj = "msgObj." + id;
+        this.setData({
+            [msgObj]: e.detail
+        });
+    },
     toggleSex() {
         let sexShow = this.data.sexShow;
         this.setData({
@@ -69,24 +99,6 @@ Page({
             ['msgObj.sex']: name
         })
         this.toggleSex()
-    },
-    onClose() {
-        this.setData({
-            majorShow: false,
-            eduShow: false,
-            siteShow: false,
-            tagShow: false
-        });
-    },
-    site() {
-        this.setData({ siteShow: true })
-    },
-    changeMsgObj(e) {
-        var id = e.currentTarget.dataset.id;
-        var msgObj = "msgObj." + id;
-        this.setData({
-            [msgObj]: e.detail
-        });
     },
     confirm(e) {
         var msgObj = "msgObj.addr";
@@ -149,39 +161,21 @@ Page({
             tagShow: true
         })
     },
-    onTag(e) { // 选择职业标签
-        var { id, index } = e.currentTarget.dataset, { tagList, msgObj } = this.data;
-
-        msgObj.tag.indexOf(id) > -1 ? msgObj.tag.splice(msgObj.tag.indexOf(id), 1) : msgObj.tag.push(id)
-        tagList[index].status = !tagList[index].status;
-
-        // 按顺序选中id
-        var resTag = tagList.filter(item => item.status).map(item => item.name)
-            // console.log('resTag: ', resTag);
-        this.setData({
-            ['msgObj.tag']: msgObj.tag,
-            tagList: tagList,
-            tags: resTag
-        })
-    },
     getData() {
         app.http({
-            url: app.api.ApiDancerType
+            url: app.api.ApiOrganType
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
-                data.tag.forEach(item => {
-                    item.status = false
-                })
                 this.setData({
-                    pageData: data,
-                    tagList: data.tag
+                    ageList: data.age,
+                    scaleList: data.people
                 })
             }
         })
 
         app.http({
-            url: app.api.ApiDancer
+            url: app.api.ApiOrgan
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 1) {

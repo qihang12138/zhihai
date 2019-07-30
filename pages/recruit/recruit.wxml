@@ -1,11 +1,8 @@
 <view class="wrap">
   <van-field value="" clearable label="我要招聘" placeholder="请输入职位" bind:input="changeMsgObj" data-id="name" />
   <van-cell title="工作年限" required is-link value="{{ msgObj.age }}" bind:click="ageShow" data-id="age" />
-  <!-- <van-field value="" clearable label="工作年限"  placeholder="请输入工作年限" bind:input="changeMsgObj" data-id="age" /> -->
   <van-cell title="学历要求" required is-link value="{{ msgObj.edu }}" bind:click="eduShow" data-id="edu" />
-  <!-- <van-field value="" clearable label="学历要求"  placeholder="请输入学历要求" bind:input="changeMsgObj" data-id="edu" /> -->
   <van-cell title="薪资范围" required is-link value="{{ msgObj.money }}" bind:click="moneyShow" data-id="money" />
-  <!-- <van-field value="" clearable label="薪资范围"  placeholder="请输入薪资" bind:input="changeMsgObj" data-id="money" /> -->
   <van-field value="" clearable label="工作地点" placeholder="请输入工作地点" bind:input="changeMsgObj" data-id="addr" />
   <van-field value="" clearable label="联系电话" placeholder="请输入电话" bind:input="changeMsgObj" data-id="phone" />
   <van-field value="" clearable label="职位描述" type="textarea" autosize placeholder="请输入职位描述" bind:input="changeMsgObj" data-id="content" />
@@ -17,8 +14,8 @@
 <van-toast id="van-toast" />
 <!-- 弹出层 -->
 <!-- 工作年限 -->
-<van-action-sheet show="{{ ageShow }}" actions="{{ age }}" bind:close="onClose" bind:select="selectSex" />
+<van-action-sheet show="{{ ageShow }}" actions="{{ age }}" bind:close="onClose" bind:select="selectAge" />
 <!-- 学历 -->
-<van-action-sheet show="{{ eduShow }}" actions="{{ edu }}" bind:close="onClose" bind:select="selectSex" />
+<van-action-sheet show="{{ eduShow }}" actions="{{ edu }}" bind:close="onClose" bind:select="selectEdu" />
 <!-- 薪资范围 -->
-<van-action-sheet show="{{ moneyShow }}" actions="{{ money }}" bind:close="onClose" bind:select="selectSex" />
+<van-action-sheet show="{{ moneyShow }}" actions="{{ money }}" bind:close="onClose" bind:select="selectMoney" />

@@ -20,5 +20,8 @@ const api = {
     ApiSaveJob: ApiUrl + 'user/save_job',
     ApiIndexSearch: ApiUrl + 'index/search',
     ApiIndexSearchLister: ApiUrl + 'index/type_lister',
+    ApiOrganSave: ApiUrl + 'user/organ_save',
+    ApiOrgan: ApiUrl + 'user/organ',
+    ApiOrganType: ApiUrl + 'organ/organ_type',
 }
 module.exports = api;

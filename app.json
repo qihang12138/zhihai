@@ -1,12 +1,12 @@
 {
     "pages": [
+        "pages/agency/agency",
+        "pages/perfect/perfect",
+        "pages/recruit/recruit",
         "pages/index/index",
         "pages/logIn/logIn",
-        "pages/recruit/recruit",
-        "pages/agency/agency",
         "pages/searchJob/searchJob",
         "pages/searchDancer/searchDancer",
-        "pages/perfect/perfect",
         "pages/searchOrgan/searchOrgan",
         "pages/organization/organization",
         "pages/issue/issue",
