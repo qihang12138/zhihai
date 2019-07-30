@@ -11,12 +11,16 @@
   <view class="perfect-row underline">公司简介</view>
   <textarea placeholder="请输入公司信息" maxlength="300" class="perfect-msg underline" value="{{msgObj.work}}" data-type="work" bindinput="textInput"></textarea>
   <view class="perfect-row underline">公司环境</view>
-  <!-- <textarea placeholder="请输入教育经历..." maxlength="300" class="perfect-msg underline" value="{{msgObj.edu_history}}" data-type="edu_history" bindinput="textInput"></textarea> -->
   <view class="perfect-msg underline imgs">
-    <image src="../../image/add.png" bindtap="" class="perfect-img" mode="aspectFill"/>
+     <image class="thumb perfect-img" src="/image/add.png" bindtap="addImgs"  mode="aspectFill"></image>
+      <image wx:for="{{thumbs}}" wx:key="{{index}}" class="thumb img" src="{{item}}"  mode="aspectFill" data-current="{{item}}" bindtap="previewImage"></image>
+
+    <!-- <image src="../../image/add.png" bindtap="addImgs" class="perfect-img" mode="aspectFill"/> -->
   </view>
   <view class="perfect-row underline">公司LOGO</view>
-  <textarea placeholder="请输入培训经历..." maxlength="300" class="perfect-msg underline" value="{{msgObj.train}}" data-type="train" bindinput="textInput"></textarea>
+  <view class="perfect-msg underline imgs">
+    <image class="thumb" src="{{logoThumb || '/image/add.png'}}" bindtap="singleUpload"  mode="aspectFill"></image>
+  </view>
 </view>
 <!-- 确认按钮 -->
 <view class="my-btn-box">

@@ -80,3 +80,13 @@ page {
     width: 100rpx;
     height: 100rpx;
 }
+
+.thumb {
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 10rpx;
+  }
+  
+  .img {
+    border: 1rpx solid #eee;
+  }

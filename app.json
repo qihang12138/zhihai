@@ -1,12 +1,12 @@
 {
     "pages": [
+        "pages/agency/agency",
         "pages/issue/issue",
         "pages/index/index",
         "pages/about/about",
         "pages/personal/personal",
         "pages/organization/organization",
         "pages/recruit/recruit",
-        "pages/agency/agency",
         "pages/perfect/perfect",
         "pages/logIn/logIn",
         "pages/searchJob/searchJob",

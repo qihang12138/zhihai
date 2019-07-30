@@ -16,6 +16,8 @@ Page({
         scaleList: [],
         age: '',
         scale: '',
+        logoThumb: '',
+        thumbs: [],
         msgObj: {
             name: '',
             yid: '',
@@ -42,6 +44,29 @@ Page({
         this.setData({
             ['msgObj.' + type]: value
         })
+    },
+    singleUpload() {
+        let _this = this,
+            { msgObj } = this.data;
+
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success (res) {
+        const tempFilePaths = res.tempFilePaths,
+        tempImg = tempFilePaths[0];
+        _this.setData({ logoThumb: tempImg })
+        app.upload({
+          url: app.api.ApiAddImg,
+          filePath: tempImg,
+          name: 'image'
+        }).then(res => {
+            msgObj.logo = res.data
+            _this.setData({ msgObj: msgObj })
+        })
+      }
+    })
     },
     ageShow() {
         this.setData({ ageShow: true })
@@ -173,6 +198,59 @@ Page({
             eduShow: true
         })
     },
+    previewImage(e) {
+        let { current } = e.currentTarget.dataset,
+        { thumbs } = this.data;
+        
+        wx.previewImage({
+            current: current, // 当前显示图片的http链接
+            urls: thumbs // 需要预览的图片http链接列表
+        })
+    },
+    addImgs() {
+        let { thumbs, msgObj } = this.data,
+        _this = this;
+
+        if(msgObj.image.length >= 9) {
+        app.util.toast({
+            title: '最大只能上传9张',
+            icon: 'none'
+        })
+        return
+        }
+
+        wx.chooseImage({
+        count: 9,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'],
+        success (res) {
+            // tempFilePath可以作为img标签的src属性显示图片
+            const tempFilePaths = res.tempFilePaths
+            if(msgObj.image.length + tempFilePaths.length >= 9) {
+            app.util.toast({
+                title: '最大只能上传9张',
+                icon: 'none'
+            })
+            return
+            }
+            // TODO: 数组去重(好像不需要了)
+            thumbs = thumbs.concat(tempFilePaths)
+            _this.setData({ thumbs })
+            tempFilePaths.forEach(item => {
+            // TODO: 封装多图上传函数
+            app.upload({
+                url: app.api.ApiAddImg,
+                filePath: item,
+                name: 'image'
+            }).then(res => {
+                msgObj.image.push(res.data)
+            })
+            })
+        }
+        })
+
+        this.setData({ msgObj: msgObj })
+    },
     tagShow() {
         this.setData({
             tagShow: true
@@ -207,7 +285,8 @@ Page({
     submit() {
         let { msgObj } = this.data;
         let flag = true;
-
+        
+        console.log('msgObj: ', msgObj);
         for (const key in msgObj) {
             if (msgObj.hasOwnProperty(key)) {
                 const element = msgObj[key];
@@ -226,25 +305,26 @@ Page({
             return
         }
 
-        app.util.verifyPhone(msgObj.phone).then(res => {
-            app.http({
-                url: app.api.ApiDancerSave,
-                data: msgObj,
-                method: 'POST'
-            }).then(res => {
-                let { error_code, msg } = res;
+        app.http({
+            url: app.api.ApiOrganSave,
+            data: msgObj,
+            method: 'POST'
+        }).then(res => {
+            let { error_code, msg } = res;
 
-                app.util.toast({
-                    title: msg,
-                    icon: error_code === 0 ? 'success' : 'none'
-                }).then(() => {
-                    if (error_code === 0) {
-                        // 提交成功soming
+            app.util.toast({
+                title: msg,
+                icon: error_code === 0 ? 'success' : 'none'
+            }).then(() => {
+                if (error_code === 0) {
+                    // 提交成功soming
 
-                    }
-                })
+                }
             })
         })
+        // app.util.verifyPhone(msgObj.phone).then(res => {
+            
+        // })
     },
     /**
      * 生命周期函数--监听页面加载
