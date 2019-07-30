@@ -1,15 +1,28 @@
-<van-tabs animated>
-  <van-tab title="全部" bind:click="status"></van-tab>
-  <van-tab title="审核中"></van-tab>
-  <van-tab title="已通过"></van-tab>
-  <van-tab title="已驳回"></van-tab>
+<van-tabs animated bind:click="status">
+    <van-tab title="全部"></van-tab>
+    <van-tab title="审核中"></van-tab>
+    <van-tab title="已通过"></van-tab>
+    <van-tab title="已驳回"></van-tab>
 </van-tabs>
-<block wx:for="{{pageData}}" wx:key="index">
+<block wx:for="{{2}}" wx:key="index">
     <navigator class="recommend" url="/pages/position/position?id={{item.id}}">
         <view class="recommend-row">
-            <view>{{item.name}}</view>
-            <view class="recommend-money">{{item.money}}</view>
+            <view>{{item.name}}街舞老师</view>
+            <view class="recommend-money">{{item.money}}5-8k</view>
         </view>
-        <view class="recommend-site">{{item.addr}} · {{item.edu}} · {{item.age}}</view>
+        <view class="recommend-site">{{item.addr}}河南 · {{item.edu}}郑州 · {{item.age}}金水</view>
     </navigator>
 </block>
+<van-swipe-cell right-width="{{ 65 }}" left-width="{{ 1 }}" >
+    <view slot="right" class="del" bindtap="del" data-id="{{2}}">删除</view>
+    <view slot="">
+        <navigator class="recommend" url="/pages/position/position?id={{item.id}}">
+            <view class="recommend-row">
+                <view>{{item.name}}街舞老师</view>
+                <view class="recommend-money">{{item.money}}5-8k</view>
+            </view>
+            <view class="recommend-site">{{item.addr}}河南 · {{item.edu}}郑州 · {{item.age}}金水</view>
+        </navigator>
+    </view>
+</van-swipe-cell>
+<van-toast id="van-toast" />

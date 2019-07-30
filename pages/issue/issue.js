@@ -1,20 +1,38 @@
 // pages/issue/issue.js
 const app = getApp()
+import Toast from 'path/to/vant-weapp/dist/toast/toast';
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        status: 0,
+        pageData: ''
     },
-    status() {
-        console.log('aa');
+    status(e) {
+        this.setData({ status: e.detail.index });
+        this.getData();
+    },
+    del(e) {
+        var id = e.currentTarget.dataset.id;
+        app.http({
+            url: app.api.ApiDelete,
+            data: { id: id }
+        }).then(res => {
+            let { error_code, msg } = res;
+            if (error_code === 0) {
+                Toast.success(msg);
+            } else {
+                Toast.fail(msg);
+            }
 
+        })
     },
     getData() {
         app.http({
-            url: app.api.ApiMyRelease
+            url: app.api.ApiMyRelease,
+            data: { status: this.data.status }
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
