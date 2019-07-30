@@ -67,5 +67,5 @@
 </van-tabs>
 <!-- 联系按钮 -->
 <view class="my-btn-box">
-  <button class="my-btn">联系</button>
+  <button class="my-btn" data-phone="{{pageData.phone}}" bindtap="callPhone">联系</button>
 </view>
