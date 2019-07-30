@@ -1,7 +1,7 @@
 <view class="imgs">
     <block wx:for="{{pageData}}" wx:key="index">
         <navigator url="/pages/company/company?id={{item.id}}" class="img-box">
-            <image src="{{item.logo}}" class="img" />
+            <image src="{{item.logo}}" class="img" mode="aspectFill" />
         </navigator>
     </block>
 </view>

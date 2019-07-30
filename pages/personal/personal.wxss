@@ -22,19 +22,19 @@
 /* 信息 */
 
 .msg {
-    margin: -20rpx 0 20rpx;
-    padding: 45rpx 50rpx 0;
+    padding: 30rpx 50rpx 0;
     background: #fff;
 }
 
 .msg-row {
     display: flex;
-    padding-bottom: 30rpx;
+    padding-bottom: 20rpx;
 }
 
 .msg-item {
     flex: 1;
     padding-left: 40rpx;
+    font-size: 14px;
 }
 
 .list {

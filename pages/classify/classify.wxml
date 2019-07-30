@@ -20,7 +20,7 @@
 <block wx:for="{{dancerData}}" wx:key="index">
     <view class="dancer">
         <view class="dancer-brief">
-            <image src="{{item.image}}" class="dancer-img"></image>
+            <image src="{{item.image}}" class="dancer-img" mode="aspectFill"></image>
             <view>
                 <view>{{item.username}}</view>
                 <view class="dancer-msg">年龄: {{item.age}}</view>
