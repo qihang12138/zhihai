@@ -3,7 +3,7 @@
   <van-tab title="最新"></van-tab>
   <van-tab title="最热"></van-tab>
 </van-tabs>
-<block wx:for="{{list}}">
+<block wx:for="{{list}}" wx:key="{{index}}">
   <view class="dancer">
     <view class="dancer-brief">
       <image src="{{item.image}}" class="dancer-img"></image>
@@ -12,7 +12,7 @@
         <view class="dancer-msg">年龄: {{item.age}}</view>
         <view class="dancer-msg">地址: {{item.addr}}</view>
       </view>
-      <button class="check">立即查看</button>
+      <navigator class="check" url="/pages/about/about?id={{item.id}}&teach=1">立即查看</navigator>
     </view>
     <view>
       <block wx:for="{{item.tag}}" wx:key="index" wx:if="{{index<3}}">

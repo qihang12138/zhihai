@@ -17,9 +17,9 @@ Page({
             phoneNumber: phone
         })
     },
-    getData() {
+    getData(id, url) {
         app.http({
-            url: app.api.ApiDetail + '?id=' + this.data.id
+            url: url + '?id=' + this.data.id
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
@@ -40,7 +40,10 @@ Page({
      */
     onLoad: function(options) {
         this.setData({ id: options.id })
-        this.getData();
+        console.log(options);
+        
+        var url = options.teach == 1 ? app.api.ApiTeacherDetail : app.api.ApiDetail
+        this.getData(options.id, url);
     },
 
     /**

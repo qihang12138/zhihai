@@ -20,5 +20,6 @@ const api = {
     ApiSaveJob: ApiUrl + 'user/save_job',
     ApiIndexSearch: ApiUrl + 'index/search',
     ApiIndexSearchLister: ApiUrl + 'index/type_lister',
+    ApiTeacherDetail: ApiUrl + 'user/teacher_detail',
 }
 module.exports = api;
