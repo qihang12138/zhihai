@@ -1,18 +1,55 @@
 // pages/searchJob/searchJob.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    searchlist: [],
+    keyword: '',
+    edit: true,
+    resData: []
   },
-
+  select(e) {
+    let { name } = e.currentTarget.dataset
+    this.search(name)
+    this.setData({ keyword: name })
+  },
+  inputKey(e) {
+    let keyword = e.detail;
+    if (keyword) {
+      this.setData({ edit: false, keyword })
+    }else {
+      this.setData({ edit: true, keyword, resData: [] })
+    }
+  },
+  search(word) {
+    app.http({
+      url: app.api.ApiIndexSearchLister,
+      method: "POST",
+      data: {
+        keywords: word
+      }
+    }).then(res => {
+      let { error_code, data } = res;
+      if(error_code === 0) {
+        this.setData({ edit: false, resData: data })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.http({
+      url: app.api.ApiIndexSearch
+    }).then(res => {
+      let { error_code, data } = res;
+      if(error_code === 0) {
+        this.setData({ searchlist: data })
+      }
+    })
   },
 
   /**
