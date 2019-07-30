@@ -1,7 +1,7 @@
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
   <block wx:for="{{pageData.banner}}" wx:key="index">
     <swiper-item>
-      <navigator url="">
+      <navigator url="{{item.url}}">
         <image src="{{item.image}}" class="slide-image" />
       </navigator>
     </swiper-item>
@@ -10,7 +10,7 @@
 <!-- 舞种分类 -->
 <view class="dance">
   <block wx:for="{{pageData.type}}" wx:key="index">
-    <navigator class="dance-list" url="">
+    <navigator class="dance-list" hover-class="none" url="/pages/classify/classify?active={{index}}">
       <image src="{{item.image}}" class="dance-image"></image>
       <view>{{item.name}}</view>
     </navigator>

@@ -47,7 +47,7 @@
   <van-tab title="教育经历">
     <view class="job tab">
       <view class="job-tit underline">教育经历</view>
-      <view class="job-brief underline" wx:for="{{2}}">
+      <view class="job-brief underline" wx:for="{{2}}" wx:key="{{index}}">
         <view class="job-site">四川音乐学院</view>
         <view class="teach-time">2014年-2018年</view>
         <view class="job-duties">

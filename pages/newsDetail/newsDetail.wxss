@@ -2,13 +2,16 @@ page {
     background: #fff !important;
 }
 
+.p20 {
+    padding: 20rpx;
+}
 .p10 {
     padding: 0 10rpx;
 }
 
 /* 标题 */
 .title {
-    padding: 20rpx 0 10rpx;
+    padding: 20rpx 10rpx;
     font-size: 18px;
 }
 
@@ -19,5 +22,6 @@ page {
 
 /* 内容 */
 .cont {
-    padding-top: 40rpx;
+    margin-top: 40rpx;
+    font-size: 14px!important;
 }
