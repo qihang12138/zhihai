@@ -1,24 +1,46 @@
 // pages/organ/organ.js
+const app = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        imgUrls: ['https://s2.ax1x.com/2019/07/15/ZoFuee.png', 'https://s2.ax1x.com/2019/07/15/ZoFuee.png', 'https://s2.ax1x.com/2019/07/15/ZoFuee.png'],
-        autoplay: true,
-        interval: 5000,
-        duration: 1000,
-        circular: true
+        pageData: '',
+        tabsOn: 0,
+        tabs: ''
     },
-
+    tabsOn(e) {
+        var id = e.currentTarget.dataset.id,
+            data = this.data.pageData,
+            tabs = [data.comper, data.near, data.goods]
+        this.setData({
+            tabsOn: id,
+            tabs: tabs[id]
+        })
+    },
+    getData() {
+        app.http({
+            url: app.api.ApiOrganIndex
+        }).then(res => {
+            let { error_code, data } = res;
+            if (error_code === 0) {
+                // data.news.forEach(item => {
+                //     item.time = app.util.YMD(new Date(item.time * 1000));
+                // })
+                this.setData({
+                    pageData: data,
+                    tabs: data.comper
+                })
+            }
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        this.getData();
     },
-
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

@@ -9,6 +9,10 @@ const api = {
     ApiDancerType: ApiUrl + 'user/dancer_type',
     ApiUserIndex: ApiUrl + 'user/index',
     ApiDancerSave: ApiUrl + 'user/dancer_save',
-    ApiOrganDetail: ApiUrl + 'user/organ_detail?id=2'
+    ApiOrganIndex: ApiUrl + 'organ/index',
+    ApiOrganDetail: ApiUrl + 'user/organ_detail',
+    ApiDetailJob: ApiUrl + 'organ/detail_job',
+    ApiCooper: ApiUrl + 'user/cooper'
+
 }
 module.exports = api;

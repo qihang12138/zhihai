@@ -1,4 +1,4 @@
-// pages/position//position.js
+// pages/cooperation/cooperation.js
 const app = getApp()
 Page({
 
@@ -6,37 +6,27 @@ Page({
      * 页面的初始数据
      */
     data: {
-        pageData: '',
-        id: 0
+        pageData: ''
     },
+
     getData() {
         app.http({
-            url: app.api.ApiDetailJob,
-            data: {
-                id: this.data.id
-            }
+            url: app.api.ApiCooper
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
-                data.time = app.util.YMD(new Date(data.time * 1000));
                 this.setData({
                     pageData: data
                 })
             }
         })
     },
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function(options) {
-        this.setData({ id: options.id })
-        this.getData();
-    },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function() {
-
+        this.getData();
     },
 
     /**

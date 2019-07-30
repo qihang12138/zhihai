@@ -1,0 +1,13 @@
+.imgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20rpx 0;
+    border-top: 20rpx solid #f4f5f6;
+}
+
+.img {
+    margin: 0 5rpx;
+    height: 128rpx;
+    width: 238rpx;
+}

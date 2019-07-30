@@ -6,7 +6,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        level: ['游客', '舞者', '机构']
+        level: ['游客', '舞者', '机构'],
+        identity: true
     },
     getData() {
         app.http({
@@ -14,9 +15,9 @@ Page({
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
-                // data.news.forEach(item => {
-                //   item.time = app.util.YMD(new Date(item.time * 1000));
-                // })
+                if (data.level === 2) {
+                    this.setData({ identity: true })
+                }
                 this.setData({
                     pageData: data
                 })

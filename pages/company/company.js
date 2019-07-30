@@ -6,11 +6,13 @@ Page({
      * 页面的初始数据
      */
     data: {
-        pageData: ''
+        pageData: '',
+        id: 0
     },
     getData() {
+        var id = this.data.id;
         app.http({
-            url: app.api.ApiOrganDetail
+            url: app.api.ApiOrganDetail + '?id=' + id
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
@@ -27,6 +29,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
+        this.setData({ id: options.id })
         this.getData();
     },
 

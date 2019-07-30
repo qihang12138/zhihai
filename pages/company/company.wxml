@@ -22,7 +22,7 @@
     <!-- 公司简介 -->
     <view class="aboutUs">
       <view class="aboutUs-tit">公司简介</view>
-      <view class="aboutUs-cont">{{pageData.content}}</view>
+      <rich-text nodes="{{ pageData.content }}"></rich-text>
     </view>
   </van-tab>
   <van-tab title="公司环境">
@@ -35,20 +35,20 @@
     </view>
   </van-tab>
   <van-tab title="公司招聘">
-     <!-- 招聘 -->
-    <view class="careers" wx:for="{{pageData.job}}" wx:key="index">
-      <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="careers-img"></image>
-      <view class="careers-cont">
-        <view class="careers-job">{{item.name}}</view>
-        <view class="careers-text">
-          {{item.addr}}
+    <!-- 招聘 -->
+    <block wx:for="{{pageData.job}}" wx:key="index">
+      <navigator class="careers" url="/pages/position/position?id={{item.id}}">
+        <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="careers-img"></image>
+        <view class="careers-cont">
+          <view class="careers-job">{{item.name}}</view>
+          <view class="careers-text">{{item.addr}}</view>
+          <view class="careers-text">
+            <text>{{item.edu}}</text>
+            <text>{{item.age}}</text>
+          </view>
         </view>
-        <view class="careers-text">
-          <text>{{item.edu}}</text>
-          <text>{{item.age}}</text>
-        </view>
-      </view>
-      <view class="careers-pay">{{item.money}}</view>
-    </view>
+        <view class="careers-pay">{{item.money}}</view>
+      </navigator>
+    </block>
   </van-tab>
 </van-tabs>

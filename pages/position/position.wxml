@@ -1,30 +1,44 @@
 <view class="jobCard">
-    <view class="job-tit">芭蕾舞老师</view>
+    <view class="job-tit">{{pageData.name}}</view>
     <view>
         <text class="job-text job-font">文化路</text>
-        <text class="job-text job-font">3-5年</text>
-        <text class="job-text job-font">本科</text>
+        <text class="job-text job-font">{{pageData.age}}</text>
+        <text class="job-text job-font">{{pageData.edu}}</text>
     </view>
     <view class="job-msg">
-        <text class="job-money">8-10k</text>
-        <text class="job-font">7月20日</text>
+        <text class="job-money">{{pageData.money}}</text>
+        <text class="job-font">{{pageData.time}}</text>
     </view>
-    <view class="job-site job-font">郑州市金水区文化路</view>
+    <view class="job-site job-font">{{pageData.addr}}</view>
 </view>
 <!-- 职位详情 -->
 <view class="details">
     <view class="details-tit">职位详情</view>
-    <view class="details-cont">热爱舞蹈艺术，根据教学技术完成任务。热爱舞蹈艺术，根据教学技术完成任务</view>
+    <view class="details-cont">{{pageData.content}}</view>
 </view>
-
 <!-- 公司信息 -->
 <view class="company">
     <view class="company-tit">公司信息</view>
-    <view class="company-card">
-        <image src="" class="company-img"/>
+    <view class="company-card" data-id="{{pageData.company.id}}">
+        <image src="{{pageData.company.logo}}" class="company-img" />
         <view class="company-cont">
-            <view >郑州朵朵科技有限公司</view>
-             <view >20-90人</view>
+            <view>{{pageData.company.name}}</view>
+            <view>{{pageData.company.people}}</view>
         </view>
     </view>
+</view>
+<!-- 相似推荐 -->
+<view class="recommend-tit">相似职位推荐</view>
+<block wx:for="{{pageData.job}}" wx:key="index">
+    <navigator class="recommend" url="/pages/position/position?id={{item.id}}">
+        <view class="recommend-row">
+            <view>{{item.name}}</view>
+            <view class="recommend-money">{{item.money}}</view>
+        </view>
+        <view class="recommend-site">{{item.addr}} · {{item.edu}} · {{item.age}}</view>
+    </navigator>
+</block>
+<!-- 投递简历 -->
+<view class="my-btn-box">
+  <button class="my-btn">投递简历</button>
 </view>
