@@ -25,6 +25,10 @@ const api = {
     ApiOrganType: ApiUrl + 'organ/organ_type',
     ApiAddImg: ApiUrl + 'index/add_img',
     ApiTeacherDetail: ApiUrl + 'user/teacher_detail',
+<<<<<<< HEAD
     ApiDelete: ApiUrl + 'user/delete',
+=======
+    ApiAddImg: ApiUrl + 'index/add_img',
+>>>>>>> be4686a441de63327d1b7668343c01babb099d3e
 }
 module.exports = api;
