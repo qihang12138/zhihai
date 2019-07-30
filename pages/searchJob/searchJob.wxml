@@ -1,10 +1,32 @@
-<view class="search">
-  <input type="text" value="" placeholder="请输入关键词" class="search-input"/>
-</view>
-
-<view class="suggest">搜索建议</view>
-<navigator url="" class="suggest-nav">
-  <text class="option">拉丁舞</text>
-</navigator>
-  
-
+<van-search value="{{ keyword }}" shape="round" placeholder="请输入搜索关键词" bind:change="inputKey" />
+<block wx:if="{{edit}}">
+  <view class="suggest">搜索建议</view>
+  <view wx:for="{{searchlist}}" class="suggest-nav option" wx:key="{{index}}" data-name="{{item.name}}" bindtap="select">
+    {{item.name}}
+  </view>
+</block>
+<block wx:else>
+  <block wx:if="{{resData.length}}">
+    <block wx:for="{{resData}}" wx:key="index">
+      <view class="dancer">
+        <view class="dancer-brief">
+          <image src="{{item.image}}" class="dancer-img"></image>
+          <view>
+            <view>{{item.username}}</view>
+            <view class="dancer-msg">年龄: {{item.age}}</view>
+            <view class="dancer-msg">地址: {{item.addr}}</view>
+          </view>
+          <navigator class="check" url="/pages/about/about?id={{item.id}}">立即查看</navigator>
+        </view>
+        <view>
+          <block wx:for="{{item.tag}}" wx:key="index" wx:if="{{index<3}}">
+            <text class="label">{{item.name}}</text>
+          </block>
+        </view>
+      </view>
+    </block>
+  </block>
+  <block wx:else>
+    <view class="nodata">暂无数据</view>
+  </block>
+</block>

@@ -60,6 +60,7 @@
         "van-tabs": "/vant/tabs/index",
         "van-cell": "/vant/cell/index",
         "van-action-sheet": "/vant/action-sheet/index",
-        "van-toast": "/vant/toast/index"
+        "van-toast": "/vant/toast/index",
+        "van-search": "/vant/search/index"
     }
 }

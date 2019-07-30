@@ -18,5 +18,7 @@ const api = {
     ApiMyRelease: ApiUrl + 'user/my_release?status=1',
     ApiTypeLister: ApiUrl + 'index/type_lister',
     ApiSaveJob: ApiUrl + 'user/save_job',
+    ApiIndexSearch: ApiUrl + 'index/search',
+    ApiIndexSearchLister: ApiUrl + 'index/type_lister',
 }
 module.exports = api;
