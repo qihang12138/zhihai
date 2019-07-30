@@ -8,6 +8,9 @@ Page({
      * 页面的初始数据
      */
     data: {
+        ageShow: false,
+        eduShow: false,
+        moneyShow: false,
         msgObj: {
             name: '',
             age: '',
@@ -16,7 +19,25 @@ Page({
             content: '',
             addr: '',
             phone: '',
-        }
+        },
+        age: [
+            { name: '1-3年' },
+            { name: '3-5年' },
+            { name: '5-8年' },
+            { name: '8年以上' }
+        ],
+        edu: [
+            { name: '高中' },
+            { name: '大专' },
+            { name: '本科' },
+            { name: '研究生' }
+        ],
+        money: [
+            { name: '3-5k' },
+            { name: '5-8k' },
+            { name: '8-10k' },
+            { name: '10k以上' }
+        ]
     },
     changeMsgObj(e) {
         var id = e.currentTarget.dataset.id,
