@@ -47,21 +47,23 @@
   <van-tab title="教育经历">
     <view class="job tab">
       <view class="job-tit underline">教育经历</view>
-      <view class="job-brief underline" wx:for="{{2}}" wx:key="{{index}}">
+      <!-- <view class="job-brief underline" wx:for="{{2}}" wx:key="{{index}}">
         <view class="job-site">四川音乐学院</view>
         <view class="teach-time">2014年-2018年</view>
         <view class="job-duties">
           <text class="teach-major">艺术专业</text>
           <text>本科</text>
         </view>
-      </view>
+      </view> -->
+      <rich-text nodes="{{ pageData.edu_history }}"></rich-text>
     </view>
   </van-tab>
   <!-- 培训经历 -->
   <van-tab title="培训经历">
     <view class="evaluate tab">
-      <view class="job-tit underline">教育经历</view>
-      <view class="evaluate-cont">5年舞蹈经验，擅长民族舞，芭蕾舞等，曾获全国大赛一等奖，桃李杯一等奖。</view>
+      <view class="job-tit underline">培训经历</view>
+      <!-- <view class="evaluate-cont">5年舞蹈经验，擅长民族舞，芭蕾舞等，曾获全国大赛一等奖，桃李杯一等奖。</view> -->
+      <rich-text nodes="{{ pageData.train }}"></rich-text>
     </view>
   </van-tab>
 </van-tabs>

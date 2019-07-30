@@ -104,6 +104,7 @@
 }
 
 .job-tit {
+    margin-bottom: 20rpx;
     padding: 0 0 35rpx 40rpx;
     font-size: 16px;
     color: #000;

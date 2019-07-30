@@ -23,5 +23,6 @@ const api = {
     ApiOrganSave: ApiUrl + 'user/organ_save',
     ApiOrgan: ApiUrl + 'user/organ',
     ApiOrganType: ApiUrl + 'organ/organ_type',
+    ApiAddImg: ApiUrl + 'index/add_img',
 }
 module.exports = api;

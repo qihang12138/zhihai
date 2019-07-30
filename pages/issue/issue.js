@@ -8,6 +8,10 @@ Page({
     data: {
 
     },
+    status() {
+        console.log('aa');
+
+    },
     getData() {
         app.http({
             url: app.api.ApiMyRelease
