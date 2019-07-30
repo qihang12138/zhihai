@@ -1,35 +1,27 @@
-<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <navigator url="">
-        <image src="{{item}}" class="slide-image" />
-      </navigator>
-    </swiper-item>
-  </block>
-</swiper>
+<navigator url="{{pageData.banner.url}}">
+  <image src="{{pageData.banner.image}}" class="slide-image" />
+</navigator>
 <!-- 合作机构 -->
 <view class="partners">
   <view class="partners-tit"></view>
   <view class="partners-cont">
-    <navigator url="" wx:for="{{6}}">
-      <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="partners-img" />
+    <navigator url="/pages/company/company?id={{item.id}}" wx:for="{{pageData.cooper}}" wx:key="index">
+      <image src="{{item.logo}}" class="partners-img" />
     </navigator>
   </view>
 </view>
 <!-- 选项卡 -->
 <view class="tabs">
   <view class="tabs-list">
-    <text class="tabs-on">综合</text>
-    <text>附近</text>
-    <text>优秀</text>
+    <text class="{{tabsOn==0?'tabs-on':''}}" bindtap="tabsOn" data-id="0">综合</text>
+    <text class="{{tabsOn==1?'tabs-on':''}}" bindtap="tabsOn" data-id="1">附近</text>
+    <text class="{{tabsOn==2?'tabs-on':''}}" bindtap="tabsOn" data-id="2">优秀</text>
   </view>
   <view class="tabs-images">
-    <block wx:for="{{6}}">
-      <navigator url="">
-        <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="tabs-image"></image>
+    <block wx:for="{{tabs}}" wx:key="index">
+      <navigator url="/pages/company/company?id={{item.id}}">
+        <image src="{{item.logo}}" class="tabs-image"></image>
       </navigator>
-        
-      
     </block>
   </view>
 </view>

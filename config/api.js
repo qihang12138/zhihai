@@ -9,8 +9,11 @@ const api = {
     ApiDancerType: ApiUrl + 'user/dancer_type',
     ApiUserIndex: ApiUrl + 'user/index',
     ApiDancerSave: ApiUrl + 'user/dancer_save',
+    ApiOrganIndex: ApiUrl + 'organ/index',
+    ApiOrganDetail: ApiUrl + 'user/organ_detail',
+    ApiDetailJob: ApiUrl + 'organ/detail_job',
+    ApiCooper: ApiUrl + 'user/cooper',
     ApiDancer: ApiUrl + 'user/dancer',
-    ApiOrganDetail: ApiUrl + 'user/organ_detail?id=2',
     ApiIndexSearch: ApiUrl + 'index/search',
     ApiIndexSearchLister: ApiUrl + 'index/type_lister',
 }

@@ -1,7 +1,13 @@
+page {
+    padding-bottom: 150rpx;
+    background: #f4f5f6;
+}
+
 .jobCard {
     margin: 20rpx;
     padding: 30rpx 30rpx 0;
     box-shadow: 0px 2px 6px 0px rgba(233, 232, 232, 1);
+    background: #fff;
 }
 
 .job-tit {
@@ -33,7 +39,8 @@
 }
 
 .job-site {
-    padding: 27rpx 54rpx;
+    padding: 25rpx;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAXCAYAAADtNKTnAAADAUlEQVQ4T4WUX0hTcRTHu/tjssrV+kMOoiLKQKGXMPO5AumpHqSEHobIcFPJIc0HCcFKxGAi2XTOBQkVYthzfyjChCLspSB8McoaUk3GStfmdvuctTsut6kXDud3zvmd7/me8/v9rrJJ96mqqgwPDztxVSmKUod9HG3FTqPnstnsc4vFMm232z/X19dntFRFW0xMTJhjsVg1djsJJ9F2xIbIHhX5A2iC2KzJZAokEolpn8+3Ivk5kDzAaZY32FSFluprfcJgLpPJDCSTyXEBUqSFUChUjQ4CcIwNpnUAtJAw+0h77YuLi0+UkZGRcoxeKDYYGQC8AvBv/KXIVsP8stgvyW1UhoaGzjCsEI79hTKqmiX5CyBT+N4hh7HPo48gFh3Yd0A65TR62NCaH6TEyVUXzGZzKxteYC9TRJhUra6uhtFHdS2n2PtY2pFqdcjmfIUUyZMMrq2lpeWnVrW/v39LWVmZH7td11oWkLcC8grnCcScT1hGD1L1utfr/aWBdHd3W5xO50UKBGC+M+//B0I7D3GcJaAxkcAzxNXc3PxVAwkEAtttNttVbDci90c+Oe43AuIHQGju0BIAkDZ60JPpdDphtVpLWZ9iTr349yHaJRXWD5TR0dEaKI5jHNIFhc0Sxz6Lb5Z4BbqGYnvQ+nv0DV+bEg6HHQyxk6BXRzNHCiA5arnacjrazDTC0sojCl0WWkowGKzEuM+6UsdG27yWXiDQGI1Gn+Z644RsVPRQuQtTHt5GX5K9Edrs8ng8S4VXDJsDAI0jtYa+jYDybj6UlJQ0uFyu99K18VdwDpBBAuXrUImz5xpMbrvdbjmdwlHlcmhrFxRvFnuMeVA5tRnkEnfok1aowCTvkCHXUukucrDIkKMAtDkcjqmifzYNta+vbxu/vw5AfPj0zz8Ny3uw7KCNH/p2jUxysbGxsQrezh2WNTo284BIGzMyzA1BmI0VJhfkZ4XeS0KMNm7F4/GA3+9PGIdelIlsikQiu1Op1BVAhM1r2hhoamqSC/bf9xfSHmTa6if7MAAAAABJRU5ErkJggg==') no-repeat 0 center/17rpx 23rpx
 }
 
 
@@ -41,6 +48,7 @@
 
 .details {
     padding: 30rpx 20rpx 100rpx;
+    background: #fff;
 }
 
 .details-tit {
@@ -56,7 +64,8 @@
 /* 公司信息 */
 
 .company {
-    padding: 0 20rpx;
+    padding: 0 20rpx 50rpx;
+    background: #fff;
 }
 
 .company-tit {
@@ -65,6 +74,7 @@
 
 .company-card {
     display: flex;
+    position: relative;
 }
 
 .company-img {
@@ -74,5 +84,50 @@
 }
 
 .company-cont {
+    color: #999;
     font-size: 12px;
+}
+
+.company-card:after {
+    content: '';
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+    width: 20rpx;
+    height: 20rpx;
+    border-top: 4rpx solid #ddd;
+    border-right: 4rpx solid #ddd;
+    transform: rotate(45deg);
+}
+
+
+/* 推荐 */
+
+.recommend-tit {
+    padding: 15rpx 0;
+    margin-bottom: 20rpx;
+    text-align: center;
+    font-size: 12px;
+    color: #d0d0d0;
+}
+
+.recommend {
+    padding: 40rpx;
+    background: #fff;
+}
+
+.recommend-row {
+    display: flex;
+}
+
+.recommend-site {
+    padding-top: 20rpx;
+    font-size: 12px;
+    color: #999;
+}
+
+.recommend-money {
+    flex: 1;
+    text-align: right;
+    color: #D86381;
 }
