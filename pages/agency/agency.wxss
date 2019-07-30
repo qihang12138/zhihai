@@ -67,3 +67,16 @@ page {
     background: #fff;
     z-index: 99;
 }
+
+
+/* 图片 */
+
+.imgs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.perfect-img {
+    width: 100rpx;
+    height: 100rpx;
+}

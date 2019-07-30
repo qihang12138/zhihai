@@ -2,8 +2,8 @@
     "pages": [
         "pages/agency/agency",
         "pages/perfect/perfect",
-        "pages/recruit/recruit",
         "pages/index/index",
+        "pages/recruit/recruit",
         "pages/logIn/logIn",
         "pages/searchJob/searchJob",
         "pages/searchDancer/searchDancer",

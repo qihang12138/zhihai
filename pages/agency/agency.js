@@ -14,6 +14,8 @@ Page({
         pageData: '',
         ageList: [],
         scaleList: [],
+        age: '',
+        scale: '',
         msgObj: {
             name: '',
             yid: '',
@@ -45,33 +47,48 @@ Page({
         this.setData({ ageShow: true })
     },
     changeAge(e) {
-        this.setData({
-            ['msgObj.yid']: e.detail.id
+        var age = this.data.ageList,
+            id = e.detail.id
+        age.forEach(item => {
+            if (item.id === id) {
+                this.setData({
+                    ['msgObj.yid']: id,
+                    age: item.name
+                })
+            }
         })
+        this.onClose();
     },
     scaleShow() {
         this.setData({ scaleShow: true })
     },
     changeScale(e) {
-        this.setData({
-            ['msgObj.pid']: e.detail.id
+        var scale = this.data.scaleList,
+            id = e.detail.id
+        scale.forEach(item => {
+            if (item.id === id) {
+                this.setData({
+                    ['msgObj.pid']: id,
+                    scale: item.name
+                })
+            }
         })
+        this.onClose();
     },
     siteShow() {
         this.setData({ siteShow: true })
     },
     changeSite(e) {
         var site = '';
-        console.log(e);
-
         e.detail.values.forEach(item => {
-            site += item.name
+            if (item.name !== site) {
+                site += item.name
+            }
         })
         this.setData({
-            ['msgObj.addr']: site
+            ['msgObj.addr']: site,
         })
-        console.log(this.data.msgObj);
-
+        this.onClose();
     },
     onClose() {
         this.setData({
