@@ -1,4 +1,5 @@
 let ApiUrl = 'https://xwz.dd371.com/api/';
+
 const api = {
     ApiWechat: ApiUrl + 'login/login',
     ApiIndex: ApiUrl + 'index/index',
@@ -14,7 +15,6 @@ const api = {
     ApiDetailJob: ApiUrl + 'organ/detail_job',
     ApiCooper: ApiUrl + 'user/cooper',
     ApiDancer: ApiUrl + 'user/dancer',
-    // 没写完
     ApiMyRelease: ApiUrl + 'user/my_release?status=1',
     ApiTypeLister: ApiUrl + 'index/type_lister',
     ApiSaveJob: ApiUrl + 'user/save_job',

@@ -6,9 +6,10 @@ Page({
      * 页面的初始数据
      */
     data: {
-        pageData: '',
+        pageData: {},
         dancerData: '',
         columns: '',
+        active: 0,
         show: false,
         type: '',
         msgObj: {
@@ -18,15 +19,17 @@ Page({
             addr: '',
         }
     },
-    getData() {
+    getData(active) {
         app.http({
             url: app.api.ApiType
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
                 this.setData({
-                    pageData: data
+                    pageData: data,
+                    ['msgObj.tid']: active
                 })
+                this.postData()
             }
         })
     },
@@ -35,14 +38,17 @@ Page({
             types = ['type', 'edu', 'major'],
             data = this.data.pageData,
             columns = []
-        data[types[type]].forEach(item => {
-            columns.push(item.name)
-        });
-        this.setData({
-            type: type,
-            columns: columns,
-            show: true
-        });
+            if (type) {
+                data[types[type]].forEach(item => {
+                    columns.push(item.name)
+                });
+                this.setData({
+                    type: type,
+                    columns: columns,
+                    show: true
+                });
+            }
+        
     },
     onConfirm(e) {
         var type = this.data.type,
@@ -60,16 +66,35 @@ Page({
         })
     },
     changeTab(e) {
-        var msgObj = 'msgObj.tid'
+        let { msgObj } = this.data;
+        msgObj = {
+            tid: e.detail.index,
+            eid: 0,
+            mid: 0,
+            addr: ''
+        }
         this.setData({
-            [msgObj]: e.detail.index
+            msgObj,
+            active: e.detail.index
         })
         this.postData()
     },
-    postData() {
+    postData(e) {
+        let { msgObj, active } = this.data;
+        if (e) {
+            var type = e.currentTarget.dataset.type
+            if(type === 'all') {
+                msgObj = {
+                    tid: active,
+                    eid: 0,
+                    mid: 0,
+                    addr: ''
+                }
+            }
+        }
         app.http({
             url: app.api.ApiTypeLister,
-            data: this.data.msgObj,
+            data: msgObj,
             method: 'POST'
         }).then(res => {
             let { error_code, data } = res;
@@ -84,8 +109,8 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        this.getData();
-        this.postData();
+        this.setData({active: options.active})
+        this.getData(options.active);
     },
 
     /**

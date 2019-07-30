@@ -5,7 +5,7 @@
 </van-tabs>
 <view class="classify">
     <view class="classify-box">
-        <view class="classify-item">全部</view>
+        <view class="classify-item" data-type="all" bindtap="postData">全部</view>
     </view>
     <view class="classify-box">
         <view class="classify-item" bindtap="classify" data-id="0">地区</view>
