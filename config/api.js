@@ -12,7 +12,8 @@ const api = {
     ApiOrganIndex: ApiUrl + 'organ/index',
     ApiOrganDetail: ApiUrl + 'user/organ_detail',
     ApiDetailJob: ApiUrl + 'organ/detail_job',
-    ApiCooper: ApiUrl + 'user/cooper'
+    ApiCooper: ApiUrl + 'user/cooper',
+    ApiDancer: ApiUrl + 'user/dancer',
 
 }
 module.exports = api;
