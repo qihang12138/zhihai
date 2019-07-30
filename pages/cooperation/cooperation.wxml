@@ -1,11 +1,7 @@
 <view class="imgs">
     <block wx:for="{{pageData}}" wx:key="index">
-        <image src="{{item.logo}}" class="img" />
-    </block>
-    <block wx:for="{{pageData}}" wx:key="index">
-        <image src="{{item.logo}}" class="img" />
-    </block>
-    <block wx:for="{{pageData}}" wx:key="index">
-        <image src="{{item.logo}}" class="img" />
+        <navigator url="/pages/company/company?id={{item.id}}" class="img-box">
+            <image src="{{item.logo}}" class="img" />
+        </navigator>
     </block>
 </view>

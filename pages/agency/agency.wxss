@@ -1,0 +1,69 @@
+page {
+    background: #f4f5f6;
+}
+
+.m20 {
+    margin: 20rpx 0;
+}
+
+.perfect {
+    margin: 20rpx 0 150rpx;
+    font-size: 15px;
+    color: #333;
+}
+
+.underline {
+    border-bottom: 1rpx solid #f0f0f0
+}
+
+.perfect-row {
+    padding: 35rpx 0 35rpx 20rpx;
+    font-weight: 500;
+    background: #fff;
+}
+
+.perfect-msg {
+    margin-bottom: 20rpx;
+    padding: 30rpx 0 30rpx 20rpx;
+    height: 230rpx;
+    width: 730rpx;
+    font-size: 15px;
+    background: #fff;
+}
+
+.last {
+    margin-top: 20rpx;
+}
+
+
+/* 标签 */
+
+.tags {
+    padding: 30rpx 40rpx 30rpx;
+}
+
+.tags .my-btn {
+    width: auto;
+    margin-top: 30rpx;
+    box-sizing: border-box;
+}
+
+.tag {
+    display: inline-block;
+    padding: 15rpx 30rpx;
+    margin: 0 30rpx 30rpx 0;
+    border-radius: 30rpx;
+    font-size: 12px;
+    color: #999;
+    background: #f4f5f6;
+}
+
+.tag-on {
+    color: #fff;
+    background: #F36886;
+}
+
+.my-btn-box {
+    background: #fff;
+    z-index: 99;
+}

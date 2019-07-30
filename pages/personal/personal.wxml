@@ -14,17 +14,8 @@
     <view class="msg-item {{identity?'age':'site'}}">{{pageData.birth}}</view>
   </view>
 </view>
-<!-- <navigator url="">
-  <view class="list msg">个人资料</view>
-</navigator>
-<navigator url="">
-  <view class="list service">联系客服</view>
-</navigator>
-<navigator url="">
-  <view class="list cooperation"></view>
-</navigator> -->
 <van-cell is-link icon="" title="个人资料" link-type="navigateTo" url="/pages/index/index" />
 <van-cell is-link icon="" title="联系客服" link-type="navigateTo" url="/pages/index/index" />
-<van-cell is-link icon="" title="合作渠道" link-type="navigateTo" url="/pages/index/index" wx:if="{{identity}}"/>
+<van-cell is-link icon="" title="合作渠道" link-type="navigateTo" url="/pages/cooperation/cooperation" wx:if="{{identity}}"/>
 <van-cell is-link icon="" title="我要发布" link-type="navigateTo" url="/pages/index/index" wx:if="{{identity}}"/>
 <van-cell is-link icon="" title="我要认证" link-type="navigateTo" url="/pages/index/index" />

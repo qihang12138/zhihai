@@ -2,41 +2,6 @@ page {
     background: #f4f5f6;
 }
 
-.recruit {
-    margin-top: 20rpx;
-    padding: 0 20rpx;
-    font-size: 15px;
-    color: #333;
-    background: #fff;
-}
-
-.underline {
-    border-bottom: 1rpx solid #f0f0f0
-}
-
-.recruit-row {
-    display: flex;
-    position: relative;
-    padding: 35rpx 0;
-    font-weight: 500;
-}
-
-.recruit-msg {
-    flex: 1;
-    text-align: right;
-    padding-right: 40rpx;
-    font-size: 15px;
-    color: #999;
-}
-
-.recruit-row::after {
-    content: '';
-    position: absolute;
-    top: 45rpx;
-    right: 10rpx;
-    width: 15rpx;
-    height: 15rpx;
-    border-top: 4rpx solid #ddd;
-    border-right: 4rpx solid #ddd;
-    transform: rotate(45deg);
+.wrap {
+    margin: 20rpx 0 150rpx;
 }

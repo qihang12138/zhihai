@@ -1,7 +1,19 @@
 /* 下拉框 */
+
 .classify {
     display: flex;
-    width: 750rpx;
+    padding: 20rpx 0;
+    background: #f4f5f6;
+}
+
+.classify-box {
+    flex: 1;
+    text-align: center;
+}
+
+.classify-item {
+    font-size: 14px;
+    color: #5F5F6B
 }
 
 .collapse {
@@ -13,7 +25,9 @@
     flex: 1 !important;
 }
 
+
 /* 舞者 */
+
 .dancer {
     padding-bottom: 30rpx;
     border-bottom: 1rpx solid #f0f0f0;
@@ -27,6 +41,10 @@
 }
 
 .dancer-msg {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 400rpx;
     font-size: 12px;
     color: #999;
 }
@@ -39,17 +57,18 @@
 }
 
 .check {
-    width: 164rpx;
-    height: 56rpx;
+    position: absolute;
+    right: 20rpx;
+    top: 90rpx;
     line-height: 56rpx;
     font-size: 13px;
     color: #F36886;
     border: 1px solid #F36886;
     border-radius: 10rpx;
+    text-align: center;
+    width: 164rpx;
+    height: 56rpx;
     background: #fff;
-    position: absolute;
-    right: 20rpx;
-    top: 100rpx;
 }
 
 .label {

@@ -1,0 +1,20 @@
+.recommend {
+    padding: 40rpx;
+    background: #fff;
+}
+
+.recommend-row {
+    display: flex;
+}
+
+.recommend-site {
+    padding-top: 20rpx;
+    font-size: 12px;
+    color: #999;
+}
+
+.recommend-money {
+    flex: 1;
+    text-align: right;
+    color: #D86381;
+}

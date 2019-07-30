@@ -1,46 +1,32 @@
-// pages/recruit/recruit.js
+// pages/issue/issue.js
 const app = getApp()
-import Toast from '../../vant/toast/toast';
-
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        msgObj: {
-            name: '',
-            age: '',
-            edu: '',
-            money: '',
-            content: '',
-            addr: '',
-            phone: '',
-        }
+
     },
-    changeMsgObj(e) {
-        var id = e.currentTarget.dataset.id,
-            msgObj = 'msgObj.' + id
-        this.setData({
-            [msgObj]: e.detail
-        })
-    },
-    submit() {
+    getData() {
         app.http({
-            url: app.api.ApiSaveJob,
-            data: this.data.msgObj,
-            method: 'POST'
+            url: app.api.ApiMyRelease
         }).then(res => {
-            let { error_code, data, msg } = res;
-            if (error_code === 1) {
-                Toast(msg);
+            let { error_code, data } = res;
+            if (error_code === 0) {
+                this.setData({
+                    pageData: data
+                })
             }
         })
     },
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {},
+    onLoad: function(options) {
+        this.getData();
+    },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

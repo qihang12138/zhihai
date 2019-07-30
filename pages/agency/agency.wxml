@@ -1,0 +1,58 @@
+<view class="m20">
+  <van-field value="{{ msgObj.username }}" required clearable label="公司名称" placeholder="必填" bind:input="changeMsgObj" data-id="username" />
+  <van-cell title="办学年限" required is-link value="{{ msgObj.sex }}" bind:click="toggleSex" data-id="sex" />
+  <van-cell title="出生年月" required is-link>
+    <picker mode="date" value="{{msgObj.birth}}" bindchange="bindDateChange">
+      <view class="picker">{{msgObj.birth || '请选择出生年月'}}</view>
+    </picker>
+  </van-cell>
+  <van-cell title="专业" required is-link value="{{ msgObj.major || '请选择专业' }}" bind:click="majorShow" data-id="major" />
+  <van-cell title="学历" required is-link value="{{ msgObj.edu || '请选择学历' }}" bind:click="eduShow" data-id="edu" />
+  <van-cell title="所在地区" required is-link value="{{ msgObj.addr }}" bind:click="site" />
+  <van-field value="{{ msgObj.phone }}" type="number" maxlength="11" required clearable label="手机号" placeholder="请输入手机号" bind:input="changeMsgObj" data-id="phone" />
+  <van-cell required title="职业标签" is-link value="{{ tags.length > 3 ? tags[0] + '等' + tags.length + '个标签' : tags }}" bind:click="tagShow" />
+</view>
+<view class="perfect">
+  <view class="perfect-row underline">个人介绍</view>
+  <textarea placeholder="请输入个人介绍..." maxlength="300" class="perfect-msg underline" value="{{msgObj.marray}}" data-type="marray" bindinput="textInput"></textarea>
+  <view class="perfect-row underline">工作经历</view>
+  <textarea placeholder="请输入工作..." maxlength="300" class="perfect-msg underline" value="{{msgObj.work}}" data-type="work" bindinput="textInput"></textarea>
+  <view class="perfect-row underline">教育经历</view>
+  <textarea placeholder="请输入教育经历..." maxlength="300" class="perfect-msg underline" value="{{msgObj.edu_history}}" data-type="edu_history" bindinput="textInput"></textarea>
+  <view class="perfect-row underline">培训经历</view>
+  <textarea placeholder="请输入培训经历..." maxlength="300" class="perfect-msg underline" value="{{msgObj.train}}" data-type="train" bindinput="textInput"></textarea>
+</view>
+<!-- 确认按钮 -->
+<view class="my-btn-box">
+  <button class="my-btn" bindtap="submit">确认</button>
+</view>
+<!-- 弹出层 -->
+<!-- 出生年月 -->
+<!-- <van-popup show="{{ birthShow }}" position="bottom" overlay="{{true}}" bind:close="showBirth">
+   <van-picker columns="{{ columns }}" show-toolbar="{{true}}" bind:confirm="confirm" />
+</van-popup> -->
+<!-- 性别 -->
+<van-action-sheet show="{{ sexShow }}" actions="{{ sexlist }}" bind:close="toggleSex" bind:select="selectSex" />
+<!-- 专业 -->
+<van-popup show="{{ majorShow }}" position="bottom" bind:close="onClose">
+  <van-picker columns="{{ columns }}" bind:confirm="changeMajor" bind:cancel="onClose" show-toolbar />
+</van-popup>
+<!-- 学历 -->
+<van-popup show="{{ eduShow }}" position="bottom" bind:close="onClose">
+  <van-picker columns="{{ columns }}" bind:confirm="changeEdu" bind:cancel="onClose" show-toolbar />
+</van-popup>
+<!-- 所在地区 -->
+<van-popup show="{{ siteShow }}" position="bottom" bind:close="onClose">
+  <van-area area-list="{{ areaList }}" bind:cancel="onClose" bind:confirm="confirm" />
+</van-popup>
+<!-- 职业标签 -->
+<van-popup show="{{ tagShow }}" position="bottom" bind:close="onClose">
+  <view class="tags">
+    <block wx:for="{{tagList}}" wx:key="{{index}}">
+      <view class="tag {{item.status ? 'tag-on' : ''}}" data-index="{{index}}" bindtap="onTag" data-id="{{item.id}}">
+        {{item.name}}
+      </view>
+    </block>
+    <button class="my-btn" bindtap="onClose">确认</button>
+  </view>
+</van-popup>

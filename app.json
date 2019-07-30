@@ -1,20 +1,22 @@
 {
     "pages": [
-        "pages/cooperation/cooperation",
+        "pages/agency/agency",
+        "pages/perfect/perfect",
+        "pages/searchOrgan/searchOrgan",
+        "pages/searchJob/searchJob",
+        "pages/organization/organization",
+        "pages/searchDancer/searchDancer",
+        "pages/issue/issue",
+        "pages/recruit/recruit",
+        "pages/classify/classify",
         "pages/personal/personal",
+        "pages/cooperation/cooperation",
         "pages/company/company",
         "pages/position/position",
         "pages/organ/organ",
-        "pages/perfect/perfect",
-        "pages/searchJob/searchJob",
         "pages/index/index",
         "pages/dancer/dancer",
         "pages/about/about",
-        "pages/recruit/recruit",
-        "pages/searchDancer/searchDancer",
-        "pages/searchOrgan/searchOrgan",
-        "pages/organization/organization",
-        "pages/classify/classify",
         "pages/newsDetail/newsDetail"
     ],
     "window": {
@@ -57,6 +59,7 @@
         "van-tab": "/vant/tab/index",
         "van-tabs": "/vant/tabs/index",
         "van-cell": "/vant/cell/index",
-        "van-action-sheet": "/vant/action-sheet/index"
+        "van-action-sheet": "/vant/action-sheet/index",
+        "van-toast": "/vant/toast/index"
     }
 }

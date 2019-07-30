@@ -1,13 +1,19 @@
 .imgs {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 20rpx 0;
+    padding: 20rpx 12rpx;
     border-top: 20rpx solid #f4f5f6;
 }
 
+.img-box {
+    flex: 1;
+    max-width: 245rpx;
+    margin-bottom: 20rpx;
+    text-align: center;
+}
+
 .img {
-    margin: 0 5rpx;
     height: 128rpx;
     width: 238rpx;
+    border: 1rpx solid #ccc;
 }
