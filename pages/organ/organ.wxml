@@ -6,7 +6,7 @@
   <view class="partners-tit"></view>
   <view class="partners-cont">
     <navigator url="/pages/company/company?id={{item.id}}" wx:for="{{pageData.cooper}}" wx:key="index">
-      <image src="{{item.logo}}" class="partners-img" />
+      <image src="{{item.logo}}" class="partners-img" mode="aspectFill" />
     </navigator>
   </view>
 </view>
@@ -20,7 +20,7 @@
   <view class="tabs-images">
     <block wx:for="{{tabs}}" wx:key="index">
       <navigator url="/pages/company/company?id={{item.id}}">
-        <image src="{{item.logo}}" class="tabs-image"></image>
+        <image src="{{item.logo}}" class="tabs-image" mode="aspectFill"></image>
       </navigator>
     </block>
   </view>

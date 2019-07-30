@@ -2,7 +2,7 @@
   <block wx:for="{{pageData.banner}}" wx:key="index">
     <swiper-item>
       <navigator url="{{item.url}}">
-        <image src="{{item.image}}" class="slide-image" />
+        <image src="{{item.image}}" class="slide-image" mode="aspectFill" />
       </navigator>
     </swiper-item>
   </block>
@@ -11,7 +11,7 @@
 <view class="dance">
   <block wx:for="{{pageData.type}}" wx:key="index">
     <navigator class="dance-list" hover-class="none" url="/pages/classify/classify?active={{index}}">
-      <image src="{{item.image}}" class="dance-image"></image>
+      <image src="{{item.image}}" class="dance-image" mode="aspectFill"></image>
       <view>{{item.name}}</view>
     </navigator>
   </block>
@@ -22,7 +22,7 @@
   <view class="tabs-images">
     <block wx:for="{{pageData.teacher}}" wx:key="index">
       <navigator url="/pages/about/about?id={{item.id}}">
-        <image src="{{item.image}}" class="tabs-image"></image>
+        <image src="{{item.image}}" class="tabs-image" mode="aspectFill"></image>
       </navigator>
     </block>
   </view>

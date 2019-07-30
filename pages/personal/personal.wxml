@@ -9,9 +9,9 @@
     <view class="msg-item id">{{pageData.uid}}</view>
     <view class="msg-item level">{{level[pageData.level]}}</view>
   </view>
-  <view class="msg-row">
-    <view class="msg-item tel">{{pageData.phone}}</view>
-    <view class="msg-item {{identity?'age':'site'}}">{{pageData.birth}}</view>
+  <view class="msg-row" wx:if="{{pageData.phone || pageData.birth}}">
+    <view wx:if="{{pageData.phone}}" class="msg-item tel">{{pageData.phone}}</view>
+    <view wx:if="{{pageData.birth}}" class="msg-item {{identity?'age':'site'}}">{{pageData.birth}}</view>
   </view>
 </view>
 <van-cell is-link icon="" title="个人资料" link-type="navigateTo" url="/pages/index/index" />

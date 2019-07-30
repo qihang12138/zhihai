@@ -13,7 +13,7 @@
   <view class="visitingCard-cont">{{pageData.marray}}</view>
   <view class="address">
     <view class="address-text">{{pageData.addr}}</view>
-    <view class="tel"></view>
+    <view class="tel" data-phone="{{pageData.phone}}" bindtap="callPhone"></view>
   </view>
 </view>
 <!-- 选项卡 -->

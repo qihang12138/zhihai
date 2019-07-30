@@ -10,6 +10,13 @@ Page({
         header: '',
         id: 0
     },
+    callPhone(e) {
+        let { phone } = e.currentTarget.dataset;
+
+        wx.makePhoneCall({
+            phoneNumber: phone
+        })
+    },
     getData() {
         app.http({
             url: app.api.ApiDetail + '?id=' + this.data.id
