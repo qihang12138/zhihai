@@ -37,9 +37,13 @@ page {
 
 
 /* 标签 */
-
 .tags {
-    padding: 30rpx 40rpx 150rpx;
+    padding: 30rpx 40rpx 30rpx;
+}
+.tags .my-btn {
+    width: auto;
+    margin-top: 30rpx;
+    box-sizing: border-box;
 }
 
 .tag {
@@ -59,4 +63,5 @@ page {
 
 .my-btn-box {
     background: #fff;
+    z-index: 99;
 }

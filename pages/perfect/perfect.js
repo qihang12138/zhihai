@@ -11,29 +11,64 @@ Page({
         majorShow: false,
         eduShow: false,
         tagShow: false,
+        siteShow: false,
+        sexShow: false,
         pageData: '',
         columns: [],
-        siteShow: false,
+        sexlist: [
+            {
+                name: '男'
+            },
+            {
+                name: '女'
+            },
+            {
+                name: '保密'
+            }
+        ],
         tags: [],
         tag: '',
         msgObj: {
-            name: '',
+            username: '',
             sex: '',
-            age: '',
+            birth: '',
             major: '',
             edu: '',
             addr: '',
-            tel: '',
-            tag: []
+            phone: '',
+            tag: [],
+            marray: '',
+            work: '',
+            edu_history: '',
+            train: ''
         }
     },
-    onChange(event) {
-        const { picker, value, index } = event.detail;
-        console.log(event);
-        var msgObj = "msgObj.addr";
+    textInput(e) {
+        let { detail: {
+                value
+              },
+              currentTarget: {
+                  dataset: {
+                      type
+                    }
+                }  
+            } = e
         this.setData({
-
+            ['msgObj.'+type]: value
         })
+    },
+    toggleSex() {
+        let sexShow = this.data.sexShow;
+      this.setData({
+        sexShow: !sexShow
+      })
+    },
+    selectSex(e) {
+        let { name } = e.detail;
+     this.setData({
+         ['msgObj.sex']: name
+     })
+     this.toggleSex()
     },
     onClose() {
         this.setData({
@@ -65,6 +100,13 @@ Page({
         });
         this.onClose();
         console.log(this.data.msgObj)
+    },
+    bindDateChange(e) {// 选择出生日期
+        let { value } = e.detail;
+
+        this.setData({
+            ['msgObj.birth']: value
+        })
     },
     majorShow() {
         var data = this.data.pageData.major;
@@ -109,25 +151,19 @@ Page({
     },
     onTag(e) { // 选择职业标签
         var { id, index } = e.currentTarget.dataset,
-        { tagList, tags } = this.data;
+        { tagList, msgObj } = this.data;
 
-        tags.indexOf(id) > -1 ? tags.splice( tags.indexOf(id), 1) : tags.push(id)
+        msgObj.tag.indexOf(id) > -1 ? msgObj.tag.splice( msgObj.tag.indexOf(id), 1) : msgObj.tag.push(id)
         tagList[index].status = !tagList[index].status;
         
         // 按顺序选中id
-        // var resTag = tagList.filter(item => item.status).map(item => item.id)
+        var resTag = tagList.filter(item => item.status).map(item => item.name)
         // console.log('resTag: ', resTag);
         this.setData({
-            tags: tags,
-            tagList: tagList
+            ['msgObj.tag']: msgObj.tag,
+            tagList: tagList,
+            tags: resTag
         })
-    },
-    changeTag() {
-        // var msgObj = "msgObj.tag"
-        // this.setData({
-        //     [msgObj]: this.data.tag,
-        // })
-        this.onClose();
     },
     getData() {
         app.http({
@@ -135,9 +171,6 @@ Page({
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
-                // data.news.forEach(item => {
-                //     item.time = app.util.YMD(new Date(item.time * 1000));
-                // })
                 data.tag.forEach(item => {
                     item.status = false
                 })
@@ -147,11 +180,47 @@ Page({
                 })
             }
         })
+
+        app.http({
+            url: app.api.ApiDancer
+        }).then(res => {
+            let { error_code, data } = res;
+            if (error_code === 1) {
+                this.setData({
+                    msgObj: data
+                })
+            }
+        })
+
+        
     },
     submit() {
+        let { msgObj } = this.data;
+        let flag = true;
+        
+        for (const key in msgObj) {
+            if (msgObj.hasOwnProperty(key)) {
+                const element = msgObj[key];
+                if(!element.length) {
+                    flag = false;
+                    break;
+                }
+            }
+        }
+
+        if(!flag) {
+            app.util.toast({
+                title: '请填写完整资料',
+                icon: 'none'
+            })
+            return
+        }
+
+        app.util.verifyPhone(msgObj.phone).then(res => {
+        return
         app.http({
             url: app.api.ApiDancerSave,
-
+            method: 'POST'
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
@@ -159,6 +228,7 @@ Page({
                     pageData: data
                 })
             }
+        })
         })
     },
     /**

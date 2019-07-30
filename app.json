@@ -57,6 +57,7 @@
         "van-collapse-item": "/vant/collapse-item/index",
         "van-tab": "/vant/tab/index",
         "van-tabs": "/vant/tabs/index",
-        "van-cell": "/vant/cell/index"
+        "van-cell": "/vant/cell/index",
+        "van-action-sheet": "/vant/action-sheet/index"
     }
 }
