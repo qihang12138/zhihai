@@ -1,3 +1,9 @@
+textarea {
+    position: relative;
+    z-index: 0!important;
+}
+
+
 /* 按钮 */
 
 .my-btn-box {

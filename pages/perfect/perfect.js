@@ -17,6 +17,7 @@ Page({
         columns: [],
         edu: '',
         major: '',
+        ball: true,
         sexlist: [{
                 name: '男'
             },
@@ -72,16 +73,21 @@ Page({
         })
         this.toggleSex()
     },
+    ballShow() {
+        this.setData({ ball: false })
+    },
     onClose() {
         this.setData({
             majorShow: false,
             eduShow: false,
             siteShow: false,
-            tagShow: false
+            tagShow: false,
+            ball: true
         });
     },
     site() {
         this.setData({ siteShow: true })
+        this.ballShow();
     },
     changeMsgObj(e) {
         var id = e.currentTarget.dataset.id;
@@ -120,16 +126,19 @@ Page({
             columns: columns,
             majorShow: true
         })
+        this.ballShow();
     },
     changeMajor(e) {
         this.setData({
             major: e.detail.name,
+            ['msgObj.major']: e.detail.id
         })
         this.onClose();
     },
     changeEdu(e) {
         this.setData({
             edu: e.detail.name,
+            ['msgObj.edu']: e.detail.id
         })
         this.onClose();
     },
@@ -143,11 +152,13 @@ Page({
             columns: columns,
             eduShow: true
         })
+        this.ballShow();
     },
     tagShow() {
         this.setData({
             tagShow: true
         })
+        this.ballShow();
     },
     onTag(e) { // 选择职业标签
         var { id, index } = e.currentTarget.dataset, { tagList, msgObj } = this.data;
@@ -228,6 +239,7 @@ Page({
     submit() {
         let { msgObj } = this.data;
         let flag = true;
+        console.log(msgObj);
 
         for (const key in msgObj) {
             if (msgObj.hasOwnProperty(key)) {

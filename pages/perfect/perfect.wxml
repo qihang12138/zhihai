@@ -14,34 +14,24 @@
 </view>
 <view class="perfect">
   <view class="perfect-row underline">个人介绍</view>
-  <textarea placeholder="请输入个人介绍..." maxlength="300" class="perfect-msg underline" value="{{msgObj.marray}}" data-type="marray" bindinput="textInput"></textarea>
+  <textarea placeholder="请输入个人介绍..." maxlength="300" class="perfect-msg underline" value="{{msgObj.marray}}" data-type="marray" bindinput="textInput" wx:if="{{ball}}"></textarea>
   <view class="perfect-row underline">工作经历</view>
-  <textarea placeholder="请输入工作..." maxlength="300" class="perfect-msg underline" value="{{msgObj.work}}" data-type="work" bindinput="textInput"></textarea>
+  <textarea placeholder="请输入工作..." maxlength="300" class="perfect-msg underline" value="{{msgObj.work}}" data-type="work" bindinput="textInput"  wx:if="{{ball}}"></textarea>
   <view class="perfect-row underline">教育经历</view>
-  <textarea placeholder="请输入教育经历..." maxlength="300" class="perfect-msg underline" value="{{msgObj.edu_history}}" data-type="edu_history" bindinput="textInput"></textarea>
+  <textarea placeholder="请输入教育经历..." maxlength="300" class="perfect-msg underline" value="{{msgObj.edu_history}}" data-type="edu_history" bindinput="textInput"  wx:if="{{ball}}"></textarea>
   <view class="perfect-row underline">培训经历</view>
-  <textarea placeholder="请输入培训经历..." maxlength="300" class="perfect-msg underline" value="{{msgObj.train}}" data-type="train" bindinput="textInput"></textarea>
+  <textarea placeholder="请输入培训经历..." maxlength="300" class="perfect-msg underline" value="{{msgObj.train}}" data-type="train" bindinput="textInput"  wx:if="{{ball}}"></textarea>
 </view>
 <!-- 确认按钮 -->
 <view class="my-btn-box">
   <button class="my-btn" bindtap="submit">确认</button>
 </view>
 <!-- 弹出层 -->
-<!-- 出生年月 -->
-<!-- <van-popup show="{{ birthShow }}" position="bottom" overlay="{{true}}" bind:close="showBirth">
-   <van-picker columns="{{ columns }}" show-toolbar="{{true}}" bind:confirm="confirm" />
-</van-popup> -->
 <!-- 性别 -->
 <van-action-sheet show="{{ sexShow }}" actions="{{ sexlist }}" bind:close="toggleSex" bind:select="selectSex" />
 <!-- 专业 -->
-<!-- <van-popup show="{{ majorShow }}" position="bottom" bind:close="onClose">
-  <van-picker columns="{{ columns }}" bind:confirm="changeMajor" bind:cancel="onClose" show-toolbar />
-</van-popup> -->
 <van-action-sheet show="{{ majorShow }}" actions="{{ majorlist }}" bind:close="onClose" bind:select="changeMajor" />
 <!-- 学历 -->
-<!-- <van-popup show="{{ eduShow }}" position="bottom" bind:close="onClose">
-  <van-picker columns="{{ columns }}" bind:confirm="changeEdu" bind:cancel="onClose" show-toolbar />
-</van-popup> -->
 <van-action-sheet show="{{ eduShow }}" actions="{{ edulist }}" bind:close="onClose" bind:select="changeEdu" />
 <!-- 所在地区 -->
 <van-popup show="{{ siteShow }}" position="bottom" bind:close="onClose">

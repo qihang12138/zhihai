@@ -39,8 +39,9 @@ Page({
                         app.util.toast({
                             title: msg
                         }).then(() => {
-                            wx.navigateBack({
-                                delta: 1
+                            console.log('aa');
+                            wx.switchTab({
+                                url: '/pages/index/index'
                             })
                         })
                     }

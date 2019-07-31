@@ -7,9 +7,9 @@
 </view>
 <view class="perfect">
   <view class="perfect-row underline">公司介绍</view>
-  <textarea placeholder="请输入公司优势、特色" maxlength="300" class="perfect-msg underline" value="{{msgObj.marray}}" data-type="marray" bindinput="textInput"></textarea>
+  <textarea placeholder="请输入公司优势、特色" maxlength="300" class="perfect-msg underline" value="{{msgObj.marray}}" data-type="marray" bindinput="textInput" wx:if="{{ball}}"></textarea>
   <view class="perfect-row underline">公司简介</view>
-  <textarea placeholder="请输入公司信息" maxlength="300" class="perfect-msg underline" value="{{msgObj.content}}" data-type="content" bindinput="textInput"></textarea>
+  <textarea placeholder="请输入公司信息" maxlength="300" class="perfect-msg underline" value="{{msgObj.content}}" data-type="content" bindinput="textInput" wx:if="{{ball}}"></textarea>
   <view class="perfect-row underline">公司环境</view>
   <view class="perfect-msg underline imgs">
     <image class="thumb perfect-img" src="/image/add.png" bindtap="addImgs" mode="aspectFill"></image>

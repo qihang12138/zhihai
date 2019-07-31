@@ -18,6 +18,7 @@ Page({
         scale: '',
         logoThumb: '',
         thumbs: [],
+        ball: true,
         msgObj: {
             name: '',
             yid: '',
@@ -72,6 +73,7 @@ Page({
     },
     ageShow() {
         this.setData({ ageShow: true })
+        this.ballShow();
     },
     changeAge(e) {
         var age = this.data.ageList,
@@ -88,6 +90,7 @@ Page({
     },
     scaleShow() {
         this.setData({ scaleShow: true })
+        this.ballShow();
     },
     changeScale(e) {
         var scale = this.data.scaleList,
@@ -104,6 +107,7 @@ Page({
     },
     siteShow() {
         this.setData({ siteShow: true })
+        this.ballShow();
     },
     changeSite(e) {
         var site = '';
@@ -117,11 +121,15 @@ Page({
         })
         this.onClose();
     },
+    ballShow() {
+        this.setData({ ball: false })
+    },
     onClose() {
         this.setData({
             scaleShow: false,
             ageShow: false,
-            siteShow: false
+            siteShow: false,
+            ball: true
         });
     },
     changeMsgObj(e) {
