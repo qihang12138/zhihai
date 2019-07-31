@@ -1,6 +1,6 @@
 // pages/issue/issue.js
 const app = getApp()
-    // import Toast from 'path/to/vant-weapp/dist/toast/toast';
+import Toast from '../../vant/toast/toast';
 Page({
 
     /**
@@ -23,6 +23,7 @@ Page({
             let { error_code, msg } = res;
             if (error_code === 0) {
                 Toast.success(msg);
+                this.getData();
             } else {
                 Toast.fail(msg);
             }
@@ -60,7 +61,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+        this.getData();
     },
 
     /**

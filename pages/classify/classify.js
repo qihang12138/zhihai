@@ -1,11 +1,13 @@
 // pages/classify/classify.js
 const app = getApp()
+import area from '../../utils/area.js'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        areaList: area,
         pageData: {},
         dancerData: '',
         columns: '',
@@ -35,24 +37,39 @@ Page({
     },
     classify(e) {
         var type = e.currentTarget.dataset.id,
-            types = ['type', 'edu', 'major'],
+            types = ['edu', 'major'],
             data = this.data.pageData,
             columns = []
-            if (type) {
-                data[types[type]].forEach(item => {
-                    columns.push(item.name)
-                });
-                this.setData({
-                    type: type,
-                    columns: columns,
-                    show: true
-                });
+        if (type) {
+            data[types[type]].forEach(item => {
+                columns.push(item.name)
+            });
+            this.setData({
+                type: type,
+                columns: columns,
+                show: true
+            });
+        }
+    },
+    siteShow() {
+        this.setData({ siteShow: true })
+    },
+    changeSite(e) {
+        var site = '';
+        e.detail.values.forEach(item => {
+            if (item.name !== site) {
+                site += item.name
             }
-        
+        })
+        this.setData({
+            ['msgObj.addr']: site,
+        })
+        this.onClose();
+        this.postData()
     },
     onConfirm(e) {
         var type = this.data.type,
-            types = ['addr', 'eid', 'mid'],
+            types = ['eid', 'mid'],
             msgObj = 'msgObj.' + types[type];
         this.setData({
             [msgObj]: e.detail.index,
@@ -62,7 +79,8 @@ Page({
     },
     onClose() {
         this.setData({
-            show: false
+            show: false,
+            siteShow: false
         })
     },
     changeTab(e) {
@@ -83,7 +101,7 @@ Page({
         let { msgObj, active } = this.data;
         if (e) {
             var type = e.currentTarget.dataset.type
-            if(type === 'all') {
+            if (type === 'all') {
                 msgObj = {
                     tid: active,
                     eid: 0,
@@ -109,7 +127,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        this.setData({active: options.active})
+        this.setData({ active: options.active })
         this.getData(options.active);
     },
 

@@ -1,5 +1,6 @@
 page {
     background: #f4f5f6;
+    padding-bottom: 150rpx;
 }
 
 .recommend {

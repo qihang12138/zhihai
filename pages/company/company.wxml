@@ -3,7 +3,7 @@
 <view class="visitingCard">
   <view class="visitingCard-tit">
     <view class="visitingCard-name">{{pageData.name}}</view>
-    <view class="view">52</view>
+    <view class="view">{{pageData.browse}}</view>
   </view>
   <view class="brief">
     <view class="brief-text">{{pageData.addr}}</view>

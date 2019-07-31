@@ -15,8 +15,9 @@ Page({
         sexShow: false,
         pageData: '',
         columns: [],
-        sexlist: [
-            {
+        edu: '',
+        major: '',
+        sexlist: [{
                 name: '男'
             },
             {
@@ -44,31 +45,32 @@ Page({
         }
     },
     textInput(e) {
-        let { detail: {
+        let {
+            detail: {
                 value
-              },
-              currentTarget: {
-                  dataset: {
-                      type
-                    }
-                }  
-            } = e
+            },
+            currentTarget: {
+                dataset: {
+                    type
+                }
+            }
+        } = e
         this.setData({
-            ['msgObj.'+type]: value
+            ['msgObj.' + type]: value
         })
     },
     toggleSex() {
         let sexShow = this.data.sexShow;
-      this.setData({
-        sexShow: !sexShow
-      })
+        this.setData({
+            sexShow: !sexShow
+        })
     },
     selectSex(e) {
         let { name } = e.detail;
-     this.setData({
-         ['msgObj.sex']: name
-     })
-     this.toggleSex()
+        this.setData({
+            ['msgObj.sex']: name
+        })
+        this.toggleSex()
     },
     onClose() {
         this.setData({
@@ -101,7 +103,7 @@ Page({
         this.onClose();
         console.log(this.data.msgObj)
     },
-    bindDateChange(e) {// 选择出生日期
+    bindDateChange(e) { // 选择出生日期
         let { value } = e.detail;
 
         this.setData({
@@ -120,16 +122,14 @@ Page({
         })
     },
     changeMajor(e) {
-        var msgObj = "msgObj.major"
         this.setData({
-            [msgObj]: e.detail.value,
+            major: e.detail.name,
         })
         this.onClose();
     },
     changeEdu(e) {
-        var msgObj = "msgObj.edu"
         this.setData({
-            [msgObj]: e.detail.value,
+            edu: e.detail.name,
         })
         this.onClose();
     },
@@ -150,15 +150,14 @@ Page({
         })
     },
     onTag(e) { // 选择职业标签
-        var { id, index } = e.currentTarget.dataset,
-        { tagList, msgObj } = this.data;
+        var { id, index } = e.currentTarget.dataset, { tagList, msgObj } = this.data;
 
-        msgObj.tag.indexOf(id) > -1 ? msgObj.tag.splice( msgObj.tag.indexOf(id), 1) : msgObj.tag.push(id)
+        msgObj.tag.indexOf(id) > -1 ? msgObj.tag.splice(msgObj.tag.indexOf(id), 1) : msgObj.tag.push(id)
         tagList[index].status = !tagList[index].status;
-        
+
         // 按顺序选中id
         var resTag = tagList.filter(item => item.status).map(item => item.name)
-        // console.log('resTag: ', resTag);
+            // console.log('resTag: ', resTag);
         this.setData({
             ['msgObj.tag']: msgObj.tag,
             tagList: tagList,
@@ -176,6 +175,8 @@ Page({
                 })
                 this.setData({
                     pageData: data,
+                    majorlist: data.major,
+                    edulist: data.edu,
                     tagList: data.tag
                 })
             }
@@ -186,51 +187,100 @@ Page({
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 1) {
-                this.setData({
-                    msgObj: data
+                let tagList = this.data.tagList,
+                    tags = this.data.tags,
+                    tag = data.tag;
+                tag = tag.map(item => parseInt(item)).sort();
+
+                tagList.forEach((item, index) => {
+                    if (tag.includes(item.id)) {
+                        item.status = true
+                        tags.push(item.name)
+                    }
                 })
+
+
+                var { majorlist, edulist, major, edu } = this.data;
+                majorlist.forEach(item => {
+                    if (item.id == data.major) {
+                        major = item.name
+                    }
+                })
+                edulist.forEach(item => {
+                    if (item.id == data.edu) {
+                        edu = item.name
+                    }
+                })
+                this.setData({
+                    msgObj: data,
+                    tags: tags,
+                    tagList: tagList,
+                    major: major,
+                    edu: edu
+                })
+
             }
         })
 
-        
+        console.log(this.data.msgObj);
+
     },
     submit() {
         let { msgObj } = this.data;
         let flag = true;
-        
+
         for (const key in msgObj) {
             if (msgObj.hasOwnProperty(key)) {
                 const element = msgObj[key];
-                if(!element.length) {
+                if (element === '') {
+                    console.log(element);
                     flag = false;
                     break;
                 }
             }
         }
 
-        if(!flag) {
+        if (!flag) {
             app.util.toast({
                 title: '请填写完整资料',
                 icon: 'none'
             })
             return
         }
+        var oldMsg = this.data.msgObj;
+        var newMsg = {
+            username: oldMsg.username,
+            sex: oldMsg.sex,
+            birth: oldMsg.birth,
+            major: oldMsg.major,
+            edu: oldMsg.edu,
+            addr: oldMsg.addr,
+            phone: oldMsg.phone,
+            tag: oldMsg.tag,
+            marray: oldMsg.marray,
+            work: oldMsg.work,
+            edu_history: oldMsg.edu_history,
+            train: oldMsg.train
+        }
 
         app.util.verifyPhone(msgObj.phone).then(res => {
             app.http({
                 url: app.api.ApiDancerSave,
-                data: msgObj,
+                data: newMsg,
                 method: 'POST'
             }).then(res => {
                 let { error_code, msg } = res;
-                
+
                 app.util.toast({
                     title: msg,
                     icon: error_code === 0 ? 'success' : 'none'
                 }).then(() => {
                     if (error_code === 0) {
                         // 提交成功soming
-                        
+                        wx.navigateBack({
+                            delta: 1
+                        })
+
                     }
                 })
             })

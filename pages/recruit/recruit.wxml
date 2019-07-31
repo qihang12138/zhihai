@@ -11,7 +11,6 @@
 <view class="my-btn-box">
   <button class="my-btn" bindtap="submit">保存</button>
 </view>
-<van-toast id="van-toast" />
 <!-- 弹出层 -->
 <!-- 工作年限 -->
 <van-action-sheet show="{{ ageShow }}" actions="{{ age }}" bind:close="onClose" bind:select="selectAge" />

@@ -6,8 +6,8 @@
       <view class="picker">{{msgObj.birth || '请选择出生年月'}}</view>
     </picker>
   </van-cell>
-  <van-cell title="专业" required is-link value="{{ msgObj.major || '请选择专业' }}" bind:click="majorShow" data-id="major" />
-  <van-cell title="学历" required is-link value="{{ msgObj.edu || '请选择学历' }}" bind:click="eduShow" data-id="edu" />
+  <van-cell title="专业" required is-link value="{{ major || '请选择专业' }}" bind:click="majorShow" data-id="major" />
+  <van-cell title="学历" required is-link value="{{ edu || '请选择学历' }}" bind:click="eduShow" data-id="edu" />
   <van-cell title="所在地区" required is-link value="{{ msgObj.addr }}" bind:click="site" />
   <van-field value="{{ msgObj.phone }}" type="number" maxlength="11" required clearable label="手机号" placeholder="请输入手机号" bind:input="changeMsgObj" data-id="phone" />
   <van-cell required title="职业标签" is-link value="{{ tags.length > 3 ? tags[0] + '等' + tags.length + '个标签' : tags }}" bind:click="tagShow" />
@@ -34,13 +34,15 @@
 <!-- 性别 -->
 <van-action-sheet show="{{ sexShow }}" actions="{{ sexlist }}" bind:close="toggleSex" bind:select="selectSex" />
 <!-- 专业 -->
-<van-popup show="{{ majorShow }}" position="bottom" bind:close="onClose">
+<!-- <van-popup show="{{ majorShow }}" position="bottom" bind:close="onClose">
   <van-picker columns="{{ columns }}" bind:confirm="changeMajor" bind:cancel="onClose" show-toolbar />
-</van-popup>
+</van-popup> -->
+<van-action-sheet show="{{ majorShow }}" actions="{{ majorlist }}" bind:close="onClose" bind:select="changeMajor" />
 <!-- 学历 -->
-<van-popup show="{{ eduShow }}" position="bottom" bind:close="onClose">
+<!-- <van-popup show="{{ eduShow }}" position="bottom" bind:close="onClose">
   <van-picker columns="{{ columns }}" bind:confirm="changeEdu" bind:cancel="onClose" show-toolbar />
-</van-popup>
+</van-popup> -->
+<van-action-sheet show="{{ eduShow }}" actions="{{ edulist }}" bind:close="onClose" bind:select="changeEdu" />
 <!-- 所在地区 -->
 <van-popup show="{{ siteShow }}" position="bottom" bind:close="onClose">
   <van-area area-list="{{ areaList }}" bind:cancel="onClose" bind:confirm="confirm" />

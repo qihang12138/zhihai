@@ -1,11 +1,13 @@
 // pages/searchJob/searchJob.js
 const app = getApp()
+import area from '../../utils/area.js'
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        areaList: area,
         pageData: [],
         keyword: '',
         edit: true,
@@ -54,10 +56,27 @@ Page({
         this.onClose();
         this.postData();
     },
+    siteShow() {
+        this.setData({ siteShow: true })
+    },
+    changeSite(e) {
+        var site = '';
+        e.detail.values.forEach(item => {
+            if (item.name !== site) {
+                site += item.name
+            }
+        })
+        this.setData({
+            ['msgObj.addr']: site,
+        })
+        this.onClose();
+        this.postData()
+    },
     onClose() {
         this.setData({
             ageShow: false,
-            peopleShow: false
+            peopleShow: false,
+            siteShow: false
         })
     },
     postData(e) {

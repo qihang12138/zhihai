@@ -4,21 +4,22 @@
     <van-tab title="已通过"></van-tab>
     <van-tab title="已驳回"></van-tab>
 </van-tabs>
-<van-swipe-cell right-width="{{ 65 }}" left-width="{{ 1 }}" >
-    <view slot="right" class="del" bindtap="del" data-id="{{2}}">删除</view>
-    <view slot="">
-        <navigator class="recommend" url="/pages/position/position?id={{item.id}}">
-            <view class="recommend-row">
-                <view>{{item.name}}街舞老师</view>
-                <view class="recommend-money">{{item.money}}5-8k</view>
-            </view>
-            <view class="recommend-site">{{item.addr}}河南 · {{item.edu}}郑州 · {{item.age}}金水</view>
-        </navigator>
-    </view>
-</van-swipe-cell>
+<block wx:for="{{pageData}}" wx:key="{{index}}">
+    <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 1 }}">
+        <view slot="right" class="del" bindtap="del" data-id="{{item.id}}">删除</view>
+        <view slot="">
+            <navigator class="recommend" url="/pages/position/position?id={{item.id}}">
+                <view class="recommend-row">
+                    <view>{{item.name}}</view>
+                    <view class="recommend-money">{{item.money}}</view>
+                </view>
+                <view class="recommend-site">{{item.addr}}{{item.edu}}{{item.age}}</view>
+            </navigator>
+        </view>
+    </van-swipe-cell>
+</block>
 <van-toast id="van-toast" />
-
 <!-- 确认按钮 -->
 <navigator class="my-btn-box" url="/pages/recruit/recruit">
-  <button class="my-btn" bindtap="add">发布招聘</button>
+    <button class="my-btn" bindtap="add">发布招聘</button>
 </navigator>

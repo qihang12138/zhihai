@@ -251,6 +251,8 @@ Page({
         })
 
         this.setData({ msgObj: msgObj })
+        console.log(this.data.msgObj);
+
     },
     tagShow() {
         this.setData({
@@ -267,20 +269,41 @@ Page({
                     ageList: data.age,
                     scaleList: data.people
                 })
+
             }
         })
-
         app.http({
             url: app.api.ApiOrgan
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 1) {
-                this.setData({
-                    msgObj: data
+                let { ageList, scaleList } = this.data;
+                ageList.forEach(item => {
+                    if (item.id === data.yid) {
+                        this.setData({ age: item.name })
+                    }
+                });
+                scaleList.forEach(item => {
+                    if (item.id === data.pid) {
+                        this.setData({ scale: item.name })
+                    }
                 })
-            }
-        })
+                this.setData({
+                    msgObj: data,
+                    thumbs: data.image,
+                    logoThumb: data.logo
+                })
+                console.log(data.logo);
 
+            }
+
+        })
+    },
+    delImg(e) {
+        var thumbs = this.data.thumbs,
+            id = e.currentTarget.dataset.id
+        thumbs.splice(id, 1);
+        this.setData({ thumbs: thumbs });
 
     },
     submit() {
@@ -288,11 +311,11 @@ Page({
         let flag = true;
         msgObj.pid += ''
         msgObj.yid += ''
-        console.log('msgObj: ', msgObj);
         for (const key in msgObj) {
             if (msgObj.hasOwnProperty(key)) {
                 const element = msgObj[key];
-                if (!element.length) {
+                if (element === '' || element.length === 0) {
+                    console.log(element);
                     flag = false;
                     break;
                 }
@@ -306,10 +329,28 @@ Page({
             })
             return
         }
+        var oldMsg = this.data.msgObj;
+        oldMsg.image = oldMsg.image.map(item => {
+            return item.slice(item.indexOf('/uploads'));
 
+        })
+        console.log(oldMsg.image);
+
+        oldMsg.logo = oldMsg.logo.slice(oldMsg.logo.indexOf('/uploads'));
+        var newMsg = {
+            name: oldMsg.name,
+            yid: oldMsg.yid,
+            pid: oldMsg.pid,
+            addr: oldMsg.addr,
+            phone: oldMsg.phone,
+            marray: oldMsg.marray,
+            content: oldMsg.content,
+            image: oldMsg.image,
+            logo: oldMsg.logo
+        }
         app.http({
                 url: app.api.ApiOrganSave,
-                data: msgObj,
+                data: newMsg,
                 method: 'POST'
             }).then(res => {
                 let { error_code, msg } = res;
@@ -320,6 +361,9 @@ Page({
                 }).then(() => {
                     if (error_code === 0) {
                         // 提交成功soming
+                        wx.navigateBack({
+                            delta: 1
+                        })
 
                     }
                 })

@@ -8,13 +8,13 @@
         <view class="classify-item" data-type="all" bindtap="postData">全部</view>
     </view>
     <view class="classify-box">
-        <view class="classify-item" bindtap="classify" data-id="0">地区</view>
+        <view class="classify-item" bindtap="siteShow">地区</view>
     </view>
     <view class="classify-box">
-        <view class="classify-item" bindtap="classify" data-id="1">学历</view>
+        <view class="classify-item" bindtap="classify" data-id="0">学历</view>
     </view>
     <view class="classify-box">
-        <view class="classify-item" bindtap="classify" data-id="2">专业</view>
+        <view class="classify-item" bindtap="classify" data-id="1">专业</view>
     </view>
 </view>
 <block wx:for="{{dancerData}}" wx:key="index">
@@ -37,4 +37,8 @@
 </block>
 <van-popup show="{{ show }}" position="bottom" bind:close="onClose">
     <van-picker show-toolbar title="选择分类" columns="{{ columns }}" bind:cancel="onClose" bind:confirm="onConfirm" />
+</van-popup>
+<!-- 地址 -->
+<van-popup show="{{ siteShow }}" position="bottom" bind:close="onClose">
+  <van-area area-list="{{ areaList }}" bind:cancel="onClose" bind:confirm="changeSite" />
 </van-popup>

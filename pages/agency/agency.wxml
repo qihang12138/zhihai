@@ -1,8 +1,8 @@
 <view class="m20">
   <van-field value="{{ msgObj.name }}" required clearable label="公司名称" placeholder="必填" bind:input="changeMsgObj" data-id="name" />
-  <van-cell title="办学年限" required is-link value="{{ age || '请选择办学年限' }}" bind:click="ageShow" data-id="age" />
-  <van-cell title="人员规模" required is-link value="{{ scale || '请选择人员规模'}}" bind:click="scaleShow" data-id="pid" />
-  <van-cell title="公司地址" required is-link value="{{ msgObj.addr || '请选择公司地址' }}" bind:click="siteShow" data-id="addr" />
+  <van-cell title="办学年限" required is-link value="{{ age || '请选择办学年限' }}" bind:click="ageShow" />
+  <van-cell title="人员规模" required is-link value="{{ scale || '请选择人员规模'}}" bind:click="scaleShow" />
+  <van-cell title="公司地址" required is-link value="{{ msgObj.addr || '请选择公司地址' }}" bind:click="siteShow" />
   <van-field value="{{ msgObj.phone }}" required clearable label="公司电话" placeholder="必填" bind:input="changeMsgObj" data-id="phone" />
 </view>
 <view class="perfect">
@@ -12,14 +12,16 @@
   <textarea placeholder="请输入公司信息" maxlength="300" class="perfect-msg underline" value="{{msgObj.content}}" data-type="content" bindinput="textInput"></textarea>
   <view class="perfect-row underline">公司环境</view>
   <view class="perfect-msg underline imgs">
-     <image class="thumb perfect-img" src="/image/add.png" bindtap="addImgs"  mode="aspectFill"></image>
-      <image wx:for="{{thumbs}}" wx:key="{{index}}" class="thumb img" src="{{item}}"  mode="aspectFill" data-current="{{item}}" bindtap="previewImage"></image>
-
+    <image class="thumb perfect-img" src="/image/add.png" bindtap="addImgs" mode="aspectFill"></image>
+    <view wx:for="{{thumbs}}" wx:key="{{index}}" class="img-box">
+      <image class="thumb img" src="{{item}}" mode="aspectFill" data-current="{{item}}" bindtap="previewImage"></image>
+      <van-icon name="close" custom-class="icon" bind:click="delImg" data-id="{{index}}" color="#ccc" />
+    </view>
     <!-- <image src="../../image/add.png" bindtap="addImgs" class="perfect-img" mode="aspectFill"/> -->
   </view>
   <view class="perfect-row underline">公司LOGO</view>
   <view class="perfect-msg underline imgs">
-    <image class="thumb" src="{{logoThumb || '/image/add.png'}}" bindtap="singleUpload"  mode="aspectFill"></image>
+    <image class="thumb" src="{{logoThumb || '/image/add.png'}}" bindtap="singleUpload" mode="aspectFill"></image>
   </view>
 </view>
 <!-- 确认按钮 -->

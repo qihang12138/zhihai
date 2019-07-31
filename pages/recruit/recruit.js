@@ -1,6 +1,5 @@
 // pages/recruit/recruit.js
 const app = getApp()
-import Toast from '../../vant/toast/toast';
 
 Page({
 
@@ -11,6 +10,7 @@ Page({
         ageShow: false,
         eduShow: false,
         moneyShow: false,
+        flag: 1,
         msgObj: {
             name: '',
             age: '',
@@ -90,16 +90,49 @@ Page({
         })
     },
     submit() {
+        let { msgObj } = this.data;
+        let flag = true;
+
+        for (const key in msgObj) {
+            if (msgObj.hasOwnProperty(key)) {
+                const element = msgObj[key];
+                if (element === '') {
+                    console.log(element);
+                    flag = false;
+                    break;
+                }
+            }
+        }
+
+        if (!flag) {
+            app.util.toast({
+                title: '请填写完整资料',
+                icon: 'none'
+            })
+            return
+        }
+
         app.http({
             url: app.api.ApiSaveJob,
             data: this.data.msgObj,
             method: 'POST'
         }).then(res => {
             let { error_code, data, msg } = res;
-            if (error_code === 1) {
-                Toast(msg);
+            if (error_code === 0) {
+                // 提交成功soming
+                app.util.toast({
+                    title: '提交成功',
+                    icon: 'none'
+                }).then(() => {
+                    wx.navigateBack({
+                        delta: 1
+                    })
+                })
+                console.log('aa');
+
             }
         })
+
     },
     /**
      * 生命周期函数--监听页面加载
