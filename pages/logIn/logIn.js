@@ -39,7 +39,6 @@ Page({
                         app.util.toast({
                             title: msg
                         }).then(() => {
-                            console.log('aa');
                             wx.switchTab({
                                 url: '/pages/index/index'
                             })

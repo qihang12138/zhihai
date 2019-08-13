@@ -1,6 +1,9 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/approve/approve",
+        "pages/map/map",
+        "pages/logIn/logIn",
         "pages/issue/issue",
         "pages/recruit/recruit",
         "pages/cooperation/cooperation",
@@ -13,7 +16,6 @@
         "pages/newsList/newsList",
         "pages/about/about",
         "pages/organization/organization",
-        "pages/logIn/logIn",
         "pages/searchJob/searchJob",
         "pages/searchDancer/searchDancer",
         "pages/searchOrgan/searchOrgan",
@@ -21,6 +23,11 @@
         "pages/classify/classify",
         "pages/newsDetail/newsDetail"
     ],
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+    },
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",

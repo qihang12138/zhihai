@@ -4,5 +4,6 @@
     "navigationBarTitleText": "寻机构",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true,
     "usingComponents": {}
 }

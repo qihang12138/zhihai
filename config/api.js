@@ -30,5 +30,7 @@ const api = {
     ApiAddImg: ApiUrl + 'index/add_img',
     ApiSearch: ApiUrl + 'organ/search',
     ApiLister: ApiUrl + 'organ/lister',
+    ApiFooterNavigation: ApiUrl + 'index/footer_navigation'
+
 }
 module.exports = api;

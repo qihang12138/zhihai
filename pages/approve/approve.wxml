@@ -1,0 +1,16 @@
+<view class="approve">
+    <image src="/image/approve-dancer.png" class="approve-img" />
+    <view>
+        <view>舞者认证</view>
+        <view class="approve-text">请完成舞者认证</view>
+    </view>
+    <navigator hover-class="none" class="toApprove" url="/pages/perfect/perfect">立即认证</navigator>
+</view>
+<view class="approve">
+    <image src="/image/approve-organ.png" class="approve-img" />
+    <view>
+        <view>机构认证</view>
+        <view class="approve-text">请完成机构认证</view>
+    </view>
+    <navigator hover-class="none" class="toApprove" url="/pages/agency/agency">立即认证</navigator>
+</view>

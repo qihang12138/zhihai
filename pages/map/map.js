@@ -1,41 +1,18 @@
-// pages/dancer/dancer.js
-const app = getApp()
+// pages/map/map.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        pageData: '',
-        list: ''
-    },
-    changeList(e) {
-        var index = e.detail.index,
-            data = this.data.pageData,
-            lists = [data.all, data.news, data.hot];
-        this.setData({
-            list: lists[index]
-        })
-    },
-    getData() {
-        app.http({
-            url: app.api.ApiTeacher
-        }).then(res => {
-            let { error_code, data } = res;
-            if (error_code === 0) {
-                this.setData({
-                    pageData: data,
-                    list: data.all
-                })
-            }
-            wx.stopPullDownRefresh()
-        })
+        latitude: '', //纬度
+        longitude: '', //经度
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        this.getData();
+
     },
 
     /**
@@ -49,7 +26,20 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+        var _this = this
+        wx.getLocation({
+            type: 'wgs84',
+            success(res) {
+                const latitude = res.latitude
+                const longitude = res.longitude
+                const speed = res.speed
+                const accuracy = res.accuracy
+                _this.setData({
+                    latitude: latitude,
+                    longitude: longitude
+                })
+            }
+        })
     },
 
     /**
@@ -70,7 +60,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function() {
-        this.getData();
+
     },
 
     /**

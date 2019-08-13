@@ -13,17 +13,16 @@
   <block wx:for="{{pageData.type}}" wx:key="index">
     <navigator class="dance-list" hover-class="none" url="/pages/classify/classify?active={{index}}">
       <image src="{{item.image}}" class="dance-image" mode="aspectFill"></image>
-      <view>{{item.name}}</view>
+      <view class="dance-name">{{item.name}}</view>
     </navigator>
   </block>
 </view>
 <!-- 优秀老师 -->
 <view class="tabs">
   <view class="tabs-tit">
-    <image src="/image/teacher.png" class="tabs-img" />
+    <image src="{{pageData.nice_teacher.icon}}" class="tabs-img" />
     <navigator url="/pages/dancer/dancer" hover-class="none" class="tabs-more">更多</navigator>
   </view>
-  <!-- <van-cell is-link title="优秀老师" value="更多" hover-class="none" url="/pages/dancer/dancer" /> -->
   <view class="tabs-images">
     <block wx:for="{{pageData.teacher}}" wx:key="index">
       <navigator url="/pages/about/about?id={{item.id}}&teach=1">
@@ -35,7 +34,7 @@
 <!-- 新闻 -->
 <view class="news">
   <view class="tabs-tit">
-    <image src="/image/news.png" class="tabs-img" />
+    <image src="{{pageData.news_titile_img.icon}}" class="tabs-img" />
     <navigator url="/pages/newsList/newsList" hover-class="none" class="tabs-more">更多</navigator>
   </view>
   <block wx:for="{{pageData.news}}" wx:key="index">

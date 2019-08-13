@@ -30,14 +30,12 @@ Page({
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
-                // data.news.forEach(item => {
-                //     item.time = app.util.YMD(new Date(item.time * 1000));
-                // })
                 this.setData({
                     pageData: data,
                     tabs: data.comper
                 })
             }
+            wx.stopPullDownRefresh()
         })
     },
     /**
@@ -78,7 +76,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function() {
-
+        this.getData();
     },
 
     /**

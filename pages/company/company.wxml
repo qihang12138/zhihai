@@ -13,8 +13,9 @@
   <view class="visitingCard-cont">{{pageData.marray}}</view>
   <view class="address">
     <view class="address-text">{{pageData.addr}}</view>
-    <view class="tel" data-phone="{{pageData.phone}}" bindtap="callPhone"></view>
+    <navigator class="nav" hover-class="none" url="/pages/map/map"></navigator>
   </view>
+  <view class="tel" data-phone="{{pageData.phone}}" bindtap="callPhone">{{pageData.phone}}</view>
 </view>
 <!-- 选项卡 -->
 <van-tabs animated custom-class="tabs">

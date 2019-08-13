@@ -40,8 +40,7 @@ Page({
      */
     onLoad: function(options) {
         this.setData({ id: options.id })
-        console.log(options);
-        
+
         var url = options.teach == 1 ? app.api.ApiTeacherDetail : app.api.ApiDetail
         this.getData(options.id, url);
     },

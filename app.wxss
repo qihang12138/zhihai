@@ -1,6 +1,5 @@
-textarea {
-    position: relative;
-    z-index: 0!important;
+.rich-box {
+    padding: 0 20px;
 }
 
 
@@ -31,4 +30,8 @@ textarea {
 
 .van-tabs__line {
     background-color: #F36886 !important;
+}
+
+.van-tab--active {
+    color: #F36886 !important;
 }

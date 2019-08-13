@@ -40,7 +40,9 @@
         <view class="job-time">2018.04-2018.09</view>
         <view class="job-duties">担任主课老师，擅长交谊 舞，民族舞，芭蕾舞</view>
       </view> -->
-      <rich-text nodes="{{ pageData.work }}"></rich-text>
+      <view class="rich-box">
+        <rich-text nodes="{{ pageData.work }}"></rich-text>
+      </view>
     </view>
   </van-tab>
   <!-- 教育经历 -->
@@ -55,7 +57,9 @@
           <text>本科</text>
         </view>
       </view> -->
-      <rich-text nodes="{{ pageData.edu_history }}"></rich-text>
+      <view class="rich-box">
+        <rich-text nodes="{{ pageData.edu_history }}"></rich-text>
+      </view>
     </view>
   </van-tab>
   <!-- 培训经历 -->
@@ -63,7 +67,9 @@
     <view class="evaluate tab">
       <view class="job-tit underline">培训经历</view>
       <!-- <view class="evaluate-cont">5年舞蹈经验，擅长民族舞，芭蕾舞等，曾获全国大赛一等奖，桃李杯一等奖。</view> -->
-      <rich-text nodes="{{ pageData.train }}"></rich-text>
+      <view class="rich-box">
+        <rich-text nodes="{{ pageData.train }}"></rich-text>
+      </view>
     </view>
   </van-tab>
 </van-tabs>

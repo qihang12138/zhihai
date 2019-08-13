@@ -35,11 +35,19 @@ page {
     margin-top: 20rpx;
 }
 
+.thumb {
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 20rpx;
+}
+
 
 /* 标签 */
+
 .tags {
     padding: 30rpx 40rpx 30rpx;
 }
+
 .tags .my-btn {
     width: auto;
     margin-top: 30rpx;

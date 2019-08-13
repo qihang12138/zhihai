@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "优秀老师",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee",
+    "enablePullDownRefresh": true,
+    "usingComponents": {}
 }

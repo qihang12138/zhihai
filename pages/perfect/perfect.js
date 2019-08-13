@@ -18,6 +18,7 @@ Page({
         edu: '',
         major: '',
         ball: true,
+        honorThumb: '',
         sexlist: [{
                 name: '男'
             },
@@ -42,7 +43,10 @@ Page({
             marray: '',
             work: '',
             edu_history: '',
-            train: ''
+            train: '',
+            school: '',
+            honor: '',
+            papers: ''
         }
     },
     textInput(e) {
@@ -63,7 +67,8 @@ Page({
     toggleSex() {
         let sexShow = this.data.sexShow;
         this.setData({
-            sexShow: !sexShow
+            sexShow: !sexShow,
+            ball: false
         })
     },
     selectSex(e) {
@@ -72,6 +77,7 @@ Page({
             ['msgObj.sex']: name
         })
         this.toggleSex()
+        this.ballShow();
     },
     ballShow() {
         this.setData({ ball: false })
@@ -232,20 +238,50 @@ Page({
 
             }
         })
+    },
+    singleUpload(e) {
+        let _this = this,
+            { msgObj } = this.data,
+            id = e.currentTarget.dataset.id,
+            thumb = id + 'Thumb',
+            type = 'msgObj.' + id;
+        console.log(msgObj);
 
-        console.log(this.data.msgObj);
 
+
+
+        wx.chooseImage({
+            count: 1,
+            sizeType: ['original', 'compressed'],
+            sourceType: ['album', 'camera'],
+            success(res) {
+                const tempFilePaths = res.tempFilePaths,
+                    tempImg = tempFilePaths[0];
+                _this.setData({
+                    [thumb]: tempImg
+                })
+                app.upload({
+                    url: app.api.ApiAddImg,
+                    filePath: tempImg,
+                    name: 'image'
+                }).then(res => {
+                    console.log(msgObj.honor);
+                    [type] = res.data
+                    _this.setData({ msgObj: msgObj })
+                    console.log(msgObj);
+
+                })
+            }
+        })
     },
     submit() {
         let { msgObj } = this.data;
         let flag = true;
-        console.log(msgObj);
 
         for (const key in msgObj) {
             if (msgObj.hasOwnProperty(key)) {
                 const element = msgObj[key];
                 if (element === '') {
-                    console.log(element);
                     flag = false;
                     break;
                 }
@@ -302,7 +338,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        this.getData();
+
     },
 
     /**
@@ -316,7 +352,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+        this.getData();
     },
 
     /**
