@@ -38,6 +38,15 @@ Page({
             wx.stopPullDownRefresh()
         })
     },
+    nav(e) {
+        var lat = e.currentTarget.dataset.lat - 0,
+            lng = e.currentTarget.dataset.lng - 0;
+        wx.openLocation({
+            latitude: lat,
+            longitude: lng,
+            scale: 18
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */

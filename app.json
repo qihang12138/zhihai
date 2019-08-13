@@ -2,7 +2,6 @@
     "pages": [
         "pages/index/index",
         "pages/approve/approve",
-        "pages/map/map",
         "pages/logIn/logIn",
         "pages/issue/issue",
         "pages/recruit/recruit",

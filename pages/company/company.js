@@ -7,7 +7,8 @@ Page({
      */
     data: {
         pageData: '',
-        id: 0
+        id: 0,
+        phone: ''
     },
     callPhone(e) {
         let { phone } = e.currentTarget.dataset;
@@ -23,13 +24,34 @@ Page({
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
-                // data.news.forEach(item => {
-                //     item.time = app.util.YMD(new Date(item.time * 1000));
-                // })
+                var phone = data.phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')
                 this.setData({
-                    pageData: data
+                    pageData: data,
+                    phone: phone
                 })
             }
+        })
+    },
+    getUser() {
+        app.http({
+            url: app.api.ApiUserIndex
+        }).then(res => {
+            let { error_code, data } = res;
+            if (error_code === 0) {
+                this.setData({
+                    level: data.level
+                })
+                console.log(this.data.level);
+            }
+        })
+    },
+    nav(e) {
+        var lat = e.currentTarget.dataset.lat - 0,
+            lng = e.currentTarget.dataset.lng - 0;
+        wx.openLocation({
+            latitude: lat,
+            longitude: lng,
+            scale: 18
         })
     },
     /**
@@ -38,6 +60,7 @@ Page({
     onLoad: function(options) {
         this.setData({ id: options.id })
         this.getData();
+        this.getUser();
     },
 
     /**

@@ -6,13 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        level: [{
-            id: 0,
-            name: '舞者'
-        }, {
-            id: 1,
-            name: '机构'
-        }],
+        level: ['未认证', '舞者', '机构'],
         identity: false,
         show: false
     },

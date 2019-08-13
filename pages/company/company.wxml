@@ -13,9 +13,10 @@
   <view class="visitingCard-cont">{{pageData.marray}}</view>
   <view class="address">
     <view class="address-text">{{pageData.addr}}</view>
-    <navigator class="nav" hover-class="none" url="/pages/map/map"></navigator>
+    <view class="nav" bindtap="nav" data-lat="{{item.lat}}" data-lng="{{item.lng}}"></view>
   </view>
-  <view class="tel" data-phone="{{pageData.phone}}" bindtap="callPhone">{{pageData.phone}}</view>
+  <view class="tel" data-phone="{{pageData.phone}}" bindtap="callPhone" wx:if="{{level}}">{{pageData.phone}}</view>
+  <view class="tel" wx:if="{{!level}}">{{phone}}</view>
 </view>
 <!-- 选项卡 -->
 <van-tabs animated custom-class="tabs">

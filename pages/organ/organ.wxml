@@ -25,14 +25,14 @@
       </navigator> -->
     <view class="organ">
       <view class="organ-brief">
-        <image src="{{item.image}}" class="organ-img"></image>
+        <image src="{{item.logo}}" class="organ-img"></image>
         <view class="organ-item">
           <view>{{item.username}}</view>
-          <view class="organ-tit">{{item.age}}点点星舞蹈机构</view>
-          <view class="organ-msg">热招: {{item.school}}民族舞、拉丁舞老qwelkasjdlkasj dlkasjkd asd asd 师</view>
-          <view class="organ-msg">地址: {{item.addr}}郑州市中原区碧沙岗附近</view>
+          <view class="organ-tit">{{item.age}}</view>
+          <view class="organ-msg">热招: {{item.school}}</view>
+          <view class="organ-msg">地址: {{item.addr}}</view>
         </view>
-        <navigator class="nav" hover-class="none" url="/pages/map/map"></navigator>
+        <view class="nav" bindtap="nav" data-lat="{{item.lat}}" data-lng="{{item.lng}}"></view>
       </view>
     </view>
   </block>

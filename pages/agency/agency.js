@@ -28,7 +28,9 @@ Page({
             marray: '',
             content: '',
             image: [],
-            logo: ''
+            logo: '',
+            latitude: '',
+            longitude: ''
         }
     },
     textInput(e) {
@@ -105,9 +107,19 @@ Page({
         })
         this.onClose();
     },
-    siteShow() {
-        this.setData({ siteShow: true })
-        this.ballShow();
+    selectSite() {
+        // this.setData({ siteShow: true })
+        // this.ballShow();
+        var _this = this;
+        wx.chooseLocation({
+            success(res) {
+                _this.setData({
+                    ['msgObj.longitude']: res.longitude + '',
+                    ['msgObj.latitude']: res.latitude + '',
+                    ['msgObj.addr']: res.name
+                })
+            }
+        })
     },
     changeSite(e) {
         var site = '';
@@ -259,7 +271,6 @@ Page({
         })
 
         this.setData({ msgObj: msgObj })
-        console.log(this.data.msgObj);
 
     },
     tagShow() {
@@ -301,7 +312,6 @@ Page({
                     thumbs: data.image,
                     logoThumb: data.logo
                 })
-                console.log(data.logo);
 
             }
 
@@ -319,11 +329,12 @@ Page({
         let flag = true;
         msgObj.pid += ''
         msgObj.yid += ''
+        console.log(msgObj);
+        msgObj.hot = 'q'
         for (const key in msgObj) {
             if (msgObj.hasOwnProperty(key)) {
                 const element = msgObj[key];
                 if (element === '' || element.length === 0) {
-                    console.log(element);
                     flag = false;
                     break;
                 }
@@ -342,7 +353,6 @@ Page({
             return item.slice(item.indexOf('/uploads'));
 
         })
-        console.log(oldMsg.image);
 
         oldMsg.logo = oldMsg.logo.slice(oldMsg.logo.indexOf('/uploads'));
         var newMsg = {
@@ -354,7 +364,9 @@ Page({
             marray: oldMsg.marray,
             content: oldMsg.content,
             image: oldMsg.image,
-            logo: oldMsg.logo
+            logo: oldMsg.logo,
+            lat: oldMsg.latitude,
+            lng: oldMsg.longitude
         }
         app.http({
                 url: app.api.ApiOrganSave,
@@ -384,7 +396,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        this.getData();
     },
 
     /**
@@ -398,7 +410,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-        this.getData();
+
     },
 
     /**

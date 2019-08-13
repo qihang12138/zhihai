@@ -16,7 +16,6 @@
 }
 
 .head-name {
-    flex: 1;
     position: relative;
     padding-left: 30rpx;
 }
@@ -33,6 +32,10 @@
     font-size: 16rpx;
     color: #fff;
     background: #AEAEAE;
+}
+
+.status-on {
+    background: #F89A06;
 }
 
 .approve {

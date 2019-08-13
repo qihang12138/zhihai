@@ -245,10 +245,7 @@ Page({
             id = e.currentTarget.dataset.id,
             thumb = id + 'Thumb',
             type = 'msgObj.' + id;
-        console.log(msgObj);
-
-
-
+        console.log(type);
 
         wx.chooseImage({
             count: 1,
@@ -265,9 +262,9 @@ Page({
                     filePath: tempImg,
                     name: 'image'
                 }).then(res => {
-                    console.log(msgObj.honor);
-                    [type] = res.data
-                    _this.setData({ msgObj: msgObj })
+                    _this.setData({
+                        [type]: res.data
+                    })
                     console.log(msgObj);
 
                 })
@@ -277,6 +274,7 @@ Page({
     submit() {
         let { msgObj } = this.data;
         let flag = true;
+        // console.log(msgObj);
 
         for (const key in msgObj) {
             if (msgObj.hasOwnProperty(key)) {
@@ -308,7 +306,10 @@ Page({
             marray: oldMsg.marray,
             work: oldMsg.work,
             edu_history: oldMsg.edu_history,
-            train: oldMsg.train
+            train: oldMsg.train,
+            school: oldMsg.school,
+            honor: oldMsg.honor,
+            papers: oldMsg.papers
         }
 
         app.util.verifyPhone(msgObj.phone).then(res => {
