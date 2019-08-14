@@ -20,20 +20,20 @@
     <text class="{{tabsOn==1?'tabs-on':''}}" bindtap="tabsOn" data-id="1">附近机构</text>
   </view>
   <block wx:for="{{tabs}}" wx:key="{{index}}">
-    <!-- <navigator url="/pages/company/company?id={{item.id}}" hover-class="none">
+    <!-- <navigator >
         <image src="{{item.logo}}" class="tabs-image img-border" mode="aspectFill"></image>
       </navigator> -->
-    <view class="organ">
+    <navigator class="organ" url="/pages/company/company?id={{item.id}}" hover-class="none">
       <view class="organ-brief">
         <image src="{{item.logo}}" class="organ-img"></image>
         <view class="organ-item">
-          <view>{{item.username}}</view>
+          <view>{{item.name}}</view>
           <view class="organ-tit">{{item.age}}</view>
-          <view class="organ-msg">热招: {{item.school}}</view>
+          <view class="organ-msg">热招: {{item.hot}}</view>
           <view class="organ-msg">地址: {{item.addr}}</view>
         </view>
         <view class="nav" bindtap="nav" data-lat="{{item.lat}}" data-lng="{{item.lng}}"></view>
       </view>
-    </view>
+    </navigator>
   </block>
 </view>

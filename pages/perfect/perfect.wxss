@@ -35,10 +35,37 @@ page {
     margin-top: 20rpx;
 }
 
+
+/* 图片 */
+
+.imgs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.perfect-img {
+    width: 100rpx;
+    height: 100rpx;
+}
+
 .thumb {
     width: 100rpx;
     height: 100rpx;
     margin-right: 20rpx;
+}
+
+.img {
+    border: 1rpx solid #eee;
+}
+
+.img-box {
+    position: relative;
+}
+
+.icon {
+    position: absolute!important;
+    right: 5rpx!important;
+    top: -10rpx!important;
 }
 
 

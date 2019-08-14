@@ -13,7 +13,7 @@ Page({
     tabsOn(e) {
         var id = e.currentTarget.dataset.id,
             data = this.data.pageData,
-            tabs = [data.comper, data.near, data.goods]
+            tabs = [data.comper, data.near]
         this.setData({
             tabsOn: id,
             tabs: tabs[id]

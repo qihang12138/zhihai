@@ -19,6 +19,7 @@ Page({
         logoThumb: '',
         thumbs: [],
         ball: true,
+        flag: 0,
         msgObj: {
             name: '',
             yid: '',
@@ -265,6 +266,7 @@ Page({
                         name: 'image'
                     }).then(res => {
                         msgObj.image.push(res.data)
+                        _this.setData({ flag: 1 })
                     })
                 })
             }
@@ -319,17 +321,20 @@ Page({
     },
     delImg(e) {
         var thumbs = this.data.thumbs,
-            id = e.currentTarget.dataset.id
+            id = e.currentTarget.dataset.id,
+            image = this.data.msgObj.image,
+            flag = this.data.flag;
         thumbs.splice(id, 1);
+        if (flag) {
+            image.splice(id, 1);
+        }
         this.setData({ thumbs: thumbs });
-
     },
     submit() {
         let { msgObj } = this.data;
         let flag = true;
         msgObj.pid += ''
         msgObj.yid += ''
-        console.log(msgObj);
         msgObj.hot = 'q'
         for (const key in msgObj) {
             if (msgObj.hasOwnProperty(key)) {
@@ -351,7 +356,6 @@ Page({
         var oldMsg = this.data.msgObj;
         oldMsg.image = oldMsg.image.map(item => {
             return item.slice(item.indexOf('/uploads'));
-
         })
 
         oldMsg.logo = oldMsg.logo.slice(oldMsg.logo.indexOf('/uploads'));

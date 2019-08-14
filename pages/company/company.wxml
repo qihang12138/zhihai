@@ -19,7 +19,7 @@
   <view class="tel" wx:if="{{!level}}">{{phone}}</view>
 </view>
 <!-- 选项卡 -->
-<van-tabs animated custom-class="tabs">
+<van-tabs animated custom-class="tabs" line-width="0">
   <van-tab title="公司信息">
     <!-- 公司简介 -->
     <view class="aboutUs">
@@ -40,7 +40,7 @@
     <!-- 招聘 -->
     <block wx:for="{{pageData.job}}" wx:key="index">
       <navigator class="careers" url="/pages/position/position?id={{item.id}}">
-        <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="careers-img"></image>
+        <image src="{{pageData.logo}}" class="careers-img"></image>
         <view class="careers-cont">
           <view class="careers-job">{{item.name}}</view>
           <view class="careers-text">{{item.addr}}</view>

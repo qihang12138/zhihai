@@ -10,6 +10,7 @@
   <van-cell title="专业" is-link value="{{ major || '请选择专业' }}" bind:click="majorShow" data-id="major" />
   <van-cell title="学历" is-link value="{{ edu || '请选择学历' }}" bind:click="eduShow" data-id="edu" />
   <van-cell title="所在地区" is-link value="{{ msgObj.addr }}" bind:click="site" />
+  <van-field value="" clearable label="详细地址" placeholder="请输入详细地址" bind:input="changeMsgObj" data-id="home" />
   <van-field value="{{ msgObj.phone }}" type="number" maxlength="11" clearable label="手机号" placeholder="请输入手机号" bind:input="changeMsgObj" data-id="phone" />
   <van-cell title="职业标签" is-link value="{{ tags.length > 3 ? tags[0] + '等' + tags.length + '个标签' : tags }}" bind:click="tagShow" />
 </view>
@@ -22,9 +23,18 @@
   <textarea placeholder="请输入教育经历..." maxlength="300" class="perfect-msg underline" value="{{msgObj.edu_history}}" data-type="edu_history" bindinput="textInput" wx:if="{{ball}}"></textarea>
   <view class="perfect-row underline">培训经历</view>
   <textarea placeholder="请输入培训经历..." maxlength="300" class="perfect-msg underline" value="{{msgObj.train}}" data-type="train" bindinput="textInput" wx:if="{{ball}}"></textarea>
-  <view class="perfect-row underline">荣誉资质</view>
+  <!-- <view class="perfect-row underline">荣誉证书</view>
   <view class="perfect-msg underline imgs">
     <image class="thumb" src="{{honorThumb || '/image/add.png'}}" bindtap="singleUpload" mode="aspectFill" data-id="honor"></image>
+  </view> -->
+  <view class="perfect-row underline">荣誉证书</view>
+  <view class="perfect-msg underline imgs">
+    <image class="thumb perfect-img" src="/image/add.png" bindtap="addImgs" mode="aspectFill"></image>
+    <view wx:for="{{thumbs}}" wx:key="{{index}}" class="img-box">
+      <image class="thumb img" src="{{item}}" mode="aspectFill" data-current="{{item}}" bindtap="previewImage"></image>
+      <van-icon name="close" custom-class="icon" bind:click="delImg" data-id="{{index}}" color="#ccc" />
+    </view>
+    <!-- <image src="../../image/add.png" bindtap="addImgs" class="perfect-img" mode="aspectFill"/> -->
   </view>
   <view class="perfect-row underline">上传证件照</view>
   <view class="perfect-msg underline imgs">

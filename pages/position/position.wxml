@@ -1,7 +1,6 @@
 <view class="jobCard">
     <view class="job-tit">{{pageData.name}}</view>
     <view>
-        <text class="job-text job-font">文化路</text>
         <text class="job-text job-font">{{pageData.age}}</text>
         <text class="job-text job-font">{{pageData.edu}}</text>
     </view>

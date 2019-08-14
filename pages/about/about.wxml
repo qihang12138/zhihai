@@ -8,7 +8,7 @@
   <view class="nameCard-site">{{pageData.addr}}</view>
 </view>
 <!-- 选项卡 -->
-<van-tabs animated custom-class="tabs">
+<van-tabs animated custom-class="tabs" line-width="0">
   <!-- 个人简厉 -->
   <van-tab title="个人简历">
     <view class="resume tab">

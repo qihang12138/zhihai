@@ -33,5 +33,6 @@
 }
 
 .van-tab--active {
-    color: #F36886 !important;
+    color: #fff !important;
+    background-color: #F36886 !important;
 }

@@ -18,7 +18,6 @@ Page({
         edu: '',
         major: '',
         ball: true,
-        honorThumb: '',
         sexlist: [{
                 name: '男'
             },
@@ -29,8 +28,10 @@ Page({
                 name: '保密'
             }
         ],
+        flag: 0,
         tags: [],
         tag: '',
+        thumbs: [],
         msgObj: {
             username: '',
             sex: '',
@@ -38,6 +39,7 @@ Page({
             major: '',
             edu: '',
             addr: '',
+            home: '',
             phone: '',
             tag: [],
             marray: '',
@@ -45,7 +47,7 @@ Page({
             edu_history: '',
             train: '',
             school: '',
-            honor: '',
+            honor: [],
             papers: ''
         }
     },
@@ -113,7 +115,6 @@ Page({
             confirm: true
         });
         this.onClose();
-        console.log(this.data.msgObj)
     },
     bindDateChange(e) { // 选择出生日期
         let { value } = e.detail;
@@ -216,7 +217,6 @@ Page({
                     }
                 })
 
-
                 var { majorlist, edulist, major, edu } = this.data;
                 majorlist.forEach(item => {
                     if (item.id == data.major) {
@@ -228,6 +228,7 @@ Page({
                         edu = item.name
                     }
                 })
+                data.addr = data.addr.slice(0, data.addr.indexOf('区') + 1)
                 this.setData({
                     msgObj: data,
                     tags: tags,
@@ -239,13 +240,66 @@ Page({
             }
         })
     },
-    singleUpload(e) {
-        let _this = this,
-            { msgObj } = this.data,
+    addImgs() {
+        let { thumbs, msgObj } = this.data,
+            _this = this;
+
+        if (msgObj.honor.length >= 9) {
+            app.util.toast({
+                title: '最大只能上传9张',
+                icon: 'none'
+            })
+            return
+        }
+
+        wx.chooseImage({
+            count: 9,
+            sizeType: ['original', 'compressed'],
+            sourceType: ['album', 'camera'],
+            success(res) {
+                // tempFilePath可以作为img标签的src属性显示图片
+                const tempFilePaths = res.tempFilePaths
+                if (msgObj.honor.length + tempFilePaths.length >= 9) {
+                    app.util.toast({
+                        title: '最大只能上传9张',
+                        icon: 'none'
+                    })
+                    return
+                }
+                // TODO: 数组去重(好像不需要了)
+                thumbs = thumbs.concat(tempFilePaths)
+                _this.setData({ thumbs })
+                tempFilePaths.forEach(item => {
+                    // TODO: 封装多图上传函数
+                    app.upload({
+                        url: app.api.ApiAddImg,
+                        filePath: item,
+                        name: 'image'
+                    }).then(res => {
+                        msgObj.honor.push(res.data)
+                        _this.setData({ flag: 1 })
+                    })
+                })
+            }
+        })
+
+        this.setData({ msgObj: msgObj })
+
+    },
+    delImg(e) {
+        var thumbs = this.data.thumbs,
             id = e.currentTarget.dataset.id,
-            thumb = id + 'Thumb',
-            type = 'msgObj.' + id;
-        console.log(type);
+            honor = this.data.msgObj.honor,
+            flag = this.data.flag;
+        thumbs.splice(id, 1);
+        if (flag) {
+            honor.splice(id, 1);
+        }
+        this.setData({ thumbs: thumbs });
+    },
+    singleUpload() {
+        let _this = this,
+            { msgObj } = this.data
 
         wx.chooseImage({
             count: 1,
@@ -255,7 +309,7 @@ Page({
                 const tempFilePaths = res.tempFilePaths,
                     tempImg = tempFilePaths[0];
                 _this.setData({
-                    [thumb]: tempImg
+                    papersThumb: tempImg
                 })
                 app.upload({
                     url: app.api.ApiAddImg,
@@ -263,10 +317,8 @@ Page({
                     name: 'image'
                 }).then(res => {
                     _this.setData({
-                        [type]: res.data
+                        ['msgObj.papers']: res.data
                     })
-                    console.log(msgObj);
-
                 })
             }
         })
@@ -294,13 +346,17 @@ Page({
             return
         }
         var oldMsg = this.data.msgObj;
+        oldMsg.honor = oldMsg.honor.map(item => {
+            return item.slice(item.indexOf('/uploads'));
+        })
+        var oldMsg = this.data.msgObj;
         var newMsg = {
             username: oldMsg.username,
             sex: oldMsg.sex,
             birth: oldMsg.birth,
             major: oldMsg.major,
             edu: oldMsg.edu,
-            addr: oldMsg.addr,
+            addr: oldMsg.addr + oldMsg.home,
             phone: oldMsg.phone,
             tag: oldMsg.tag,
             marray: oldMsg.marray,
@@ -339,7 +395,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        this.getData();
     },
 
     /**
@@ -352,9 +408,7 @@ Page({
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function() {
-        this.getData();
-    },
+    onShow: function() {},
 
     /**
      * 生命周期函数--监听页面隐藏

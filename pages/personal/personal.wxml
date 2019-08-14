@@ -6,8 +6,8 @@
     <open-data type="userNickName"></open-data>
     <view class="status {{pageData.level?'status-on':''}}">{{ level[pageData.level] }}</view>
   </view>
-  <view wx:if="{{ pageData.level }}" class="approve">已认证</view>
-  <navigator wx:if="{{ !pageData.level }}" class="approve" hover-class="none" url="/pages/approve/approve">我要认证</navigator>
+  <view wx:if="{{ !pageData.level }}" class="approve">已认证</view>
+  <navigator wx:if="{{ pageData.level }}" class="approve" hover-class="none" url="/pages/approve/approve">我要认证</navigator>
 </view>
 <view class="msg">
   <view class="msg-row">
