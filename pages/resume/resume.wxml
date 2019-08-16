@@ -1,8 +1,3 @@
-<van-tabs animated bind:change="changeList">
-  <van-tab title="全部"></van-tab>
-  <van-tab title="最新"></van-tab>
-  <van-tab title="附近"></van-tab>
-</van-tabs>
 <block wx:for="{{list}}" wx:key="{{index}}">
   <view class="dancer">
     <view class="dancer-brief">

@@ -1,6 +1,6 @@
 <view class="news">
   <block wx:for="{{pageData}}" wx:key="index">
-    <navigator class="" url="/pages/newsDetail/newsDetail?id={{item.id}}">
+    <navigator hover-class="none" class="" url="/pages/newsDetail/newsDetail?id={{item.id}}">
       <view class="news-cont">
         <image src="{{item.image}}" class="news-image"></image>
         <view class="news-deta">

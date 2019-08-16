@@ -1,10 +1,16 @@
 page {
     background: #F4F5F6;
+    padding-bottom: 150rpx;
 }
 
 .redBar {
     background: #f36886;
     height: 83rpx;
+}
+
+.van-tab--active {
+    color: #fff !important;
+    background-color: #F36886 !important;
 }
 
 

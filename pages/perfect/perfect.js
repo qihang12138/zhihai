@@ -48,8 +48,19 @@ Page({
             train: '',
             school: '',
             honor: [],
-            papers: ''
-        }
+            papers: '',
+            teach_time: []
+        },
+        timeList: [''],
+        teach_time: ''
+    },
+    changeTime(e) {
+        this.setData({
+            teach_time: e.detail
+        });
+        var teach_time = this.data.teach_time.join(",")
+        console.log(teach_time);
+
     },
     textInput(e) {
         let {
@@ -90,7 +101,8 @@ Page({
             eduShow: false,
             siteShow: false,
             tagShow: false,
-            ball: true
+            ball: true,
+            timeShow: false
         });
     },
     site() {
@@ -167,6 +179,12 @@ Page({
         })
         this.ballShow();
     },
+    timeShow() {
+        this.setData({
+            timeShow: true
+        })
+        this.ballShow();
+    },
     onTag(e) { // 选择职业标签
         var { id, index } = e.currentTarget.dataset, { tagList, msgObj } = this.data;
 
@@ -182,6 +200,21 @@ Page({
             tags: resTag
         })
     },
+    onTime(e) { // 选择职业标签
+        var { id, index } = e.currentTarget.dataset, { timeList, msgObj } = this.data;
+
+        msgObj.teach_time.indexOf(id) > -1 ? msgObj.teach_time.splice(msgObj.teach_time.indexOf(id), 1) : msgObj.teach_time.push(id)
+        timeList[index].status = !timeList[index].status;
+
+        // 按顺序选中id
+        var resTime = timeList.filter(item => item.status).map(item => item.name)
+            // console.log('resTag: ', resTag);
+        this.setData({
+            ['msgObj.teach_time']: msgObj.teach_time,
+            timeList: timeList,
+            teach_time: resTime
+        })
+    },
     getData() {
         app.http({
             url: app.api.ApiDancerType
@@ -191,11 +224,15 @@ Page({
                 data.tag.forEach(item => {
                     item.status = false
                 })
+                data.teach_time.forEach(item => {
+                    item.status = false
+                })
                 this.setData({
                     pageData: data,
                     majorlist: data.major,
                     edulist: data.edu,
-                    tagList: data.tag
+                    tagList: data.tag,
+                    timeList: data.teach_time
                 })
             }
         })
@@ -365,7 +402,8 @@ Page({
             train: oldMsg.train,
             school: oldMsg.school,
             honor: oldMsg.honor,
-            papers: oldMsg.papers
+            papers: oldMsg.papers,
+            teach_time: oldMsg.teach_time
         }
 
         app.util.verifyPhone(msgObj.phone).then(res => {

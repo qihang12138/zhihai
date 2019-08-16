@@ -1,4 +1,4 @@
-// pages/position//position.js
+// pages/resume/resume.js
 const app = getApp()
 Page({
 
@@ -6,51 +6,31 @@ Page({
      * 页面的初始数据
      */
     data: {
-        pageData: '',
-        id: 0
+        list: '',
+        flag: 0
     },
     getData() {
         app.http({
-            url: app.api.ApiDetailJob,
-            data: {
-                id: this.data.id
-            }
+            url: app.api.ApiGetUserRecord
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
-                data.time = app.util.YMD(new Date(data.time * 1000));
                 this.setData({
-                    pageData: data
+                    organ: data.organ,
+                    job: data.job
                 })
             }
-        })
-    },
-    resume() {
-        app.http({
-            url: app.api.ApiApplyJob,
-            data: {
-                jid: this.data.id
-            }
-        }).then(res => {
-            if (res.error_code === 0) {
-                app.util.toast({
-                    title: '投递成功'
-                })
-            } else {
-                app.util.toast({
-                    title: '请勿重复投递',
-                    icon: 'none'
-                })
-            }
+            wx.stopPullDownRefresh()
         })
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        this.setData({ id: options.id })
-        this.getData();
+        this.setData({ flag: options.flag - 0 })
+        this.getData()
     },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -83,7 +63,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function() {
-
+        this.getData();
     },
 
     /**

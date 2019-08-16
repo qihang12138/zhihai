@@ -13,7 +13,7 @@
   </view>
 </view>
 <block wx:for="{{pageData}}" wx:key="{{index}}">
-  <navigator url="/pages/company/company?id={{item.id}}">
+  <navigator hover-class="none" url="/pages/company/company?id={{item.id}}">
     <view class="organ">
       <view class="organ-brief">
         <image src="{{item.logo}}" class="organ-img"></image>

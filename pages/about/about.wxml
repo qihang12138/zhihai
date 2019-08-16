@@ -6,13 +6,14 @@
   <view class="nameCard-job">{{pageData.major}}</view>
   <view class="nameCard-brief">{{pageData.tag}}</view>
   <view class="nameCard-site">{{pageData.addr}}</view>
+  <view class="nameCard-teach_time">授课时段: {{pageData.teach_time}}</view>
 </view>
 <!-- 选项卡 -->
 <van-tabs animated custom-class="tabs" line-width="0">
   <!-- 个人简厉 -->
-  <van-tab title="个人简历">
+  <van-tab title="我的资料">
     <view class="resume tab">
-      <view class="resume-tit">个人简历</view>
+      <view class="resume-tit">我的资料</view>
       <view class="resume-row underline">
         <view class="resume-msg">姓名</view>
         {{pageData.username}}
@@ -28,20 +29,6 @@
       <view class="resume-row">
         <view class="resume-msg">专业</view>
         {{pageData.major}}
-      </view>
-    </view>
-  </van-tab>
-  <!-- 工作经历 -->
-  <van-tab title="工作经历">
-    <view class="job tab">
-      <view class="job-tit underline">工作经历</view>
-      <!-- <view class="job-brief underline" wx:for="{{2}}">
-        <view class="job-site">点点星科技有限公司</view>
-        <view class="job-time">2018.04-2018.09</view>
-        <view class="job-duties">担任主课老师，擅长交谊 舞，民族舞，芭蕾舞</view>
-      </view> -->
-      <view class="rich-box">
-        <rich-text nodes="{{ pageData.work }}"></rich-text>
       </view>
     </view>
   </van-tab>
@@ -62,10 +49,24 @@
       </view>
     </view>
   </van-tab>
+  <!-- 工作经历 -->
+  <van-tab title="工作经历">
+    <view class="job tab">
+      <view class="job-tit underline">工作经历</view>
+      <!-- <view class="job-brief underline" wx:for="{{2}}">
+        <view class="job-site">点点星科技有限公司</view>
+        <view class="job-time">2018.04-2018.09</view>
+        <view class="job-duties">担任主课老师，擅长交谊 舞，民族舞，芭蕾舞</view>
+      </view> -->
+      <view class="rich-box">
+        <rich-text nodes="{{ pageData.work }}"></rich-text>
+      </view>
+    </view>
+  </van-tab>
   <!-- 培训经历 -->
-  <van-tab title="培训经历">
+  <van-tab title="所获荣誉">
     <view class="evaluate tab">
-      <view class="job-tit underline">培训经历</view>
+      <view class="job-tit underline">所获荣誉</view>
       <!-- <view class="evaluate-cont">5年舞蹈经验，擅长民族舞，芭蕾舞等，曾获全国大赛一等奖，桃李杯一等奖。</view> -->
       <view class="rich-box">
         <rich-text nodes="{{ pageData.train }}"></rich-text>

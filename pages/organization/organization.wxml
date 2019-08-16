@@ -1,10 +1,7 @@
 <view class="screen"></view>
 
 <block wx:for="{{4}}">
-  <navigator url="">
-    
-  
-    
+  <navigator hover-class="none" url="">
   <view class="organization">
     <view class="organization-brief">
       <image src="https://s2.ax1x.com/2019/07/15/ZoFuee.png" class="organization-img"></image>

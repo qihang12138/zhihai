@@ -16,12 +16,17 @@ Page({
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
-                if (data.level === 2) {
-                    this.setData({ identity: true })
-                }
                 this.setData({
                     pageData: data
                 })
+                if (data.level === 2) {
+                    this.setData({ identity: true });
+                    app.http({
+                        url: app.api.ApiUserIndex
+                    }).then(res => {
+
+                    })
+                }
             }
         })
     },
@@ -36,6 +41,17 @@ Page({
             identity: e.detail.id
         })
         this.onClose();
+    },
+    // 未认证
+    unverified() {
+        app.util.toast({
+            title: '请先认证机构',
+            icon: 'none'
+        }).then(() => {
+            wx.navigateTo({
+                url: '/pages/agency/agency'
+            })
+        })
     },
     /**
      * 生命周期函数--监听页面加载

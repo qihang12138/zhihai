@@ -39,7 +39,7 @@
   <van-tab title="公司招聘">
     <!-- 招聘 -->
     <block wx:for="{{pageData.job}}" wx:key="index">
-      <navigator class="careers" url="/pages/position/position?id={{item.id}}">
+      <navigator hover-class="none" class="careers" url="/pages/position/position?id={{item.id}}">
         <image src="{{pageData.logo}}" class="careers-img"></image>
         <view class="careers-cont">
           <view class="careers-job">{{item.name}}</view>

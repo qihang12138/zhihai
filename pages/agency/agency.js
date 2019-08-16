@@ -30,8 +30,8 @@ Page({
             content: '',
             image: [],
             logo: '',
-            latitude: '',
-            longitude: ''
+            lat: '',
+            lng: ''
         }
     },
     textInput(e) {
@@ -51,9 +51,12 @@ Page({
         console.log(value, type);
 
     },
-    singleUpload() {
-        let _this = this,
-            { msgObj } = this.data;
+    singleUpload(e) {
+        let id = e.currentTarget.dataset.id,
+            _this = this,
+            { msgObj } = this.data,
+            thumb = id + 'Thumb',
+            item = 'msgObj.' + id;
 
         wx.chooseImage({
             count: 1,
@@ -62,14 +65,18 @@ Page({
             success(res) {
                 const tempFilePaths = res.tempFilePaths,
                     tempImg = tempFilePaths[0];
-                _this.setData({ logoThumb: tempImg })
+                _this.setData({
+                    [thumb]: tempImg
+                })
+
                 app.upload({
                     url: app.api.ApiAddImg,
                     filePath: tempImg,
                     name: 'image'
                 }).then(res => {
-                    msgObj.logo = res.data
-                    _this.setData({ msgObj: msgObj })
+                    _this.setData({
+                        [item]: res.data
+                    })
                 })
             }
         })
@@ -115,8 +122,8 @@ Page({
         wx.chooseLocation({
             success(res) {
                 _this.setData({
-                    ['msgObj.longitude']: res.longitude + '',
-                    ['msgObj.latitude']: res.latitude + '',
+                    ['msgObj.lng']: res.longitude + '',
+                    ['msgObj.lat']: res.latitude + '',
                     ['msgObj.addr']: res.name
                 })
             }
@@ -369,9 +376,13 @@ Page({
             content: oldMsg.content,
             image: oldMsg.image,
             logo: oldMsg.logo,
-            lat: oldMsg.latitude,
-            lng: oldMsg.longitude
+            lat: oldMsg.lat,
+            lng: oldMsg.lng,
+            license: oldMsg.license
         }
+
+        console.log(newMsg, oldMsg);
+
         app.http({
                 url: app.api.ApiOrganSave,
                 data: newMsg,
@@ -385,10 +396,9 @@ Page({
                 }).then(() => {
                     if (error_code === 0) {
                         // 提交成功soming
-                        wx.navigateBack({
-                            delta: 1
+                        wx.switchTab({
+                            url: '/pages/personal/personal'
                         })
-
                     }
                 })
             })

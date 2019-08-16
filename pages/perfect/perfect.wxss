@@ -100,3 +100,10 @@ page {
     background: #fff;
     z-index: 99;
 }
+
+
+/* 授课时段 */
+
+.checkbox {
+    display: flex;
+}

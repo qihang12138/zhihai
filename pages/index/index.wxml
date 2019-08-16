@@ -2,7 +2,7 @@
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
   <block wx:for="{{pageData.banner}}" wx:key="index">
     <swiper-item>
-      <navigator url="{{item.url}}">
+      <navigator hover-class="none" url="{{item.url}}">
         <image src="{{item.image}}" class="slide-image" mode="aspectFill" />
       </navigator>
     </swiper-item>
@@ -25,7 +25,7 @@
   </view>
   <view class="tabs-images">
     <block wx:for="{{pageData.teacher}}" wx:key="index">
-      <navigator url="/pages/about/about?id={{item.id}}&teach=1">
+      <navigator hover-class="none" url="/pages/about/about?id={{item.id}}&teach=1">
         <image src="{{item.image}}" class="tabs-image" mode="aspectFill"></image>
       </navigator>
     </block>
@@ -38,7 +38,7 @@
     <navigator url="/pages/newsList/newsList" hover-class="none" class="tabs-more">更多</navigator>
   </view>
   <block wx:for="{{pageData.news}}" wx:key="index">
-    <navigator class="" url="/pages/newsDetail/newsDetail?id={{item.id}}">
+    <navigator hover-class="none" class="" url="/pages/newsDetail/newsDetail?id={{item.id}}">
       <view class="news-cont">
         <image src="{{item.image}}" class="news-image"></image>
         <view class="news-deta">

@@ -30,7 +30,10 @@ const api = {
     ApiAddImg: ApiUrl + 'index/add_img',
     ApiSearch: ApiUrl + 'organ/search',
     ApiLister: ApiUrl + 'organ/lister',
-    ApiFooterNavigation: ApiUrl + 'index/footer_navigation'
+    ApiFooterNavigation: ApiUrl + 'index/footer_navigation',
+    ApiGetUserApply: ApiUrl + 'user/get_user_apply',
+    ApiApplyJob: ApiUrl + 'user/apply_job',
+    ApiGetUserRecord: ApiUrl + 'user/get_user_record'
 
 }
 module.exports = api;

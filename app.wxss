@@ -31,8 +31,3 @@
 .van-tabs__line {
     background-color: #F36886 !important;
 }
-
-.van-tab--active {
-    color: #fff !important;
-    background-color: #F36886 !important;
-}

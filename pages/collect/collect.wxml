@@ -1,0 +1,29 @@
+<block wx:for="{{organ}}" wx:key="{{index}}" wx:if="{{flag}}">
+  <navigator class="organ" url="/pages/company/company?id={{item.id}}" hover-class="none">
+    <view class="organ-brief">
+      <image src="{{item.logo}}" class="organ-img"></image>
+      <view class="organ-item">
+        <view>{{item.name}}</view>
+        <view class="organ-tit">{{item.age}}</view>
+        <view class="organ-msg">热招: {{item.hot}}</view>
+        <view class="organ-msg">地址: {{item.addr}}</view>
+      </view>
+      <view class="nav" bindtap="nav" data-lat="{{item.lat}}" data-lng="{{item.lng}}"></view>
+    </view>
+  </navigator>
+</block>
+<!-- 收藏 -->
+<block wx:for="{{job}}" wx:key="{{index}}" wx:if="{{!flag}}">
+  <navigator class="organ" url="/pages/company/company?id={{item.id}}" hover-class="none">
+    <view class="organ-brief">
+      <image src="{{item.logo}}" class="organ-img"></image>
+      <view class="organ-item">
+        <view>{{item.name}}</view>
+        <view class="organ-tit">{{item.age}}</view>
+        <view class="organ-msg">热招: {{item.hot}}</view>
+        <view class="organ-msg">地址: {{item.addr}}</view>
+      </view>
+      <view class="nav" bindtap="nav" data-lat="{{item.lat}}" data-lng="{{item.lng}}"></view>
+    </view>
+  </navigator>
+</block>

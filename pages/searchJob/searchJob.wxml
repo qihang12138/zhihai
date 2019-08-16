@@ -16,7 +16,7 @@
             <view class="dancer-msg">年龄: {{item.age}}</view>
             <view class="dancer-msg">地址: {{item.addr}}</view>
           </view>
-          <navigator class="check" url="/pages/about/about?id={{item.id}}">立即查看</navigator>
+          <navigator hover-class="none" class="check" url="/pages/about/about?id={{item.id}}">立即查看</navigator>
         </view>
         <view>
           <block wx:for="{{item.tag}}" wx:key="index" wx:if="{{index<3}}">

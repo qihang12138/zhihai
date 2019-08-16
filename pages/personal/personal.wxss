@@ -66,6 +66,9 @@
 
 .msg-item {
     flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     padding-left: 40rpx;
     font-size: 14px;
 }

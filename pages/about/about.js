@@ -8,14 +8,28 @@ Page({
     data: {
         pageData: '',
         header: '',
-        id: 0
+        id: 0,
+        level: ''
     },
     callPhone(e) {
-        let { phone } = e.currentTarget.dataset;
+        let { phone } = e.currentTarget.dataset,
+            level = this.data.level;
+        if (level == 0) {
+            app.util.toast({
+                title: '请先认证信息',
+                icon: 'none'
+            }).then(() => {
+                wx.navigateTo({
+                    url: '/pages/approve/approve'
+                })
+            })
+        } else {
+            wx.makePhoneCall({
+                phoneNumber: phone
+            })
+        }
 
-        wx.makePhoneCall({
-            phoneNumber: phone
-        })
+
     },
     getData(id, url) {
         app.http({
@@ -30,8 +44,19 @@ Page({
                     pageData: data,
                     header: data.image
                 })
-                console.log(this.data.header);
-
+            }
+        })
+    },
+    getUser() {
+        app.http({
+            url: app.api.ApiUserIndex
+        }).then(res => {
+            let { error_code, data } = res;
+            if (error_code === 0) {
+                this.setData({
+                    level: data.level
+                })
+                console.log(this.data.level);
             }
         })
     },
@@ -40,7 +65,6 @@ Page({
      */
     onLoad: function(options) {
         this.setData({ id: options.id })
-
         var url = options.teach == 1 ? app.api.ApiTeacherDetail : app.api.ApiDetail
         this.getData(options.id, url);
     },
