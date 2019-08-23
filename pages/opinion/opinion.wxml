@@ -1,0 +1,9 @@
+<textarea maxlength="400" placeholder="请输入反馈内容" maxlength="300" class="perfect-msg underline" data-id="content" bindinput="changeMsgObj"></textarea>
+<view class="perfect-row">上传图片</view>
+<view class="perfect-msg underline imgs">
+    <image class="thumb" src="{{image || '/image/add.png'}}" bindtap="singleUpload" mode="aspectFill"></image>
+</view>
+<van-field clearable label="联系方式" placeholder="手机号" bindinput="changeMsgObj" data-id="phone" />
+<view class="my-btn-box">
+  <button class="my-btn" bindtap="submit">发送</button>
+</view>

@@ -1,3 +1,4 @@
+// pages/introduce/introduce.js
 const app = getApp()
 Page({
 
@@ -5,34 +6,19 @@ Page({
      * 页面的初始数据
      */
     data: {
-        autoplay: true,
-        interval: 5000,
-        duration: 1000,
-        circular: true,
         pageData: ''
-    },
-    toSearch() {
-        wx.navigateTo({
-            url: '/pages/searchJob/searchJob'
-        })
     },
     getData() {
         app.http({
-            url: app.api.ApiIndex
+            url: app.api.ApiCompanyBreif
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
-                data.news.forEach(item => {
-                    item.time = app.util.YMD(new Date(item.time * 1000));
-                })
-                data.study.forEach(item => {
-                    item.time = app.util.YMD(new Date(item.time * 1000));
-                })
                 this.setData({
-                    pageData: data
+                    pageData: data.alone.content,
+
                 })
             }
-            wx.stopPullDownRefresh()
         })
     },
     /**
@@ -74,7 +60,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function() {
-        this.getData();
+
     },
 
     /**

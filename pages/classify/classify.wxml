@@ -1,8 +1,13 @@
-<van-tabs active="{{ active }}" bind:click="changeTab">
-    <block wx:for="{{pageData.type}}" wx:key="index">
+<!-- <van-tabs active="{{ active }}" bind:click="changeTab">
+    <block wx:for="{{pageData.type}}" wx:key="index" wx:if="{{index<3}}">
         <van-tab title="{{item.name}}"></van-tab>
     </block>
-</van-tabs>
+</van-tabs> -->
+<view class="classify-type">
+    <block wx:for="{{pageData.type}}" wx:key="index">
+        <view class="classify-type-item {{index == active?'classify-on':''}}" bindtap="changeTab" data-id="{{index}}">{{item.name}}</view>
+    </block>
+</view>
 <view class="classify">
     <view class="classify-box">
         <view class="classify-item" data-type="all" bindtap="postData">全部</view>
@@ -14,7 +19,7 @@
         <view class="classify-item" bindtap="classify" data-id="0">学历</view>
     </view>
     <view class="classify-box">
-        <view class="classify-item" bindtap="classify" data-id="1">专业</view>
+        <view class="classify-item" bindtap="classify" data-id="1">授课年限</view>
     </view>
 </view>
 <block wx:for="{{dancerData}}" wx:key="index">
@@ -23,7 +28,7 @@
             <image src="{{item.image}}" class="dancer-img" mode="aspectFill"></image>
             <view>
                 <view>{{item.username}}</view>
-                <view class="dancer-msg">年龄: {{item.age}}</view>
+                <view class="dancer-msg">年龄: {{item.age}} <text class="dancer-year">授课年限: {{item.teach_year}}</text></view>
                 <view class="dancer-msg">地址: {{item.addr}}</view>
             </view>
             <navigator hover-class="none" class="check" url="/pages/about/about?id={{item.id}}">立即查看</navigator>

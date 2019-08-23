@@ -7,7 +7,8 @@ Page({
      */
     data: {
         pageData: '',
-        id: 0
+        id: 0,
+        star: 0
     },
     getData() {
         app.http({
@@ -43,6 +44,10 @@ Page({
                 })
             }
         })
+    },
+    changeStar() {
+        var star = this.data.star
+        this.setData({ star: !star })
     },
     /**
      * 生命周期函数--监听页面加载

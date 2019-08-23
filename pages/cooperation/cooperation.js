@@ -11,7 +11,7 @@ Page({
 
     getData() {
         app.http({
-            url: app.api.ApiCooper
+            url: app.api.ApiTogether
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {

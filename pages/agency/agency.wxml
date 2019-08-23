@@ -4,13 +4,15 @@
   <van-cell title="人员规模" is-link value="{{ scale || '请选择人员规模'}}" bind:click="scaleShow" />
   <van-cell title="公司地址" is-link value="{{ msgObj.addr || '请选择公司地址' }}" bind:click="selectSite" />
   <van-field value="{{ msgObj.phone }}" clearable label="公司电话" placeholder="必填" bind:input="changeMsgObj" data-id="phone" />
-  <van-field value="{{ msgObj.name }}" clearable label="热招" placeholder="请输入热招的舞种" bind:input="changeMsgObj" data-id="hot" />
+  <van-cell title="成立年限" is-link value="{{ year || '请选择成立年限' }}" bind:click="yearShow" />
+  <van-field value="{{ msgObj.area }}" clearable label="经营面积" placeholder="必填" bind:input="changeMsgObj" data-id="area" />
+  <van-field value="{{ msgObj.hot }}" clearable label="热招" placeholder="请输入热招的舞种" bind:input="changeMsgObj" data-id="hot" />
 </view>
 <view class="perfect">
   <view class="perfect-row underline">公司介绍</view>
-  <textarea placeholder="请输入公司优势、特色" maxlength="300" class="perfect-msg underline" value="{{msgObj.marray}}" data-type="marray" bindinput="textInput" wx:if="{{ball}}"></textarea>
+  <textarea maxlength="400" placeholder="请输入公司优势、特色" maxlength="300" class="perfect-msg underline" value="{{msgObj.marray}}" data-type="marray" bindinput="textInput" wx:if="{{ball}}"></textarea>
   <view class="perfect-row underline">公司简介</view>
-  <textarea placeholder="请输入公司信息" maxlength="300" class="perfect-msg underline" value="{{msgObj.content}}" data-type="content" bindinput="textInput" wx:if="{{ball}}"></textarea>
+  <textarea maxlength="400" placeholder="请输入公司信息" maxlength="300" class="perfect-msg underline" value="{{msgObj.content}}" data-type="content" bindinput="textInput" wx:if="{{ball}}"></textarea>
   <view class="perfect-row underline">公司环境</view>
   <view class="perfect-msg underline imgs">
     <image class="thumb perfect-img" src="/image/add.png" bindtap="addImgs" mode="aspectFill"></image>
@@ -36,6 +38,8 @@
 <!-- 弹出层 -->
 <!-- 办学年限 -->
 <van-action-sheet show="{{ ageShow }}" actions="{{ ageList }}" bind:close="onClose" bind:select="changeAge" />
+<!-- 办学年限 -->
+<van-action-sheet show="{{ yearShow }}" actions="{{ yearList }}" bind:close="onClose" bind:select="changeYear" />
 <!-- 人员规模 -->
 <van-action-sheet show="{{ scaleShow }}" actions="{{ scaleList }}" bind:close="onClose" bind:select="changeScale" />
 <!-- 公司地址 -->

@@ -117,9 +117,12 @@ page {
     padding: 30rpx 0;
 }
 
+.aboutUs-cont {
+    padding-bottom: 10px;
+}
+
 .aboutUs-img {
     width: 630rpx;
-    height: 322rpx;
     margin-bottom: 10rpx;
 }
 

@@ -19,7 +19,8 @@ Page({
             eid: 0,
             mid: 0,
             addr: '',
-        }
+        },
+        classifyOn: 0
     },
     getData(active) {
         app.http({
@@ -37,7 +38,7 @@ Page({
     },
     classify(e) {
         var type = e.currentTarget.dataset.id,
-            types = ['edu', 'major'],
+            types = ['edu', 'teach_year'],
             data = this.data.pageData,
             columns = []
         if (type) {
@@ -86,14 +87,14 @@ Page({
     changeTab(e) {
         let { msgObj } = this.data;
         msgObj = {
-            tid: e.detail.index,
+            tid: e.currentTarget.dataset.id,
             eid: 0,
             mid: 0,
             addr: ''
         }
         this.setData({
             msgObj,
-            active: e.detail.index
+            active: e.currentTarget.dataset.id
         })
         this.postData()
     },

@@ -1,9 +1,7 @@
 {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "",
+    "navigationBarTitleText": "平台介绍",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#eeeeee",
-    "enablePullDownRefresh": true,
     "usingComponents": {}
 }

@@ -1,0 +1,3 @@
+<view class="p30">
+    <rich-text nodes="{{ pageData }}"></rich-text>
+</view>

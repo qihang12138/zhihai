@@ -9,6 +9,7 @@
         <text class="job-font">{{pageData.time}}</text>
     </view>
     <view class="job-site job-font">{{pageData.addr}}</view>
+    <view class="{{ !star ? 'job-star' : 'job-star-on' }}" bindtap="changeStar"></view>
 </view>
 <!-- 职位详情 -->
 <view class="details">
@@ -39,5 +40,5 @@
 </block>
 <!-- 投递简历 -->
 <view class="my-btn-box">
-  <button class="my-btn" bindtap="resume">投递简历</button>
+    <button class="my-btn" bindtap="resume">投递简历</button>
 </view>

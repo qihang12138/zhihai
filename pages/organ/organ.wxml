@@ -2,13 +2,13 @@
 <navigator url="{{pageData.banner.url}}" hover-class="none">
   <image src="{{pageData.banner.image}}" class="slide-image" />
 </navigator>
-<!-- 合作机构 -->
+<!-- 最新招聘 -->
 <view class="partners">
   <view class="partners-tit">
     <image src="{{pageData.company_img.icon}}" class="partners-titimg"></image>
   </view>
   <view class="partners-cont">
-    <navigator url="/pages/company/company?id={{item.id}}" hover-class="none" wx:for="{{pageData.cooper}}" wx:key="{{index}}">
+    <navigator url="/pages/company/company?id={{item.id}}" hover-class="none" wx:for="{{pageData.cooper}}" wx:key="{{index}}" wx:if="{{index<8}}">
       <image src="{{item.logo}}" class="partners-img img-border" mode="aspectFill" />
     </navigator>
   </view>
@@ -18,6 +18,7 @@
   <view class="tabs-list">
     <text class="{{tabsOn==0?'tabs-on':''}}" bindtap="tabsOn" data-id="0">综合排序</text>
     <text class="{{tabsOn==1?'tabs-on':''}}" bindtap="tabsOn" data-id="1">附近机构</text>
+    <text class="{{tabsOn==2?'tabs-on':''}}" bindtap="tabsOn" data-id="2">舞种分类</text>
   </view>
   <block wx:for="{{tabs}}" wx:key="{{index}}">
     <!-- <navigator >
@@ -33,6 +34,26 @@
           <view class="organ-msg">地址: {{item.addr}}</view>
         </view>
         <view class="nav" bindtap="nav" data-lat="{{item.lat}}" data-lng="{{item.lng}}"></view>
+      </view>
+    </navigator>
+  </block>
+</view>
+<!-- 机构大学 -->
+<view class="news">
+  <view class="tabs-tit">
+    <!-- <image src="{{pageData.news_titile_img.icon}}" class="tabs-img" /> -->
+    <view >{{pageData.university_titile_img.name}}</view>
+    <navigator url="/pages/newsList/newsList?id=2" hover-class="none" class="tabs-more">更多</navigator>
+  </view>
+  <block wx:for="{{pageData.university}}" wx:key="index">
+    <navigator hover-class="none" class="" url="/pages/newsDetail/newsDetail?id={{item.id}}">
+      <view class="news-cont">
+        <image src="{{item.image}}" class="news-image"></image>
+        <view class="news-deta">
+          <view class="news-head">{{item.title}}</view>
+          <view class="news-text">{{item.marray}}</view>
+          <text class="news-time">{{item.time}}</text>
+        </view>
       </view>
     </navigator>
   </block>

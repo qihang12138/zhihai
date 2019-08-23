@@ -26,6 +26,10 @@
         <view class="resume-msg">出生年月</view>
         {{pageData.birth}}
       </view>
+      <view class="resume-row underline">
+        <view class="resume-msg">授课年限</view>
+        {{pageData.teach_year}}
+      </view>
       <view class="resume-row">
         <view class="resume-msg">专业</view>
         {{pageData.major}}
@@ -63,13 +67,16 @@
       </view>
     </view>
   </van-tab>
-  <!-- 培训经历 -->
+  <!-- 所获荣誉 -->
   <van-tab title="所获荣誉">
     <view class="evaluate tab">
       <view class="job-tit underline">所获荣誉</view>
       <!-- <view class="evaluate-cont">5年舞蹈经验，擅长民族舞，芭蕾舞等，曾获全国大赛一等奖，桃李杯一等奖。</view> -->
       <view class="rich-box">
-        <rich-text nodes="{{ pageData.train }}"></rich-text>
+        <block wx:for="{{3}}" wx:key="index">
+          <image class="honor-img" src="{{item.src}}" />
+        </block>
+        <!-- <rich-text nodes="{{ pageData.train }}"></rich-text> -->
       </view>
     </view>
   </van-tab>

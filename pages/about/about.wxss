@@ -21,7 +21,7 @@ page {
 
 .nameCard {
     margin: -120rpx 20rpx 20rpx;
-    padding: 40rpx 45rpx;
+    padding: 40rpx 45rpx 20rpx;
     border-radius: 10rpx;
     text-align: center;
     color: #222;
@@ -55,12 +55,15 @@ page {
     margin: 35rpx;
     padding-left: 30rpx;
     font-size: 14px;
+    color: #999;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAXCAYAAADtNKTnAAADAUlEQVQ4T4WUX0hTcRTHu/tjssrV+kMOoiLKQKGXMPO5AumpHqSEHobIcFPJIc0HCcFKxGAi2XTOBQkVYthzfyjChCLspSB8McoaUk3GStfmdvuctTsut6kXDud3zvmd7/me8/v9rrJJ96mqqgwPDztxVSmKUod9HG3FTqPnstnsc4vFMm232z/X19dntFRFW0xMTJhjsVg1djsJJ9F2xIbIHhX5A2iC2KzJZAokEolpn8+3Ivk5kDzAaZY32FSFluprfcJgLpPJDCSTyXEBUqSFUChUjQ4CcIwNpnUAtJAw+0h77YuLi0+UkZGRcoxeKDYYGQC8AvBv/KXIVsP8stgvyW1UhoaGzjCsEI79hTKqmiX5CyBT+N4hh7HPo48gFh3Yd0A65TR62NCaH6TEyVUXzGZzKxteYC9TRJhUra6uhtFHdS2n2PtY2pFqdcjmfIUUyZMMrq2lpeWnVrW/v39LWVmZH7td11oWkLcC8grnCcScT1hGD1L1utfr/aWBdHd3W5xO50UKBGC+M+//B0I7D3GcJaAxkcAzxNXc3PxVAwkEAtttNttVbDci90c+Oe43AuIHQGju0BIAkDZ60JPpdDphtVpLWZ9iTr349yHaJRXWD5TR0dEaKI5jHNIFhc0Sxz6Lb5Z4BbqGYnvQ+nv0DV+bEg6HHQyxk6BXRzNHCiA5arnacjrazDTC0sojCl0WWkowGKzEuM+6UsdG27yWXiDQGI1Gn+Z644RsVPRQuQtTHt5GX5K9Edrs8ng8S4VXDJsDAI0jtYa+jYDybj6UlJQ0uFyu99K18VdwDpBBAuXrUImz5xpMbrvdbjmdwlHlcmhrFxRvFnuMeVA5tRnkEnfok1aowCTvkCHXUukucrDIkKMAtDkcjqmifzYNta+vbxu/vw5AfPj0zz8Ny3uw7KCNH/p2jUxysbGxsQrezh2WNTo284BIGzMyzA1BmI0VJhfkZ4XeS0KMNm7F4/GA3+9PGIdelIlsikQiu1Op1BVAhM1r2hhoamqSC/bf9xfSHmTa6if7MAAAAABJRU5ErkJggg==') no-repeat 0 center/17rpx 23rpx
 }
 
 .nameCard-teach_time {
-    font-size: 12px;
+    padding-top: 20rpx;
+    font-size: 14px;
     color: #666;
+    border-top: 1rpx solid #f0f0f0;
 }
 
 
@@ -163,7 +166,9 @@ page {
 }
 
 
-/* 培训经历 */
+/* 荣誉证书 */
+
+.honor-img {}
 
 .evaluate {
     padding: 30rpx 0;

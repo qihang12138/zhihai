@@ -5,17 +5,19 @@
     <view class="visitingCard-name">{{pageData.name}}</view>
     <view class="view">{{pageData.browse}}</view>
   </view>
-  <view class="brief">
-    <view class="brief-text">{{pageData.addr}}</view>
-    <view class="darkSpot brief-text"></view>
-    <view class="brief-text">{{pageData.people}}</view>
-  </view>
+  <!-- <view class="brief"> -->
+  <view class="brief-text">{{pageData.addr}}</view>
+  <!-- <view class="darkSpot brief-text"></view> -->
+  <view class="brief-text">{{pageData.people}}</view>
+  <!-- </view> -->
   <view class="visitingCard-cont">{{pageData.marray}}</view>
   <view class="address">
     <view class="address-text">{{pageData.addr}}</view>
     <view class="nav" bindtap="nav" data-lat="{{item.lat}}" data-lng="{{item.lng}}"></view>
   </view>
-  <view class="tel" data-phone="{{pageData.phone}}" bindtap="callPhone" wx:if="{{level}}">{{pageData.phone}}</view>
+  <view class="tel" data-phone="{{pageData.phone}}" bindtap="callPhone" wx:if="{{level}}">
+    {{pageData.phone}}
+  </view>
   <view class="tel" wx:if="{{!level}}">{{phone}}</view>
 </view>
 <!-- 选项卡 -->
@@ -24,15 +26,19 @@
     <!-- 公司简介 -->
     <view class="aboutUs">
       <view class="aboutUs-tit">公司简介</view>
+      <view class="aboutUs-cont">
+        <view >公司年限: {{pageData.found_year}}</view>
+        <view >经营面积: {{pageData.area}}</view>
+      </view>
       <rich-text nodes="{{ pageData.content }}"></rich-text>
     </view>
   </van-tab>
   <van-tab title="公司环境">
     <!-- 公司环境 -->
     <view class="aboutUs">
-      <view class="aboutUs-tit">服务环境</view>
-      <block wx:for="{{pageData.image}}" wx:key="index">
-        <image src="{{item}}" class="aboutUs-img"></image>
+      <view class="aboutUs-tit">公司环境</view>
+      <block wx:for="{{pageData.place}}" wx:key="index">
+        <image src="{{item.image}}" class="aboutUs-img"></image>
       </block>
     </view>
   </van-tab>

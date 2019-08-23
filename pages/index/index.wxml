@@ -35,9 +35,29 @@
 <view class="news">
   <view class="tabs-tit">
     <image src="{{pageData.news_titile_img.icon}}" class="tabs-img" />
-    <navigator url="/pages/newsList/newsList" hover-class="none" class="tabs-more">更多</navigator>
+    <navigator url="/pages/newsList/newsList?id=0" hover-class="none" class="tabs-more">更多</navigator>
   </view>
   <block wx:for="{{pageData.news}}" wx:key="index">
+    <navigator hover-class="none" class="" url="/pages/newsDetail/newsDetail?id={{item.id}}">
+      <view class="news-cont">
+        <image src="{{item.image}}" class="news-image"></image>
+        <view class="news-deta">
+          <view class="news-head">{{item.title}}</view>
+          <view class="news-text">{{item.marray}}</view>
+          <text class="news-time">{{item.time}}</text>
+        </view>
+      </view>
+    </navigator>
+  </block>
+</view>
+
+<!-- 专业学习 -->
+<view class="news">
+  <view class="tabs-tit">
+    <image src="{{pageData.study_titile_img.icon}}" class="tabs-img" />
+    <navigator url="/pages/newsList/newsList?id=1" hover-class="none" class="tabs-more">更多</navigator>
+  </view>
+  <block wx:for="{{pageData.study}}" wx:key="index">
     <navigator hover-class="none" class="" url="/pages/newsDetail/newsDetail?id={{item.id}}">
       <view class="news-cont">
         <image src="{{item.image}}" class="news-image"></image>

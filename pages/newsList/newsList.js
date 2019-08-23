@@ -9,9 +9,12 @@ Page({
         pageData: {}
     },
 
-    getData() {
+    getData(id) {
         app.http({
-            url: app.api.ApiNews
+            url: app.api.ApiNews,
+            data: {
+                type: id
+            }
         }).then(res => {
             let { error_code, data } = res;
             if (error_code === 0) {
@@ -29,7 +32,12 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        this.getData();
+        var id = options.id - 0,
+            title = ['新闻资讯', '专业学习', '机构大学']
+        wx.setNavigationBarTitle({
+            title: title[id]
+        })
+        this.getData(id);
     },
     /**
      * 生命周期函数--监听页面初次渲染完成

@@ -33,7 +33,11 @@ const api = {
     ApiFooterNavigation: ApiUrl + 'index/footer_navigation',
     ApiGetUserApply: ApiUrl + 'user/get_user_apply',
     ApiApplyJob: ApiUrl + 'user/apply_job',
-    ApiGetUserRecord: ApiUrl + 'user/get_user_record'
+    ApiGetUserRecord: ApiUrl + 'user/get_user_record',
+    ApiOpinion: ApiUrl + 'user/opinion',
+    ApiCompanyBreif: ApiUrl + 'index/company_breif',
+    ApiCollection: ApiUrl + '/user/collection',
+    ApiTogether: ApiUrl + 'user/together'
 
 }
 module.exports = api;

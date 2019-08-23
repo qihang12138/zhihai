@@ -35,5 +35,7 @@
 <!-- 未认证 下 -->
 
 <van-cell is-link icon="https://xwz.dd371.com/static/admin/img/04.png" title="招聘简历" link-type="navigateTo" url="/pages/resume/resume" wx:if="{{identity}}" />
+<van-cell is-link icon="https://xwz.dd371.com/static/admin/img/04.png" title="投诉反馈" link-type="navigateTo" url="/pages/opinion/opinion" />
+<van-cell is-link icon="https://xwz.dd371.com/static/admin/img/04.png" title="关于我们" link-type="navigateTo" url="/pages/introduce/introduce" />
 <!-- 弹出层 -->
 <van-action-sheet show="{{ show }}" actions="{{ level }}" bind:close="onClose" bind:select="onChange" />

@@ -1,0 +1,30 @@
+page {
+    background: #F4F5F6;
+}
+
+.perfect-row {
+    padding: 35rpx 0 35rpx 20rpx;
+    font-weight: 500;
+    background: #fff;
+}
+
+.perfect-msg {
+    margin-bottom: 20rpx;
+    padding: 30rpx 0 30rpx 20rpx;
+    height: 230rpx;
+    width: 730rpx;
+    font-size: 15px;
+    background: #fff;
+    border-top: 1rpx solid #f0f0f0
+}
+
+.imgs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.thumb {
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 20rpx;
+}

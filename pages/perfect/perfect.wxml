@@ -6,6 +6,7 @@
       <view class="picker">{{msgObj.birth || '请选择出生年月'}}</view>
     </picker>
   </van-cell>
+  <van-cell title="授课年限" is-link value="{{ teach_year || '请选择授课年限' }}" bind:click="yearShow" data-id="major" />
   <van-field value="{{ msgObj.school }}" clearable label="毕业院校" placeholder="请输入毕业院校" bind:input="changeMsgObj" data-id="school" />
   <van-cell title="专业" is-link value="{{ major || '请选择专业' }}" bind:click="majorShow" data-id="major" />
   <van-cell title="学历" is-link value="{{ edu || '请选择学历' }}" bind:click="eduShow" data-id="edu" />
@@ -18,12 +19,12 @@
 <view class="perfect">
   <view class="perfect-row underline">个人介绍</view>
   <textarea placeholder="请输入个人介绍..." maxlength="300" class="perfect-msg underline" value="{{msgObj.marray}}" data-type="marray" bindinput="textInput" wx:if="{{ball}}"></textarea>
-  <view class="perfect-row underline">工作经历</view>
-  <textarea placeholder="请输入工作..." maxlength="300" class="perfect-msg underline" value="{{msgObj.work}}" data-type="work" bindinput="textInput" wx:if="{{ball}}"></textarea>
   <view class="perfect-row underline">教育经历</view>
   <textarea placeholder="请输入教育经历..." maxlength="300" class="perfect-msg underline" value="{{msgObj.edu_history}}" data-type="edu_history" bindinput="textInput" wx:if="{{ball}}"></textarea>
-  <view class="perfect-row underline">培训经历</view>
-  <textarea placeholder="请输入培训经历..." maxlength="300" class="perfect-msg underline" value="{{msgObj.train}}" data-type="train" bindinput="textInput" wx:if="{{ball}}"></textarea>
+  <view class="perfect-row underline">工作经历</view>
+  <textarea placeholder="请输入工作..." maxlength="300" class="perfect-msg underline" value="{{msgObj.work}}" data-type="work" bindinput="textInput" wx:if="{{ball}}"></textarea>
+  <!-- <view class="perfect-row underline">所获荣誉</view>
+  <textarea placeholder="请输入所获荣誉..." maxlength="300" class="perfect-msg underline" value="{{msgObj.train}}" data-type="train" bindinput="textInput" wx:if="{{ball}}"></textarea> -->
   <!-- <view class="perfect-row underline">荣誉证书</view>
   <view class="perfect-msg underline imgs">
     <image class="thumb" src="{{honorThumb || '/image/add.png'}}" bindtap="singleUpload" mode="aspectFill" data-id="honor"></image>
@@ -79,3 +80,6 @@
     <button class="my-btn" bindtap="onClose">确认</button>
   </view>
 </van-popup>
+
+<!-- 授课年限 -->
+<van-action-sheet show="{{ yearShow }}" actions="{{ yearList }}" bind:close="onClose" bind:select="changeYear" />

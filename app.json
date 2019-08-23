@@ -1,13 +1,15 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/cooperation/cooperation",
+        "pages/opinion/opinion",
+        "pages/introduce/introduce",
         "pages/collect/collect",
         "pages/resume/resume",
         "pages/approve/approve",
         "pages/logIn/logIn",
         "pages/issue/issue",
         "pages/recruit/recruit",
-        "pages/cooperation/cooperation",
         "pages/position/position",
         "pages/agency/agency",
         "pages/organ/organ",

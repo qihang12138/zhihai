@@ -1,7 +1,3 @@
-<view class="imgs">
-    <block wx:for="{{pageData}}" wx:key="index">
-        <navigator hover-class="none" url="/pages/company/company?id={{item.id}}" class="img-box">
-            <image src="{{item.logo}}" class="img" mode="aspectFill" />
-        </navigator>
-    </block>
-</view>
+<view class="bar"></view>
+<view class="cell">电话: {{pageData.phone}}</view>
+<view class="cell">地址: {{pageData.addr}}</view>

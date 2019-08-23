@@ -1,19 +1,10 @@
-.imgs {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20rpx 12rpx;
-    border-top: 20rpx solid #f4f5f6;
+.bar {
+    height: 20rpx;
+    background: #eee;
 }
 
-.img-box {
-    flex: 1;
-    max-width: 245rpx;
-    margin-bottom: 20rpx;
-    text-align: center;
-}
-
-.img {
-    height: 128rpx;
-    width: 238rpx;
-    border: 1rpx solid #ccc;
+.cell {
+    padding: 20rpx;
+    color: #666;
+    border-top: 1rpx solid #eee;
 }

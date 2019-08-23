@@ -24,27 +24,50 @@ page {
 }
 
 .partners-img {
-    width: 170rpx;
-    height: 170rpx;
-    border: 1rpx solid #f2f2f2;
-    margin: 5rpx;
+    width: 160rpx;
+    height: 160rpx;
+    /* border: 1rpx solid #f2f2f2; */
+    margin: 9rpx;
 }
 
 .partners-cont {
     display: flex;
     flex-wrap: wrap;
-    padding: 20rpx 13rpx;
+    padding: 20rpx 19rpx;
     font-size: 0;
 }
 
 
 /* 选项卡 */
 
+.tabs {
+    margin-bottom: 40rpx;
+}
+
 .tabs-list {
+    display: flex;
+    justify-content: space-between;
     margin-top: 20rpx;
     padding: 30rpx 20rpx;
     border-bottom: 1rpx solid #f0f0f0;
     background: #fff;
+}
+
+.tabs-tit {
+    display: flex;
+    padding: 30rpx;
+}
+
+.tabs-img {
+    height: 31rpx;
+    width: 126rpx;
+}
+
+.tabs-more {
+    flex: 1;
+    text-align: right;
+    font-size: 12px;
+    color: #999
 }
 
 .tabs-list text {
@@ -129,4 +152,41 @@ page {
     font-size: 12px;
     color: #999;
     background: rgb(244, 245, 246);
+}
+
+
+/* 机构大学 */
+
+.news {
+    background: #fff;
+}
+
+.news-cont {
+    display: flex;
+    padding: 20rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.news-head {
+    font-size: 13px;
+}
+
+.news-deta {
+    flex: 1;
+    position: relative;
+    font-size: 12px;
+}
+
+.news-image {
+    height: 140rpx;
+    width: 150rpx;
+    margin-right: 27rpx;
+}
+
+.news-time {
+    position: absolute;
+    right: 15rpx;
+    top: 90rpx;
+    color: #97979F;
+    font-size: 12px;
 }

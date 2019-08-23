@@ -11,6 +11,7 @@ Page({
         scaleShow: false,
         ageShow: false,
         siteShow: false,
+        yearShow: false,
         pageData: '',
         ageList: [],
         scaleList: [],
@@ -85,6 +86,10 @@ Page({
         this.setData({ ageShow: true })
         this.ballShow();
     },
+    yearShow() {
+        this.setData({ yearShow: true })
+        this.ballShow();
+    },
     changeAge(e) {
         var age = this.data.ageList,
             id = e.detail.id
@@ -95,6 +100,13 @@ Page({
                     age: item.name
                 })
             }
+        })
+        this.onClose();
+    },
+    changeYear(e) {
+        this.setData({
+            teach_year: e.detail.name,
+            ['msgObj.found_year']: e.detail.id
         })
         this.onClose();
     },
@@ -149,7 +161,8 @@ Page({
             scaleShow: false,
             ageShow: false,
             siteShow: false,
-            ball: true
+            ball: true,
+            yearShow: false
         });
     },
     changeMsgObj(e) {
@@ -295,7 +308,8 @@ Page({
             if (error_code === 0) {
                 this.setData({
                     ageList: data.age,
-                    scaleList: data.people
+                    scaleList: data.people,
+                    yearList: data.found_year
                 })
 
             }
@@ -378,7 +392,9 @@ Page({
             logo: oldMsg.logo,
             lat: oldMsg.lat,
             lng: oldMsg.lng,
-            license: oldMsg.license
+            license: oldMsg.license,
+            found_year: oldMsg.found_year,
+            area: oldMsg.area
         }
 
         console.log(newMsg, oldMsg);

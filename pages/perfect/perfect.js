@@ -13,6 +13,7 @@ Page({
         tagShow: false,
         siteShow: false,
         sexShow: false,
+        yearShow: false,
         pageData: '',
         columns: [],
         edu: '',
@@ -45,9 +46,8 @@ Page({
             marray: '',
             work: '',
             edu_history: '',
-            train: '',
             school: '',
-            honor: [],
+            honor_img: [],
             papers: '',
             teach_time: []
         },
@@ -102,7 +102,8 @@ Page({
             siteShow: false,
             tagShow: false,
             ball: true,
-            timeShow: false
+            timeShow: false,
+            yearShow: false
         });
     },
     site() {
@@ -154,6 +155,13 @@ Page({
         })
         this.onClose();
     },
+    changeYear(e) {
+        this.setData({
+            teach_year: e.detail.name,
+            ['msgObj.teach_year']: e.detail.id
+        })
+        this.onClose();
+    },
     changeEdu(e) {
         this.setData({
             edu: e.detail.name,
@@ -182,6 +190,12 @@ Page({
     timeShow() {
         this.setData({
             timeShow: true
+        })
+        this.ballShow();
+    },
+    yearShow() {
+        this.setData({
+            yearShow: true
         })
         this.ballShow();
     },
@@ -232,7 +246,8 @@ Page({
                     majorlist: data.major,
                     edulist: data.edu,
                     tagList: data.tag,
-                    timeList: data.teach_time
+                    timeList: data.teach_time,
+                    yearList: data.teach_year
                 })
             }
         })
@@ -244,7 +259,9 @@ Page({
             if (error_code === 1) {
                 let tagList = this.data.tagList,
                     tags = this.data.tags,
-                    tag = data.tag;
+                    tag = data.tag,
+                    honor_img = data.honor_img,
+                    papers = data.papers
                 tag = tag.map(item => parseInt(item)).sort();
 
                 tagList.forEach((item, index) => {
@@ -271,7 +288,9 @@ Page({
                     tags: tags,
                     tagList: tagList,
                     major: major,
-                    edu: edu
+                    edu: edu,
+                    thumbs: honor_img,
+                    papersThumb: papers
                 })
 
             }
@@ -281,7 +300,7 @@ Page({
         let { thumbs, msgObj } = this.data,
             _this = this;
 
-        if (msgObj.honor.length >= 9) {
+        if (msgObj.honor_img.length >= 9) {
             app.util.toast({
                 title: '最大只能上传9张',
                 icon: 'none'
@@ -296,7 +315,7 @@ Page({
             success(res) {
                 // tempFilePath可以作为img标签的src属性显示图片
                 const tempFilePaths = res.tempFilePaths
-                if (msgObj.honor.length + tempFilePaths.length >= 9) {
+                if (msgObj.honor_img.length + tempFilePaths.length >= 9) {
                     app.util.toast({
                         title: '最大只能上传9张',
                         icon: 'none'
@@ -313,7 +332,7 @@ Page({
                         filePath: item,
                         name: 'image'
                     }).then(res => {
-                        msgObj.honor.push(res.data)
+                        msgObj.honor_img.push(res.data)
                         _this.setData({ flag: 1 })
                     })
                 })
@@ -326,11 +345,11 @@ Page({
     delImg(e) {
         var thumbs = this.data.thumbs,
             id = e.currentTarget.dataset.id,
-            honor = this.data.msgObj.honor,
+            honor_img = this.data.msgObj.honor_img,
             flag = this.data.flag;
         thumbs.splice(id, 1);
         if (flag) {
-            honor.splice(id, 1);
+            honor_img.splice(id, 1);
         }
         this.setData({ thumbs: thumbs });
     },
@@ -374,6 +393,7 @@ Page({
                 }
             }
         }
+        console.log(msgObj);
 
         if (!flag) {
             app.util.toast({
@@ -383,7 +403,7 @@ Page({
             return
         }
         var oldMsg = this.data.msgObj;
-        oldMsg.honor = oldMsg.honor.map(item => {
+        oldMsg.honor_img = oldMsg.honor_img.map(item => {
             return item.slice(item.indexOf('/uploads'));
         })
         var oldMsg = this.data.msgObj;
@@ -399,11 +419,11 @@ Page({
             marray: oldMsg.marray,
             work: oldMsg.work,
             edu_history: oldMsg.edu_history,
-            train: oldMsg.train,
             school: oldMsg.school,
-            honor: oldMsg.honor,
+            honor: oldMsg.honor_img,
             papers: oldMsg.papers,
-            teach_time: oldMsg.teach_time
+            teach_time: oldMsg.teach_time,
+            teach_year: oldMsg.teach_year
         }
 
         app.util.verifyPhone(msgObj.phone).then(res => {

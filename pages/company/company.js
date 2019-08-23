@@ -30,6 +30,8 @@ Page({
                     phone: phone
                 })
             }
+            console.log(this.data.pageData.image);
+
         })
     },
     getUser() {
@@ -39,7 +41,8 @@ Page({
             let { error_code, data } = res;
             if (error_code === 0) {
                 this.setData({
-                    level: data.level
+                    level: data.level,
+                    uid: data.uid
                 })
                 console.log(this.data.level);
             }
