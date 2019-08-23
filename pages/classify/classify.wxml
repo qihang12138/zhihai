@@ -16,7 +16,7 @@
         <view class="classify-item" bindtap="siteShow">地区</view>
     </view>
     <view class="classify-box">
-        <view class="classify-item" bindtap="classify" data-id="0">学历</view>
+        <view class="classify-item" bindtap="nearby">附近舞者</view>
     </view>
     <view class="classify-box">
         <view class="classify-item" bindtap="classify" data-id="1">授课年限</view>

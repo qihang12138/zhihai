@@ -19,6 +19,7 @@ Page({
             eid: 0,
             mid: 0,
             addr: '',
+            near: ''
         },
         classifyOn: 0
     },
@@ -35,6 +36,11 @@ Page({
                 this.postData()
             }
         })
+    },
+    nearby() {
+        this.setData({
+            ['msgObj.near']: '1' })
+        this.postData();
     },
     classify(e) {
         var type = e.currentTarget.dataset.id,
