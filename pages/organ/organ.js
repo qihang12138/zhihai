@@ -8,7 +8,8 @@ Page({
     data: {
         pageData: '',
         tabsOn: 0,
-        tabs: ''
+        tabs: '',
+        typeShow: false
     },
     tabsOn(e) {
         var id = e.currentTarget.dataset.id,
@@ -32,11 +33,22 @@ Page({
             if (error_code === 0) {
                 this.setData({
                     pageData: data,
-                    tabs: data.comper
+                    tabs: data.comper,
+                    typeList: data.dancer_type
                 })
             }
             wx.stopPullDownRefresh()
         })
+    },
+    typeShow() {
+        this.setData({ typeShow: true })
+    },
+    changeType(e) {
+
+        this.onClose();
+    },
+    onClose() {
+        this.setData({ typeShow: false })
     },
     nav(e) {
         var lat = e.currentTarget.dataset.lat - 0,

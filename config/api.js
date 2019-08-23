@@ -36,7 +36,7 @@ const api = {
     ApiGetUserRecord: ApiUrl + 'user/get_user_record',
     ApiOpinion: ApiUrl + 'user/opinion',
     ApiCompanyBreif: ApiUrl + 'index/company_breif',
-    ApiCollection: ApiUrl + '/user/collection',
+    ApiCollection: ApiUrl + 'user/collection',
     ApiTogether: ApiUrl + 'user/together'
 
 }

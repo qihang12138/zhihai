@@ -11,6 +11,7 @@
         <view>{{item.username}}</view>
         <view class="dancer-msg">年龄: {{item.age}}</view>
         <view class="dancer-msg">学校: {{item.school}}</view>
+        <view class="dancer-msg">授课年限: {{item.teach_year}}</view>
         <view class="dancer-msg">地址: {{item.addr}}</view>
       </view>
       <navigator hover-class="none" class="check" url="/pages/about/about?id={{item.id}}&teach=1">立即查看</navigator>

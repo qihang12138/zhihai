@@ -1,10 +1,10 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/collect/collect",
         "pages/cooperation/cooperation",
         "pages/opinion/opinion",
         "pages/introduce/introduce",
-        "pages/collect/collect",
         "pages/resume/resume",
         "pages/approve/approve",
         "pages/logIn/logIn",

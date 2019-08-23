@@ -46,8 +46,21 @@ Page({
         })
     },
     changeStar() {
-        var star = this.data.star
-        this.setData({ star: !star })
+        var star = this.data.star,
+            id = this.data.pageData.id
+        app.http({
+            url: app.api.ApiCollection,
+            data: {
+                id: id
+            }
+        }).then(res => {
+            if (res.error_code === 0) {
+                this.setData({ star: !star })
+            }
+        })
+
+
+
     },
     /**
      * 生命周期函数--监听页面加载

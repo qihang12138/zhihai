@@ -5,11 +5,8 @@
     <view class="visitingCard-name">{{pageData.name}}</view>
     <view class="view">{{pageData.browse}}</view>
   </view>
-  <!-- <view class="brief"> -->
-  <view class="brief-text">{{pageData.addr}}</view>
-  <!-- <view class="darkSpot brief-text"></view> -->
-  <view class="brief-text">{{pageData.people}}</view>
-  <!-- </view> -->
+  <!-- <view class="brief-text">{{pageData.addr}}</view> -->
+  <!-- <view class="brief-text">{{pageData.people}}</view> -->
   <view class="visitingCard-cont">{{pageData.marray}}</view>
   <view class="address">
     <view class="address-text">{{pageData.addr}}</view>
@@ -29,6 +26,7 @@
       <view class="aboutUs-cont">
         <view >公司年限: {{pageData.found_year}}</view>
         <view >经营面积: {{pageData.area}}</view>
+        <view >公司规模: {{pageData.people}}</view>
       </view>
       <rich-text nodes="{{ pageData.content }}"></rich-text>
     </view>

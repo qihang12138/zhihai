@@ -18,7 +18,7 @@
   <view class="tabs-list">
     <text class="{{tabsOn==0?'tabs-on':''}}" bindtap="tabsOn" data-id="0">综合排序</text>
     <text class="{{tabsOn==1?'tabs-on':''}}" bindtap="tabsOn" data-id="1">附近机构</text>
-    <text class="{{tabsOn==2?'tabs-on':''}}" bindtap="tabsOn" data-id="2">舞种分类</text>
+    <text bindtap="typeShow" >舞种分类</text>
   </view>
   <block wx:for="{{tabs}}" wx:key="{{index}}">
     <!-- <navigator >
@@ -58,3 +58,5 @@
     </navigator>
   </block>
 </view>
+
+<van-action-sheet show="{{ typeShow }}" actions="{{ typeList }}" bind:close="onClose" bind:select="changeType" />
