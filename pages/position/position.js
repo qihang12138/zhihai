@@ -21,7 +21,8 @@ Page({
             if (error_code === 0) {
                 data.time = app.util.YMD(new Date(data.time * 1000));
                 this.setData({
-                    pageData: data
+                    pageData: data,
+                    star: data.sc - 0
                 })
             }
         })
